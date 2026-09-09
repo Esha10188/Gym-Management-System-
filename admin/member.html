@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Member Management - PowerFit</title>
+
+    <link rel="stylesheet" href="members.css">
+
+</head>
+
+<body>
+
+
+    <!-- Sidebar Logo -->
+
+    <div class="sidebar-logo">
+
+        <img src="../Imag/ChatGPT Image Sep 4, 2026, 07_11_46 PM.png" alt="PowerFit Logo">
+
+        <h1>PowerFit</h1>
+
+    </div>
+
+
+
+    <!-- Sidebar -->
+
+    <div class="sidebar">
+
+        <button id="sidebarToggle">‹</button>
+
+
+        <nav class="sidebar-menu">
+
+            <a href="Admin.html" class="menuitem">
+                Dashboard
+            </a>
+
+            <a href="Member.html" class="menuitem active">
+                Members
+            </a>
+
+            <a href="Trainer.html" class="menuitem">
+                Trainers
+            </a>
+
+            <a href="Memberships.html" class="menuitem">
+                Memberships
+            </a>
+
+            <a href="Classes.html" class="menuitem">
+                Classes & Schedules
+            </a>
+
+            <a href="Attendance.html" class="menuitem">
+                Attendance
+            </a>
+
+            <a href="Payments.html" class="menuitem">
+                Payments
+            </a>
+
+            <a href="Equipment.html" class="menuitem">
+                Equipment
+            </a>
+
+            <a href="Reports.html" class="menuitem">
+                Reports
+            </a>
+
+            <a href="#" class="menuitem">
+                Settings
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <a href="../index.html" class="Logout">
+                Logout
+            </a>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Main Content -->
+
+    <main class="main-content">
+
+
+        <!-- Page Header -->
+
+        <section class="page-header">
+
+            <div>
+
+                <h1>Member Management</h1>
+
+                <p>Manage all gym members</p>
+
+            </div>
+
+
+            <button id="addMemberBtn">
+                + Add Member
+            </button>
+
+        </section>
+
+
+
+        <!-- Search and Filter -->
+
+        <section class="member-controls">
+
+            <div class="search-box">
+
+                <input
+                    type="text"
+                    id="searchMember"
+                    placeholder="Search member..."
+                >
+
+            </div>
+
+
+            <div class="filter-box">
+
+                <select id="memberStatus">
+
+                    <option value="">
+                        All Status
+                    </option>
+
+                    <option value="Active">
+                        Active
+                    </option>
+
+                    <option value="Expired">
+                        Expired
+                    </option>
+
+                    <option value="Suspended">
+                        Suspended
+                    </option>
+
+                </select>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- Members Table -->
+
+        <section class="members-table-section">
+
+            <h2>Members List</h2>
+
+
+            <!-- Horizontal Overflow -->
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>ID</th>
+
+                            <th>Member Name</th>
+
+                            <th>Email</th>
+
+                            <th>Phone</th>
+
+                            <th>Membership</th>
+                            <th>Durtion</th>
+
+                            <th>Join Date</th>
+
+                            <th>Expiry Date</th>
+
+                            <th>Status</th>
+
+                            <th>Actions</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="membersTableBody">
+
+
+                        <tr>
+
+                            <td>001</td>
+
+                            <td>Ali Khan</td>
+
+                            <td>ali@gmail.com</td>
+
+                            <td>03001234567</td>
+
+                            <td>Premium</td>
+                            <td>3 months</td>
+
+                            <td>01-09-2026</td>
+
+                            <td>01-12-2026</td>
+
+                            <td>
+                                <span class="status active">
+                                    Active
+                                </span>
+                            </td>
+
+                            <td class="actions">
+
+                                <button class="view-btn">
+                                    View
+                                </button>
+
+                                <button class="edit-btn">
+                                    Edit
+                                </button>
+
+                                <button class="delete-btn">
+                                    Delete
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+
+
+                        <tr>
+
+                            <td>002</td>
+
+                            <td>Fatima Ahmed</td>
+
+                            <td>fatima@gmail.com</td>
+
+                            <td>03111234567</td>
+
+                            <td>Basic</td>
+                            <td>6 months</td>
+
+                            <td>25-08-2026</td>
+
+                            <td>25-11-2026</td>
+
+                            <td>
+                                <span class="status active">
+                                    Active
+                                </span>
+                            </td>
+
+                            <td class="actions">
+
+                                <button class="view-btn">
+                                    View
+                                </button>
+
+                                <button class="edit-btn">
+                                    Edit
+                                </button>
+
+                                <button class="delete-btn">
+                                    Delete
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+
+
+                        <tr>
+
+                            <td>003</td>
+
+                            <td>Usman Ahmed</td>
+
+                            <td>usman@gmail.com</td>
+
+                            <td>03221234567</td>
+
+                            <td>Standard</td>
+                            <td>1 Year</td>
+
+                            <td>10-07-2026</td>
+
+                            <td>10-10-2026</td>
+
+                            <td>
+                                <span class="status expired">
+                                    Expired
+                                </span>
+                            </td>
+
+                            <td class="actions">
+
+                                <button class="view-btn">
+                                    View
+                                </button>
+
+                                <button class="edit-btn">
+                                    Edit
+                                </button>
+
+                                <button class="delete-btn">
+                                    Delete
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+       <!-- Add Member Form -->
+
+<div class="add-member-form">
+
+    <h2>Add New Member</h2>
+
+    <form>
+
+        <!-- Member Name -->
+        <label for="memberName">Member Name</label>
+        <input type="text" id="memberName" placeholder="Enter member name">
+
+        <!-- Email -->
+        <label for="memberEmail">Email</label>
+        <input type="email" id="memberEmail" placeholder="Enter email">
+
+        <!-- Phone -->
+        <label for="memberPhone">Phone</label>
+        <input type="tel" id="memberPhone" placeholder="Enter phone number">
+
+        <!-- Membership Type -->
+        <label for="membership">Membership Type</label>
+        <select id="membership">
+            <option value="">Select Membership</option>
+            <option value="Basic">Basic</option>
+            <option value="Standard">Standard</option>
+            <option value="Premium">Premium</option>
+        </select>
+
+        <!-- Membership Duration -->
+        <label for="membershipDuration">Membership Duration</label>
+        <select id="membershipDuration">
+            <option value="">Select Duration</option>
+            <option value="1 Month">1 Month</option>
+            <option value="3 Months">3 Months</option>
+            <option value="6 Months">6 Months</option>
+            <option value="1 Year">1 Year</option>
+        </select>
+
+        <!-- Join Date -->
+        <label for="joinDate">Join Date</label>
+        <input type="date" id="joinDate">
+
+        <!-- Expiry Date -->
+        <label for="expiryDate">Expiry Date</label>
+        <input type="date" id="expiryDate">
+
+        <!-- Gender -->
+        <label for="gender">Gender</label>
+        <select id="gender">
+            <option value="">Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+
+        <!-- Address -->
+        <label for="address">Address</label>
+        <textarea id="address" placeholder="Enter address"></textarea>
+
+        <!-- Buttons -->
+        <div class="form-buttons">
+            <button type="button" id="saveMember">Save Member</button>
+            <button type="button" id="cancelMember">Cancel</button>
+        </div>
+
+    </form>
+
+</div>
+  </main>
+
+
+</body>
+
+</html>
+
+
+
+
+
+
+  
+   

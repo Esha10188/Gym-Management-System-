@@ -1,0 +1,260 @@
+/* =========================
+   CSS RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   BODY
+========================= */
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #0B1B33;
+
+    font-family: Arial, sans-serif;
+}
+
+
+/* =========================
+   LOGIN CARD
+========================= */
+
+.login-card {
+    width: 380px;
+
+    padding: 35px 40px;
+
+    background-color: white;
+
+    border-radius: 20px;
+
+    /* Golden Border */
+    border: 2px solid #F4C542;
+
+    /* Golden Glow */
+    box-shadow: 0 0 20px rgba(244, 197, 66, 0.35);
+}
+
+
+/* =========================
+   LOGO
+========================= */
+
+.login-card img {
+    width: 110px;
+    height: 110px;
+
+    object-fit: cover;
+
+    display: block;
+
+    margin: 0 auto 15px;
+
+    /* Circular Logo */
+    border-radius: 50%;
+
+    /* Golden Border */
+    border: 3px solid #F4C542;
+
+    padding: 5px;
+
+    /* Logo Glow */
+    box-shadow: 0 0 12px rgba(244, 197, 66, 0.5);
+}
+
+
+/* =========================
+   HEADING
+========================= */
+
+h1 {
+    color: #0B1B33;
+
+    text-align: center;
+
+    font-size: 28px;
+
+    margin-bottom: 8px;
+}
+
+
+/* =========================
+   WELCOME TEXT
+========================= */
+
+.login-card p {
+    color: #666;
+
+    text-align: center;
+
+    font-size: 14px;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   LABEL
+========================= */
+
+label {
+    display: block;
+
+    color: #0B1B33;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    margin-top: 15px;
+
+    margin-bottom: 7px;
+}
+
+
+/* =========================
+   INPUT
+========================= */
+
+input {
+    width: 100%;
+
+    height: 45px;
+
+    padding: 12px;
+
+    border: 2px solid #ccc;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+
+    outline: none;
+}
+
+
+/* =========================
+   INPUT FOCUS
+========================= */
+
+input:focus {
+    border: 2px solid #F4C542;
+
+    outline: none;
+}
+
+
+/* =========================
+   SELECT ROLE
+========================= */
+
+select {
+    width: 100%;
+
+    height: 45px;
+
+    padding: 10px;
+
+    border: 2px solid #ccc;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+
+    color: #0B1B33;
+
+    background-color: white;
+
+    outline: none;
+}
+
+
+/* SELECT FOCUS */
+
+select:focus {
+    border: 2px solid #F4C542;
+
+    outline: none;
+}
+
+
+/* =========================
+   LOGIN BUTTON
+========================= */
+
+button {
+    width: 100%;
+
+    height: 45px;
+
+    margin-top: 25px;
+
+    background-color: #F4C542;
+
+    color: #0B1B33;
+
+    border: none;
+
+    border-radius: 8px;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
+/* BUTTON HOVER */
+
+button:hover {
+    background-color: #0B1B33;
+
+    color: white;
+}
+
+
+/* BUTTON CLICK */
+
+button:active {
+    background-color: #D4A900;
+
+    transform: scale(0.98);
+}
+
+
+/* =========================
+   FORGOT PASSWORD
+========================= */
+
+a {
+    display: block;
+
+    text-align: center;
+
+    margin-top: 18px;
+
+    color: #0B1B33;
+
+    font-size: 14px;
+
+    text-decoration: none;
+}
+
+
+/* LINK HOVER */
+
+a:hover {
+    color: #F4C542;
+}

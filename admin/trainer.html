@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Trainer Management - PowerFit</title>
+
+    <link rel="stylesheet" href="trainer.css">
+</head>
+
+<body>
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <div class="sidebar">
+
+        <div class="sidebar-logo">
+            <img src="../Imag/ChatGPT Image Sep 4, 2026, 07_11_46 PM.png" alt="PowerFit Logo">
+            <h1>PowerFit</h1>
+        </div>
+
+        <button id="sidebarToggle">‹</button>
+
+        <nav class="sidebar-menu">
+
+            <a href="Admin.html" class="menuitem">
+                Dashboard
+            </a>
+
+            <a href="Member.html" class="menuitem">
+                Members
+            </a>
+
+            <a href="Trainer.html" class="menuitem active">
+                Trainers
+            </a>
+
+            <a href="Memberships.html" class="menuitem">
+                Memberships
+            </a>
+
+            <a href="Classes.html" class="menuitem">
+                Classes & Schedules
+            </a>
+
+            <a href="Attendance.html" class="menuitem">
+                Attendance
+            </a>
+
+            <a href="Payments.html" class="menuitem">
+                Payments
+            </a>
+
+            <a href="Equipment.html" class="menuitem">
+                Equipment
+            </a>
+
+            <a href="Reports.html" class="menuitem">
+                Reports
+            </a>
+
+            <a href="#" class="menuitem">
+                Settings
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="../index.html" class="Logout">
+                Logout
+            </a>
+        </div>
+
+    </div>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="main-content">
+
+        <!-- Page Header -->
+
+        <section class="page-header">
+
+            <div>
+                <h1>Trainer Management</h1>
+                <p>Manage PowerFit trainers</p>
+            </div>
+
+            <button id="addTrainerBtn">
+                + Add Trainer
+            </button>
+
+        </section>
+
+
+        <!-- ================= SEARCH & FILTER ================= -->
+
+        <section class="trainer-controls">
+
+            <input
+                type="text"
+                id="searchTrainer"
+                placeholder="Search trainer..."
+            >
+
+            <select id="trainerStatusFilter">
+
+                <option value="">All Status</option>
+                <option value="Active">Active</option>
+                <option value="Inactive">Inactive</option>
+
+            </select>
+
+        </section>
+
+
+        <!-- ================= TRAINER TABLE ================= -->
+
+        <section class="trainer-list">
+
+            <h2>Trainer List</h2>
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>ID</th>
+                            <th>Trainer Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Specialization</th>
+                            <th>Experience</th>
+                            <th>Join Date</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                        <!-- Trainer 1 -->
+
+                        <tr>
+
+                            <td>TR001</td>
+
+                            <td>Ali Ahmed</td>
+
+                            <td>ali@gmail.com</td>
+
+                            <td>0300-1234567</td>
+
+                            <td>Weight Training</td>
+
+                            <td>5 Years</td>
+
+                            <td>01-08-2026</td>
+
+                            <td>
+                                <span class="status active">
+                                    Active
+                                </span>
+                            </td>
+
+                            <td>
+
+                                <button class="view-btn">
+                                    View
+                                </button>
+
+                                <button class="edit-btn">
+                                    Edit
+                                </button>
+
+                                <button class="delete-btn">
+                                    Delete
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+
+                        <!-- Trainer 2 -->
+
+                        <tr>
+
+                            <td>TR002</td>
+
+                            <td>Ahmed Khan</td>
+
+                            <td>ahmed@gmail.com</td>
+
+                            <td>0311-9876543</td>
+
+                            <td>Cardio</td>
+
+                            <td>3 Years</td>
+
+                            <td>15-07-2026</td>
+
+                            <td>
+                                <span class="status active">
+                                    Active
+                                </span>
+                            </td>
+
+                            <td>
+
+                                <button class="view-btn">
+                                    View
+                                </button>
+
+                                <button class="edit-btn">
+                                    Edit
+                                </button>
+
+                                <button class="delete-btn">
+                                    Delete
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+
+                        <!-- Trainer 3 -->
+
+                        <tr>
+
+                            <td>TR003</td>
+
+                            <td>Usman Ali</td>
+
+                            <td>usman@gmail.com</td>
+
+                            <td>0322-4567890</td>
+
+                            <td>Yoga</td>
+
+                            <td>2 Years</td>
+
+                            <td>10-06-2026</td>
+
+                            <td>
+                                <span class="status inactive">
+                                    Inactive
+                                </span>
+                            </td>
+
+                            <td>
+
+                                <button class="view-btn">
+                                    View
+                                </button>
+
+                                <button class="edit-btn">
+                                    Edit
+                                </button>
+
+                                <button class="delete-btn">
+                                    Delete
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+        <!-- Add Trainer Form -->
+
+<div class="add-trainer-form">
+
+    <h2>Add New Trainer</h2>
+
+    <form>
+
+        <!-- Trainer Name -->
+        <label for="trainerName">Trainer Name</label>
+        <input type="text" id="trainerName" placeholder="Enter trainer name">
+
+        <!-- Email -->
+        <label for="trainerEmail">Email</label>
+        <input type="email" id="trainerEmail" placeholder="Enter email">
+
+        <!-- Phone -->
+        <label for="trainerPhone">Phone</label>
+        <input type="tel" id="trainerPhone" placeholder="Enter phone number">
+
+        <!-- Gender -->
+        <label for="trainerGender">Gender</label>
+        <select id="trainerGender">
+            <option value="">Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+
+        <!-- Specialization -->
+        <label for="specialization">Specialization</label>
+        <select id="specialization">
+            <option value="">Select Specialization</option>
+            <option value="Weight Training">Weight Training</option>
+            <option value="Cardio">Cardio</option>
+            <option value="Yoga">Yoga</option>
+            <option value="CrossFit">CrossFit</option>
+            <option value="Personal Training">Personal Training</option>
+        </select>
+
+        <!-- Experience -->
+        <label for="experience">Experience</label>
+        <select id="experience">
+            <option value="">Select Experience</option>
+            <option value="1 Year">1 Year</option>
+            <option value="2 Years">2 Years</option>
+            <option value="3 Years">3 Years</option>
+            <option value="5 Years">5 Years</option>
+            <option value="5+ Years">5+ Years</option>
+        </select>
+
+        <!-- Joining Date -->
+        <label for="joiningDate">Joining Date</label>
+        <input type="date" id="joiningDate">
+
+        <!-- Salary -->
+        <label for="salary">Salary</label>
+        <input type="number" id="salary" placeholder="Enter salary">
+
+        <!-- Address -->
+        <label for="trainerAddress">Address</label>
+        <textarea id="trainerAddress" placeholder="Enter address"></textarea>
+
+        <!-- Buttons -->
+        <div class="trainer-form-buttons">
+
+            <button type="button" id="saveTrainer">
+                Save Trainer
+            </button>
+
+            <button type="button" id="cancelTrainer">
+                Cancel
+            </button>
+
+        </div>
+
+    </form>
+
+</div>
+
+    </main>
+
+</body>
+
+</html>

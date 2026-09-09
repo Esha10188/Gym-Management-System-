@@ -1,0 +1,749 @@
+/* =========================
+   GENERAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f5f6fa;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
+}
+
+
+/* =========================
+   SIDEBAR LOGO
+========================= */
+
+.sidebar-logo {
+    width: 250px;
+    height: 100px;
+
+    background-color: #0B1B33;
+
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+
+    padding: 10px;
+
+    border-bottom: 2px solid #C9A227;
+}
+
+.sidebar-logo img {
+    width: 45px;
+    height: 45px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 2px solid #F4C542;
+}
+
+.sidebar-logo h1 {
+    color: white;
+
+    font-size: 30px;
+
+    margin-left: 30px;
+}
+
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+    width: 250px;
+
+    height: calc(100vh - 100px);
+
+    background-color: #0B1B33;
+
+    position: fixed;
+
+    left: 0;
+    top: 100px;
+
+    z-index: 5;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Sidebar Scrollbar */
+
+.sidebar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background-color: #1a2b46;
+    border-radius: 10px;
+}
+
+
+/* =========================
+   SIDEBAR MENU
+========================= */
+
+.sidebar-menu {
+    display: flex;
+
+    flex-direction: column;
+
+    margin-top: 15px;
+
+    padding-bottom: 20px;
+}
+
+.menuitem {
+    padding: 15px 20px;
+
+    margin: 2px 15px;
+
+    color: #f5f6fa;
+
+    text-decoration: none;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+
+    white-space: nowrap;
+}
+
+.menuitem:hover,
+.menuitem.active {
+    background-color: #F4C542;
+
+    color: #0B1B33;
+}
+
+
+/* =========================
+   LOGOUT
+========================= */
+
+.sidebar-bottom {
+    margin-top: auto;
+
+    padding: 20px;
+}
+
+.Logout {
+    display: block;
+
+    padding: 12px;
+
+    text-align: center;
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 8px;
+}
+
+.Logout:hover {
+    background-color: #F4C542;
+
+    color: #0B1B33;
+}
+
+
+/* =========================
+   COLLAPSE BUTTON
+========================= */
+
+#sidebarToggle {
+    position: absolute;
+
+    right: -1px;
+    top: 45%;
+
+    width: 30px;
+    height: 60px;
+
+    border: none;
+
+    border-radius: 8px 0 0 8px;
+
+    background-color: #1a2b46;
+
+    color: white;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    z-index: 20;
+}
+
+#sidebarToggle:hover {
+    background-color: #F4C542;
+
+    color: #0B1B33;
+}
+
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.main-content {
+    margin-left: 250px;
+
+    padding: 30px;
+
+    width: calc(100% - 250px);
+
+    height: 100vh;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+
+/* Main Scrollbar */
+
+.main-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.main-content::-webkit-scrollbar-thumb {
+    background-color: #c9c9c9;
+
+    border-radius: 10px;
+}
+
+
+/* =========================
+   PAGE HEADER
+========================= */
+
+.page-header {
+    width: 100%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 30px;
+}
+
+.page-header h1 {
+    color: #0B1B33;
+
+    font-size: 30px;
+
+    margin-bottom: 8px;
+}
+
+.page-header p {
+    color: #666;
+
+    font-size: 15px;
+}
+
+
+/* =========================
+   ADD MEMBER BUTTON
+========================= */
+
+#addMemberBtn {
+    background-color: #F4C542;
+
+    color: #0B1B33;
+
+    border: none;
+
+    padding: 12px 20px;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+#addMemberBtn:hover {
+    background-color: #0B1B33;
+
+    color: white;
+}
+
+
+/* =========================
+   SEARCH & FILTER
+========================= */
+
+.member-controls {
+    width: 100%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    background-color: white;
+
+    padding: 20px;
+
+    border-radius: 12px;
+
+    margin-bottom: 25px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+
+/* Search */
+
+.search-box {
+    width: 70%;
+}
+
+.search-box input {
+    width: 100%;
+
+    padding: 12px;
+
+    border: 2px solid #ddd;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+
+    outline: none;
+}
+
+.search-box input:focus {
+    border-color: #F4C542;
+}
+
+
+/* Filter */
+
+.filter-box select {
+    width: 200px;
+
+    padding: 12px;
+
+    border: 2px solid #ddd;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+
+    outline: none;
+}
+
+.filter-box select:focus {
+    border-color: #F4C542;
+}
+
+
+/* =========================
+   MEMBERS TABLE SECTION
+========================= */
+
+.members-table-section {
+    width: 100%;
+
+    background-color: white;
+
+    padding: 25px;
+
+    border-radius: 12px;
+
+    margin-bottom: 30px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.members-table-section h2 {
+    color: #0B1B33;
+
+    font-size: 20px;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   TABLE WRAPPER
+========================= */
+
+.table-wrapper {
+    width: 100%;
+
+    overflow-x: auto;
+
+    overflow-y: hidden;
+}
+
+
+/* Table Scrollbar */
+
+.table-wrapper::-webkit-scrollbar {
+    height: 8px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+    background-color: #c9c9c9;
+
+    border-radius: 10px;
+}
+
+.table-wrapper::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}
+
+
+/* =========================
+   TABLE
+========================= */
+
+table {
+    width: 100%;
+
+    min-width: 1150px;
+
+    border-collapse: collapse;
+
+    background-color: white;
+}
+
+
+/* =========================
+   TABLE HEADER
+========================= */
+
+th {
+    background-color: #0B1B33;
+
+    color: white;
+
+    padding: 15px 14px;
+
+    text-align: left;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+
+/* =========================
+   TABLE DATA
+========================= */
+
+td {
+    padding: 16px 14px;
+
+    border-bottom: 1px solid #eee;
+
+    color: #333;
+
+    font-size: 13px;
+
+    white-space: nowrap;
+}
+
+
+/* =========================
+   COLUMN SPACING
+========================= */
+
+th:nth-child(1),
+td:nth-child(1) {
+    min-width: 60px;
+}
+
+th:nth-child(2),
+td:nth-child(2) {
+    min-width: 150px;
+}
+
+th:nth-child(3),
+td:nth-child(3) {
+    min-width: 220px;
+}
+
+th:nth-child(4),
+td:nth-child(4) {
+    min-width: 140px;
+}
+
+th:nth-child(5),
+td:nth-child(5) {
+    min-width: 130px;
+}
+
+th:nth-child(6),
+td:nth-child(6) {
+    min-width: 130px;
+}
+
+th:nth-child(7),
+td:nth-child(7) {
+    min-width: 130px;
+}
+
+th:nth-child(8),
+td:nth-child(8) {
+    min-width: 110px;
+}
+
+th:nth-child(9),
+td:nth-child(9) {
+    min-width: 190px;
+}
+
+
+/* =========================
+   ROW HOVER
+========================= */
+
+tbody tr:hover {
+    background-color: #f8f9fb;
+}
+
+
+/* =========================
+   STATUS
+========================= */
+
+.status {
+    display: inline-block;
+
+    padding: 6px 10px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+.status.active {
+    background-color: #e6f7ed;
+
+    color: #218838;
+}
+
+.status.expired {
+    background-color: #fdeaea;
+
+    color: #dc3545;
+}
+
+
+/* =========================
+   ACTIONS
+========================= */
+
+.actions {
+    white-space: nowrap;
+}
+
+.view-btn,
+.edit-btn,
+.delete-btn {
+    border: none;
+
+    padding: 7px 10px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    font-size: 11px;
+
+    margin-right: 5px;
+
+    white-space: nowrap;
+}
+
+
+/* View */
+
+.view-btn {
+    background-color: #e9eef5;
+
+    color: #0B1B33;
+}
+
+.view-btn:hover {
+    background-color: #0B1B33;
+
+    color: white;
+}
+
+
+/* Edit */
+
+.edit-btn {
+    background-color: #0B1B33;
+
+    color: white;
+}
+
+.edit-btn:hover {
+    background-color: #F4C542;
+
+    color: #0B1B33;
+}
+
+
+/* Delete */
+
+.delete-btn {
+    background-color: #dc3545;
+
+    color: white;
+}
+
+.delete-btn:hover {
+    background-color: #b02a37;
+}
+/* =========================
+   ADD MEMBER FORM
+========================= */
+
+.add-member-form {
+    width: 100%;
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: white;
+    border: 2px solid #F4C542;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12); 
+    display: none;
+}
+
+.add-member-form h2 {
+    color: #0B1B33;
+    font-size: 24px;
+    margin-bottom: 25px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #F4C542;
+}
+
+/* Form Layout */
+
+.add-member-form form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 25px;
+    row-gap: 5px;
+}
+
+/* Labels */
+
+.add-member-form label {
+    display: block;
+    color: #0B1B33;
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 12px;
+    margin-bottom: 6px;
+}
+
+/* Inputs, Select & Textarea */
+
+.add-member-form input,
+.add-member-form select,
+.add-member-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    background-color: white;
+}
+
+/* Focus Effect */
+
+.add-member-form input:focus,
+.add-member-form select:focus,
+.add-member-form textarea:focus {
+    border: 2px solid #F4C542;
+}
+
+/* Address */
+
+.add-member-form textarea {
+    min-height: 90px;
+    resize: vertical;
+}
+
+/* Buttons */
+
+.form-buttons {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+#saveMember {
+    padding: 12px 25px;
+    background-color: #F4C542;
+    color: #0B1B33;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#saveMember:hover {
+    background-color: #0B1B33;
+    color: white;
+}
+
+#cancelMember {
+    padding: 12px 25px;
+    background-color: #0B1B33;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#cancelMember:hover {
+    background-color: #F4C542;
+    color: #0B1B33;
+}
+
+

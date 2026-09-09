@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PowerFit - Admin Dashboard</title>
+
+    <link rel="stylesheet" href="Admin.css">
+
+</head>
+
+<body>
+
+
+    <!-- =========================
+         SIDEBAR LOGO
+    ========================== -->
+
+    <div class="sidebar-logo">
+
+        <img src="../Imag/ChatGPT Image Sep 4, 2026, 07_11_46 PM.png" alt="PowerFit Logo">
+
+        <h1>PowerFit</h1>
+
+    </div>
+
+
+
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
+
+    <div class="sidebar">
+
+        <button id="sidebarToggle">‹</button>
+
+
+        <nav class="sidebar-menu">
+
+            <a href="Admin.html" class="menuitem active">
+                Dashboard
+            </a>
+
+            <a href="Member.html" class="menuitem">
+                Members
+            </a>
+
+            <a href="Trainer.html" class="menuitem">
+                Trainers
+            </a>
+
+            <a href="Memberships.html" class="menuitem">
+                Memberships
+            </a>
+
+            <a href="Classes.html" class="menuitem">
+                Classes & Schedules
+            </a>
+
+            <a href="Attendance.html" class="menuitem">
+                Attendance
+            </a>
+
+            <a href="Payments.html" class="menuitem">
+                Payments
+            </a>
+
+            <a href="Equipment.html" class="menuitem">
+                Equipment
+            </a>
+
+            <a href="Reports.html" class="menuitem">
+                Reports
+            </a>
+
+            <a href="#" class="menuitem">
+                Settings
+            </a>
+
+        </nav>
+
+
+        <!-- Logout -->
+
+        <div class="sidebar-bottom">
+
+            <a href="../index.html" class="Logout">
+                Logout
+            </a>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+
+    <main class="main-content">
+
+
+        <!-- =========================
+             DASHBOARD HEADER
+        ========================== -->
+
+        <section class="dashboard-header">
+
+
+            <div>
+
+                <h1>Dashboard</h1>
+
+                <p>
+                    Hello, <span id="username">Admin</span>
+                </p>
+
+            </div>
+
+
+            <div class="header-right">
+
+
+                <!-- Notification -->
+
+                <span id="notification-icon">
+                    🔔
+                </span>
+
+
+                <!-- Profile -->
+
+                <div class="profil">
+
+                    <span id="adminNama">
+                        Admin
+                    </span>
+
+                    <small>
+                        Administrator
+                    </small>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             DASHBOARD CARDS
+        ========================== -->
+
+        <section class="dashboard-cards">
+
+
+            <!-- Total Members -->
+
+            <div class="dashboard-card">
+
+                <p>Total Members</p>
+
+                <h2 id="totalMembers">
+                    250
+                </h2>
+
+            </div>
+
+
+
+            <!-- Active Members -->
+
+            <div class="dashboard-card">
+
+                <p>Active Members</p>
+
+                <h2 id="activeMembers">
+                    210
+                </h2>
+
+            </div>
+
+
+
+            <!-- Expired Members -->
+
+            <div class="dashboard-card">
+
+                <p>Expired Members</p>
+
+                <h2 id="expiredMembers">
+                    25
+                </h2>
+
+            </div>
+
+
+
+            <!-- Total Trainers -->
+
+            <div class="dashboard-card">
+
+                <p>Total Trainers</p>
+
+                <h2 id="totalTrainers">
+                    15
+                </h2>
+
+            </div>
+
+
+
+            <!-- Total Equipment -->
+
+            <div class="dashboard-card">
+
+                <p>Total Equipment</p>
+
+                <h2 id="totalEquipment">
+                    80
+                </h2>
+
+            </div>
+
+
+
+            <!-- Available Equipment -->
+
+            <div class="dashboard-card">
+
+                <p>Available Equipment</p>
+
+                <h2 id="availableEquipment">
+                    65
+                </h2>
+
+            </div>
+
+
+
+            <!-- Today's Attendance -->
+
+            <div class="dashboard-card">
+
+                <p>Today's Attendance</p>
+
+                <h2 id="todayAttendance">
+                    175
+                </h2>
+
+            </div>
+
+
+
+            <!-- Pending Payments -->
+
+            <div class="dashboard-card">
+
+                <p>Pending Payments</p>
+
+                <h2 id="pendingPayments">
+                    18
+                </h2>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =========================
+             RECENT ACTIVITIES
+        ========================== -->
+
+        <section class="recent-activities">
+
+
+            <div class="activity-header">
+
+                <h2>
+                    Recent Activities
+                </h2>
+
+                <button id="viewAllBtn">
+                    View All
+                </button>
+
+            </div>
+
+
+
+            <!-- Activity 1 -->
+
+            <div class="activity">
+
+                <div>
+
+                    <p>
+                        New member added
+                    </p>
+
+                    <small>
+                        Ali Khan joined the gym
+                    </small>
+
+                </div>
+
+                <span>
+                    Today
+                </span>
+
+            </div>
+
+
+
+            <!-- Activity 2 -->
+
+            <div class="activity">
+
+                <div>
+
+                    <p>
+                        Payment received
+                    </p>
+
+                    <small>
+                        Membership payment received
+                    </small>
+
+                </div>
+
+                <span>
+                    Today
+                </span>
+
+            </div>
+
+
+
+            <!-- Activity 3 -->
+
+            <div class="activity">
+
+                <div>
+
+                    <p>
+                        New trainer added
+                    </p>
+
+                    <small>
+                        Trainer profile created
+                    </small>
+
+                </div>
+
+                <span>
+                    Yesterday
+                </span>
+
+            </div>
+
+
+
+            <!-- Activity 4 -->
+
+            <div class="activity">
+
+                <div>
+
+                    <p>
+                        Membership expired
+                    </p>
+
+                    <small>
+                        A member's membership has expired
+                    </small>
+
+                </div>
+
+                <span>
+                    Yesterday
+                </span>
+
+            </div>
+
+
+
+        </section>
+
+
+    </main>
+
+
+</body>
+
+</html>
