@@ -20,7 +20,7 @@
 
     <div class="sidebar-logo">
 
-        <img src="../Imag/ChatGPT Image Sep 4, 2026, 07_11_46 PM.png" alt="PowerFit Logo">
+        <img src="../../Imag/ChatGPT Image Sep 4, 2026, 07_11_46 PM.png" alt="PowerFit Logo">
 
         <h1>PowerFit</h1>
 
@@ -37,52 +37,49 @@
 
         <nav class="sidebar-menu">
 
-            <a href="Admin.html" class="menuitem">
+            <a href="../dashboard/Admin.html" class="menuitem">
                 Dashboard
             </a>
 
-            <a href="Member.html" class="menuitem active">
+            <a href="../member/members.html" class="menuitem active">
                 Members
             </a>
 
-            <a href="Trainer.html" class="menuitem">
+            <a href="../trainer/trainer.html" class="menuitem">
                 Trainers
             </a>
 
-            <a href="Memberships.html" class="menuitem">
+            <a href="../membership/memberships.html" class="menuitem">
                 Memberships
             </a>
 
-            <a href="Classes.html" class="menuitem">
+            <a href="../Classes/classes.html" class="menuitem">
                 Classes & Schedules
             </a>
 
-            <a href="Attendance.html" class="menuitem">
+            <a href="../attendance/attendance.html" class="menuitem">
                 Attendance
             </a>
 
-            <a href="Payments.html" class="menuitem">
+            <a href="../payments/payments.html" class="menuitem">
                 Payments
             </a>
 
-            <a href="Equipment.html" class="menuitem">
+            <a href="../equipment/equipment.html" class="menuitem">
                 Equipment
             </a>
 
-            <a href="Reports.html" class="menuitem">
+            <a href="../reports/reports.html" class="menuitem">
                 Reports
             </a>
 
-            <a href="#" class="menuitem">
-                Settings
-            </a>
 
         </nav>
 
 
         <div class="sidebar-bottom">
 
-            <a href="../index.html" class="Logout">
+            <a href="../../index.html" class="Logout">
                 Logout
             </a>
 
@@ -183,6 +180,7 @@
                             <th>Member Name</th>
 
                             <th>Email</th>
+                            <th>CNIC</th>
 
                             <th>Phone</th>
 
@@ -212,6 +210,7 @@
                             <td>Ali Khan</td>
 
                             <td>ali@gmail.com</td>
+                            <td>35404-8976452-0</td>
 
                             <td>03001234567</td>
 
@@ -255,6 +254,7 @@
                             <td>Fatima Ahmed</td>
 
                             <td>fatima@gmail.com</td>
+                            <td>35404-2345671-7</td>
 
                             <td>03111234567</td>
 
@@ -298,6 +298,7 @@
                             <td>Usman Ahmed</td>
 
                             <td>usman@gmail.com</td>
+                            <td>354042356785-0</td>
 
                             <td>03221234567</td>
 
@@ -359,6 +360,10 @@
         <!-- Phone -->
         <label for="memberPhone">Phone</label>
         <input type="tel" id="memberPhone" placeholder="Enter phone number">
+         
+         <!-- CNIC-->
+        <label for="memberCNIC">CNIC</label>
+        <input type="cnic" id="memberCNIC" placeholder="Enter CNIC">
 
         <!-- Membership Type -->
         <label for="membership">Membership Type</label>

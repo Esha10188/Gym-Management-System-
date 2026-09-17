@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Attendance Management - PowerFit</title>
+
+    <link rel="stylesheet" href="attendance.css">
+</head>
+
+<body>
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+            <h1>PowerFit</h1>
+        </div>
+
+        <nav class="sidebar-menu">
+
+            <a href="../dashboard/admin.html">Dashboard</a>
+
+            <a href="../member/member.html">Members</a>
+
+            <a href="../trainer/trainer.html">Trainers</a>
+
+            <a href="../membership/membership.html">Memberships</a>
+
+            <a href="../classes/classes.html">Classes & Schedules</a>
+
+            <a href="attendance.html" class="active">Attendance</a>
+
+            <a href="#">Payments</a>
+
+            <a href="#">Equipment</a>
+
+            <a href="#">Reports</a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+            <button id="logoutBtn">Logout</button>
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="main-content">
+
+        <!-- Page Header -->
+
+        <header class="page-header">
+
+            <div>
+                <h2>Attendance Management</h2>
+                <p>Track and manage member attendance</p>
+            </div>
+
+        </header>
+
+
+        <!-- ================= ATTENDANCE SUMMARY ================= -->
+
+        <section class="attendance-summary">
+
+            <div class="summary-card">
+                <p>Total Members</p>
+                <h2>120</h2>
+            </div>
+
+            <div class="summary-card">
+                <p>Present Today</p>
+                <h2>86</h2>
+            </div>
+
+            <div class="summary-card">
+                <p>Absent Today</p>
+                <h2>34</h2>
+            </div>
+
+            <div class="summary-card">
+                <p>Attendance Rate</p>
+                <h2>72%</h2>
+            </div>
+
+        </section>
+
+
+        <!-- ================= ATTENDANCE CONTROLS ================= -->
+
+        <section class="attendance-controls">
+
+            <div class="date-box">
+
+                <label for="attendanceDate">Select Date</label>
+
+                <input type="date" id="attendanceDate">
+
+            </div>
+
+
+            <div class="search-box">
+
+                <label for="searchMember">Search Member</label>
+
+                <input
+                    type="text"
+                    id="searchMember"
+                    placeholder="Search member name..."
+                >
+
+            </div>
+
+
+            <div class="filter-box">
+
+                <label for="statusFilter">Status</label>
+
+                <select id="statusFilter">
+
+                    <option value="all">All Status</option>
+
+                    <option value="present">Present</option>
+
+                    <option value="absent">Absent</option>
+
+                </select>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= ATTENDANCE RECORDS ================= -->
+
+        <section class="attendance-records">
+
+            <div class="section-header">
+
+                <div>
+                    <h2>Attendance Records</h2>
+                    <p>Today's member attendance</p>
+                </div>
+
+            </div>
+
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>ID</th>
+
+                            <th>Member Name</th>
+
+                            <th>Membership</th>
+
+                            <th>Check-in</th>
+
+                            <th>Check-out</th>
+
+                            <th>Status</th>
+
+                            <th>Action</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                        <tr>
+
+                            <td>MB001</td>
+
+                            <td>Ali Khan</td>
+
+                            <td>Premium</td>
+
+                            <td>08:30 AM</td>
+
+                            <td>10:15 AM</td>
+
+                            <td>
+                                <span class="status present">
+                                    Present
+                                </span>
+                            </td>
+
+                            <td>
+                                <button class="action-btn">
+                                    View
+                                </button>
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>MB002</td>
+
+                            <td>Fatima Ahmed</td>
+
+                            <td>Standard</td>
+
+                            <td>09:10 AM</td>
+
+                            <td>11:00 AM</td>
+
+                            <td>
+                                <span class="status present">
+                                    Present
+                                </span>
+                            </td>
+
+                            <td>
+                                <button class="action-btn">
+                                    View
+                                </button>
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>MB003</td>
+
+                            <td>Usman Ahmed</td>
+
+                            <td>Basic</td>
+
+                            <td>—</td>
+
+                            <td>—</td>
+
+                            <td>
+                                <span class="status absent">
+                                    Absent
+                                </span>
+                            </td>
+
+                            <td>
+                                <button class="action-btn">
+                                    View
+                                </button>
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>MB004</td>
+
+                            <td>Ayesha Malik</td>
+
+                            <td>Premium</td>
+
+                            <td>10:20 AM</td>
+
+                            <td>12:00 PM</td>
+
+                            <td>
+                                <span class="status present">
+                                    Present
+                                </span>
+                            </td>
+
+                            <td>
+                                <button class="action-btn">
+                                    View
+                                </button>
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= QUICK ATTENDANCE ================= -->
+
+        <section class="quick-attendance">
+
+            <div class="section-header">
+
+                <div>
+                    <h2>Quick Attendance</h2>
+                    <p>Mark member attendance quickly</p>
+                </div>
+
+            </div>
+
+
+            <div class="quick-attendance-box">
+
+                <div class="member-search">
+
+                    <label for="attendanceMember">
+                        Member Name / ID
+                    </label>
+
+                    <input
+                        type="text"
+                        id="attendanceMember"
+                        placeholder="Enter member name or ID..."
+                    >
+
+                </div>
+
+
+                <div class="attendance-actions">
+
+                    <button
+                        type="button"
+                        id="presentBtn"
+                        class="present-btn">
+                        Mark Present
+                    </button>
+
+                    <button
+                        type="button"
+                        id="absentBtn"
+                        class="absent-btn">
+                        Mark Absent
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="attendance.js"></script>
+
+</body>
+
+</html>

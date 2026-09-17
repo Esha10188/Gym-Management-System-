@@ -1,0 +1,478 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
+    color: #0B1B33;
+    overflow: hidden;
+}
+
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 250px;
+    height: 100vh;
+    background-color: #0B1B33;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+}
+
+
+/* SIDEBAR LOGO */
+
+.sidebar-logo {
+    height: 90px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 20px;
+    border-bottom: 1px solid #263752;
+}
+
+.sidebar-logo img {
+    width: 55px;
+    height: 55px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #F4C542;
+}
+
+.sidebar-logo h1 {
+    color: white;
+    font-size: 23px;
+}
+
+
+/* SIDEBAR TOGGLE */
+
+#sidebarToggle {
+    position: absolute;
+    right: -1px;
+    top: 45%;
+    width: 30px;
+    height: 60px;
+    border: none;
+    border-radius: 8px 0 0 8px;
+    background-color: #1a2b46;
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+    z-index: 20;
+}
+
+
+/* SIDEBAR MENU */
+
+.sidebar-menu {
+    flex: 1;
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+
+.sidebar-menu::-webkit-scrollbar {
+    display: none;
+}
+
+.menuitem {
+    display: block;
+    padding: 13px 15px;
+    margin-bottom: 5px;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.menuitem:hover {
+    background-color: #1a2b46;
+    color: #F4C542;
+}
+
+.menuitem.active {
+    background-color: #F4C542;
+    color: #0B1B33;
+    font-weight: 600;
+}
+
+
+/* LOGOUT */
+
+.sidebar-bottom {
+    padding: 15px 10px;
+    border-top: 1px solid #263752;
+}
+
+.Logout {
+    display: block;
+    padding: 13px 15px;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.Logout:hover {
+    background-color: #1a2b46;
+    color: #F4C542;
+}
+
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.main-content {
+    margin-left: 250px;
+    padding: 30px;
+    height: 100vh;
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+
+.main-content::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* =========================
+   PAGE HEADER
+========================= */
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.page-header h1 {
+    font-size: 28px;
+    color: #0B1B33;
+    margin-bottom: 6px;
+}
+
+.page-header p {
+    color: #666;
+    font-size: 14px;
+}
+
+
+/* ADD MEMBERSHIP BUTTON */
+
+#addMembershipBtn {
+    padding: 12px 20px;
+    background-color: #F4C542;
+    color: #0B1B33;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#addMembershipBtn:hover {
+    background-color: #0B1B33;
+    color: white;
+}
+
+
+/* =========================
+   SEARCH & FILTER
+========================= */
+
+.membership-controls {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+#searchMembership {
+    width: 350px;
+    height: 45px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    font-size: 14px;
+}
+
+#membershipStatusFilter {
+    width: 180px;
+    height: 45px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    font-size: 14px;
+    background-color: white;
+}
+
+#searchMembership:focus,
+#membershipStatusFilter:focus {
+    border: 2px solid #F4C542;
+}
+
+
+/* =========================
+   MEMBERSHIP LIST
+========================= */
+
+.membership-list {
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.membership-list h2 {
+    color: #0B1B33;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   TABLE
+========================= */
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.table-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 1200px;
+}
+
+th {
+    background-color: #0B1B33;
+    color: white;
+    padding: 14px 12px;
+    text-align: left;
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+td {
+    padding: 14px 12px;
+    border-bottom: 1px solid #eee;
+    font-size: 13px;
+    color: #333;
+    white-space: nowrap;
+}
+
+tbody tr:hover {
+    background-color: #fafafa;
+}
+
+
+/* =========================
+   STATUS
+========================= */
+
+.status {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.status.active {
+    background-color: #e6f7ed;
+    color: #18864b;
+}
+
+.status.inactive {
+    background-color: #fce8e8;
+    color: #c62828;
+}
+
+
+/* =========================
+   ACTION BUTTONS
+========================= */
+
+.view-btn,
+.edit-btn,
+.delete-btn {
+    padding: 7px 10px;
+    border: none;
+    border-radius: 6px;
+    font-size: 12px;
+    cursor: pointer;
+    margin-right: 4px;
+}
+
+.view-btn {
+    background-color: #e8f1ff;
+    color: #1d5fa7;
+}
+
+.edit-btn {
+    background-color: #fff4d6;
+    color: #9a7200;
+}
+
+.delete-btn {
+    background-color: #fde8e8;
+    color: #c62828;
+}
+
+.view-btn:hover,
+.edit-btn:hover,
+.delete-btn:hover {
+    opacity: 0.75;
+}
+
+
+/* =========================
+   ADD MEMBERSHIP FORM
+========================= */
+
+.add-membership-form {
+    width: 100%;
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: white;
+    border: 2px solid #F4C542;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+
+    display: none;
+}
+
+.add-membership-form h2 {
+    color: #0B1B33;
+    font-size: 24px;
+    margin-bottom: 25px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #F4C542;
+}
+
+
+/* FORM GRID */
+
+.add-membership-form form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 25px;
+    row-gap: 5px;
+}
+
+
+/* LABEL */
+
+.add-membership-form label {
+    display: block;
+    color: #0B1B33;
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 12px;
+    margin-bottom: 6px;
+}
+
+
+/* INPUT / SELECT / TEXTAREA */
+
+.add-membership-form input,
+.add-membership-form select,
+.add-membership-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    background-color: white;
+}
+
+.add-membership-form input:focus,
+.add-membership-form select:focus,
+.add-membership-form textarea:focus {
+    border: 2px solid #F4C542;
+}
+
+
+/* TEXTAREA */
+
+.add-membership-form textarea {
+    min-height: 90px;
+    resize: vertical;
+}
+
+
+/* =========================
+   FORM BUTTONS
+========================= */
+
+.membership-form-buttons {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+
+/* SAVE */
+
+#saveMembership {
+    padding: 12px 25px;
+    background-color: #F4C542;
+    color: #0B1B33;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#saveMembership:hover {
+    background-color: #0B1B33;
+    color: white;
+}
+
+
+/* CANCEL */
+
+#cancelMembership {
+    padding: 12px 25px;
+    background-color: #0B1B33;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#cancelMembership:hover {
+    background-color: #F4C542;
+    color: #0B1B33;
+}

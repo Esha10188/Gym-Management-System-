@@ -10,9 +10,7 @@
 
 body {
     background-color: #f5f6fa;
-
     font-family: Arial, Helvetica, sans-serif;
-
     overflow: hidden;
 }
 
@@ -22,48 +20,32 @@ body {
 ========================= */
 
 .sidebar-logo {
-
     width: 250px;
     height: 100px;
-
     background-color: #0B1B33;
-
     position: fixed;
-
     left: 0;
     top: 0;
-
     z-index: 10;
 
     display: flex;
-
     align-items: center;
-
     padding: 10px;
 
     border-bottom: 2px solid #C9A227;
 }
 
-
 .sidebar-logo img {
-
     width: 45px;
     height: 45px;
-
     object-fit: cover;
-
     border-radius: 50%;
-
     border: 2px solid #F4C542;
 }
 
-
 .sidebar-logo h1 {
-
     color: white;
-
     font-size: 30px;
-
     margin-left: 30px;
 }
 
@@ -73,43 +55,27 @@ body {
 ========================= */
 
 .sidebar {
-
     width: 250px;
-
     height: calc(100vh - 100px);
 
     background-color: #0B1B33;
 
     position: fixed;
-
     left: 0;
     top: 100px;
-
     z-index: 5;
 
     overflow-y: auto;
-
     overflow-x: hidden;
 
     display: flex;
-
     flex-direction: column;
+
+    scrollbar-width: none;
 }
-
-
-/* Sidebar Scrollbar */
 
 .sidebar::-webkit-scrollbar {
-
-    width: 6px;
-}
-
-
-.sidebar::-webkit-scrollbar-thumb {
-
-    background-color: #1a2b46;
-
-    border-radius: 10px;
+    display: none;
 }
 
 
@@ -118,40 +84,31 @@ body {
 ========================= */
 
 .sidebar-menu {
-
     display: flex;
-
     flex-direction: column;
 
     margin-top: 15px;
-
     padding-bottom: 20px;
 }
 
-
 .menuitem {
-
     padding: 15px 20px;
-
     margin: 2px 15px;
 
     color: #f5f6fa;
-
     text-decoration: none;
 
     border-radius: 8px;
-
     font-size: 14px;
 
     white-space: nowrap;
-}
 
+    transition: 0.2s;
+}
 
 .menuitem:hover,
 .menuitem.active {
-
     background-color: #F4C542;
-
     color: #0B1B33;
 }
 
@@ -161,15 +118,11 @@ body {
 ========================= */
 
 .sidebar-bottom {
-
     margin-top: auto;
-
     padding: 20px;
 }
 
-
 .Logout {
-
     display: block;
 
     padding: 12px;
@@ -177,17 +130,15 @@ body {
     text-align: center;
 
     color: white;
-
     text-decoration: none;
 
     border-radius: 8px;
+
+    transition: 0.2s;
 }
 
-
 .Logout:hover {
-
     background-color: #F4C542;
-
     color: #0B1B33;
 }
 
@@ -197,23 +148,18 @@ body {
 ========================= */
 
 #sidebarToggle {
-
     position: absolute;
 
     right: -1px;
-
     top: 45%;
 
     width: 30px;
-
     height: 60px;
 
     border: none;
-
     border-radius: 8px 0 0 8px;
 
     background-color: #1a2b46;
-
     color: white;
 
     font-size: 22px;
@@ -223,12 +169,45 @@ body {
     z-index: 20;
 }
 
-
 #sidebarToggle:hover {
-
     background-color: #F4C542;
-
     color: #0B1B33;
+}
+
+
+/* =========================
+   COLLAPSED SIDEBAR
+========================= */
+
+.sidebar.collapsed {
+    width: 65px;
+}
+
+.sidebar-logo.collapsed {
+    width: 65px;
+}
+
+.sidebar.collapsed .menuitem {
+    font-size: 0;
+}
+
+.sidebar.collapsed .Logout {
+    font-size: 0;
+}
+
+.sidebar-logo.collapsed img,
+.sidebar-logo.collapsed h1 {
+    display: none;
+}
+
+.sidebar.collapsed .menuitem.active {
+    background-color: transparent;
+    color: white;
+}
+
+.sidebar.collapsed ~ .main-content {
+    margin-left: 65px;
+    width: calc(100% - 65px);
 }
 
 
@@ -237,34 +216,17 @@ body {
 ========================= */
 
 .main-content {
-
     margin-left: 250px;
 
     padding: 30px;
 
     width: calc(100% - 250px);
-
     height: 100vh;
 
     overflow-y: auto;
-
     overflow-x: hidden;
-}
 
-
-/* Main Scrollbar */
-
-.main-content::-webkit-scrollbar {
-
-    width: 8px;
-}
-
-
-.main-content::-webkit-scrollbar-thumb {
-
-    background-color: #c9c9c9;
-
-    border-radius: 10px;
+    transition: 0.3s;
 }
 
 
@@ -273,41 +235,29 @@ body {
 ========================= */
 
 .dashboard-header {
-
     width: 100%;
 
     display: flex;
-
     justify-content: space-between;
-
     align-items: center;
 
     margin-bottom: 30px;
 }
 
-
 .dashboard-header h1 {
-
     color: #0B1B33;
-
     font-size: 30px;
 
     margin-bottom: 8px;
 }
 
-
 .dashboard-header p {
-
     color: #666;
-
     font-size: 15px;
 }
 
-
-#username {
-
+#trainerName {
     color: #0B1B33;
-
     font-weight: 600;
 }
 
@@ -317,49 +267,31 @@ body {
 ========================= */
 
 .header-right {
-
     display: flex;
-
     align-items: center;
-
     gap: 20px;
 }
 
-
 #notification-icon {
-
     font-size: 22px;
-
     cursor: pointer;
 }
 
-
 .profil {
-
     display: flex;
-
     flex-direction: column;
-
     align-items: center;
 }
 
-
 .profil span {
-
     color: #0B1B33;
-
     font-size: 15px;
-
     font-weight: 600;
 }
 
-
 .profil small {
-
     color: #666;
-
     font-size: 12px;
-
     margin-top: 3px;
 }
 
@@ -369,11 +301,9 @@ body {
 ========================= */
 
 .dashboard-cards {
-
     width: 100%;
 
     display: grid;
-
     grid-template-columns: repeat(4, 1fr);
 
     gap: 20px;
@@ -381,9 +311,7 @@ body {
     margin-bottom: 30px;
 }
 
-
 .dashboard-card {
-
     background-color: white;
 
     padding: 22px;
@@ -393,19 +321,17 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 
     border-left: 4px solid #F4C542;
+
+    transition: 0.2s;
 }
 
-
 .dashboard-card:hover {
-
     transform: translateY(-2px);
 
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
 }
 
-
 .dashboard-card p {
-
     color: #666;
 
     font-size: 14px;
@@ -413,9 +339,7 @@ body {
     margin-bottom: 12px;
 }
 
-
 .dashboard-card h2 {
-
     color: #0B1B33;
 
     font-size: 28px;
@@ -425,11 +349,10 @@ body {
 
 
 /* =========================
-   RECENT ACTIVITIES
+   UPCOMING CLASSES
 ========================= */
 
-.recent-activities {
-
+.upcoming-classes {
     width: 100%;
 
     background-color: white;
@@ -443,31 +366,21 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-
-/* Activity Header */
-
-.activity-header {
-
+.section-header {
     display: flex;
 
     justify-content: space-between;
-
     align-items: center;
 
     margin-bottom: 10px;
 }
 
-
-.activity-header h2 {
-
+.section-header h2 {
     color: #0B1B33;
-
     font-size: 20px;
 }
 
-
-#viewAllBtn {
-
+#viewClassesBtn {
     background-color: transparent;
 
     border: none;
@@ -475,27 +388,19 @@ body {
     color: #0B1B33;
 
     font-size: 13px;
-
     font-weight: 600;
 
     cursor: pointer;
 }
 
-
-#viewAllBtn:hover {
-
+#viewClassesBtn:hover {
     color: #F4C542;
 }
 
-
-/* Activity */
-
-.activity {
-
+.class-item {
     display: flex;
 
     justify-content: space-between;
-
     align-items: center;
 
     padding: 18px 5px;
@@ -503,35 +408,114 @@ body {
     border-bottom: 1px solid #eee;
 }
 
-
-.activity:last-child {
-
+.class-item:last-child {
     border-bottom: none;
 }
 
-
-.activity p {
-
+.class-item p {
     color: #0B1B33;
 
     font-size: 14px;
-
     font-weight: 600;
 
     margin-bottom: 5px;
 }
 
-
-.activity small {
-
+.class-item small {
     color: #777;
 
     font-size: 12px;
 }
 
+.class-item span {
+    color: #888;
+
+    font-size: 12px;
+
+    white-space: nowrap;
+}
+
+
+/* =========================
+   RECENT ACTIVITIES
+========================= */
+
+.recent-activities {
+    width: 100%;
+
+    background-color: white;
+
+    padding: 25px;
+
+    border-radius: 12px;
+
+    margin-bottom: 30px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.activity-header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 10px;
+}
+
+.activity-header h2 {
+    color: #0B1B33;
+    font-size: 20px;
+}
+
+#viewAllBtn {
+    background-color: transparent;
+
+    border: none;
+
+    color: #0B1B33;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+#viewAllBtn:hover {
+    color: #F4C542;
+}
+
+.activity {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 5px;
+
+    border-bottom: 1px solid #eee;
+}
+
+.activity:last-child {
+    border-bottom: none;
+}
+
+.activity p {
+    color: #0B1B33;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    margin-bottom: 5px;
+}
+
+.activity small {
+    color: #777;
+
+    font-size: 12px;
+}
 
 .activity span {
-
     color: #888;
 
     font-size: 12px;

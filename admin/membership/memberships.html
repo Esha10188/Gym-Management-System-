@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Membership Management - PowerFit</title>
+
+    <link rel="stylesheet" href="memberships.css">
+</head>
+
+<body>
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <div class="sidebar">
+
+        <div class="sidebar-logo">
+            <img src="../../imag/ChatGPT Image Sep 4, 2026, 07_11_46 PM.png" alt="PowerFit Logo">
+            <h1>PowerFit</h1>
+        </div>
+
+        <button id="sidebarToggle">‹</button>
+
+        <nav class="sidebar-menu">
+
+            <a href="../dashboard/Admin.html" class="menuitem">
+                Dashboard
+            </a>
+
+            <a href="../member/members.html" class="menuitem">
+                Members
+            </a>
+
+            <a href="../trainer/trainer.html" class="menuitem">
+                Trainers
+            </a>
+
+            <a href="../membership/memberships.html" class="menuitem active">
+                Memberships
+            </a>
+
+            <a href="../classes/classes.html" class="menuitem">
+                Classes & Schedules
+            </a>
+
+            <a href="../attendance/attendance.html" class="menuitem">
+                Attendance
+            </a>
+
+            <a href="../payments/payments.html" class="menuitem">
+                Payments
+            </a>
+
+            <a href="../equipment/equipment.html" class="menuitem">
+                Equipment
+            </a>
+
+            <a href="../reports/reports.html" class="menuitem">
+                Reports
+            </a>
+
+           
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <a href="../../index.html" class="Logout">
+                Logout
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="main-content">
+
+        <!-- ================= PAGE HEADER ================= -->
+
+        <section class="page-header">
+
+            <div>
+                <h1>Membership Management</h1>
+                <p>Manage PowerFit membership plans</p>
+            </div>
+
+            <button id="addMembershipBtn">
+                + Add Membership
+            </button>
+
+        </section>
+
+
+        <!-- ================= SEARCH & FILTER ================= -->
+
+        <section class="membership-controls">
+
+            <input
+                type="text"
+                id="searchMembership"
+                placeholder="Search membership..."
+            >
+
+            <select id="membershipStatusFilter">
+
+                <option value="">All Status</option>
+
+                <option value="Active">
+                    Active
+                </option>
+
+                <option value="Inactive">
+                    Inactive
+                </option>
+
+            </select>
+
+        </section>
+
+
+        <!-- ================= MEMBERSHIP LIST ================= -->
+
+        <section class="membership-list">
+
+            <h2>Membership Plans</h2>
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>ID</th>
+
+                            <th>Membership</th>
+
+                            <th>Duration</th>
+
+                            <th>Price</th>
+
+                            <th>Discount</th>
+
+                            <th>Final Price</th>
+
+                            <th>Trainer</th>
+
+                            <th>Member Limit</th>
+
+                            <th>Popular</th>
+
+                            <th>Status</th>
+
+                            <th>Actions</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                        <!-- ================= BASIC ================= -->
+
+                        <tr>
+
+                            <td>MS001</td>
+
+                            <td>Basic</td>
+
+                            <td>1 Month</td>
+
+                            <td>Rs. 3,000</td>
+
+                            <td>0%</td>
+
+                            <td>Rs. 3,000</td>
+
+                            <td>No</td>
+
+                            <td>100</td>
+
+                            <td>—</td>
+
+                            <td>
+                                <span class="status active">
+                                    Active
+                                </span>
+                            </td>
+
+                            <td>
+
+                                <button class="view-btn">
+                                    View
+                                </button>
+
+                                <button class="edit-btn">
+                                    Edit
+                                </button>
+
+                                <button class="delete-btn">
+                                    Delete
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+
+                        <!-- ================= STANDARD ================= -->
+
+                        <tr>
+
+                            <td>MS002</td>
+
+                            <td>Standard</td>
+
+                            <td>3 Months</td>
+
+                            <td>Rs. 8,000</td>
+
+                            <td>10%</td>
+
+                            <td>Rs. 7,200</td>
+
+                            <td>No</td>
+
+                            <td>150</td>
+
+                            <td>
+                                ⭐
+                            </td>
+
+                            <td>
+                                <span class="status active">
+                                    Active
+                                </span>
+                            </td>
+
+                            <td>
+
+                                <button class="view-btn">
+                                    View
+                                </button>
+
+                                <button class="edit-btn">
+                                    Edit
+                                </button>
+
+                                <button class="delete-btn">
+                                    Delete
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+
+                        <!-- ================= PREMIUM ================= -->
+
+                        <tr>
+
+                            <td>MS003</td>
+
+                            <td>Premium</td>
+
+                            <td>6 Months</td>
+
+                            <td>Rs. 14,000</td>
+
+                            <td>15%</td>
+
+                            <td>Rs. 11,900</td>
+
+                            <td>Yes</td>
+
+                            <td>50</td>
+
+                            <td>
+                                ⭐
+                            </td>
+
+                            <td>
+                                <span class="status active">
+                                    Active
+                                </span>
+                            </td>
+
+                            <td>
+
+                                <button class="view-btn">
+                                    View
+                                </button>
+
+                                <button class="edit-btn">
+                                    Edit
+                                </button>
+
+                                <button class="delete-btn">
+                                    Delete
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= ADD MEMBERSHIP FORM ================= -->
+
+        <div class="add-membership-form">
+
+            <h2>Add New Membership</h2>
+
+            <form>
+
+                <!-- Membership Name -->
+
+                <label for="membershipName">
+                    Membership Name
+                </label>
+
+                <input
+                    type="text"
+                    id="membershipName"
+                    placeholder="Enter membership name"
+                >
+
+
+                <!-- Duration -->
+
+                <label for="membershipDuration">
+                    Duration
+                </label>
+
+                <select id="membershipDuration">
+
+                    <option value="">
+                        Select Duration
+                    </option>
+
+                    <option value="1 Month">
+                        1 Month
+                    </option>
+
+                    <option value="3 Months">
+                        3 Months
+                    </option>
+
+                    <option value="6 Months">
+                        6 Months
+                    </option>
+
+                    <option value="1 Year">
+                        1 Year
+                    </option>
+
+                </select>
+
+
+                <!-- Price -->
+
+                <label for="membershipPrice">
+                    Price
+                </label>
+
+                <input
+                    type="number"
+                    id="membershipPrice"
+                    placeholder="Enter price"
+                >
+
+
+                <!-- Discount -->
+
+                <label for="membershipDiscount">
+                    Discount
+                </label>
+
+                <input
+                    type="number"
+                    id="membershipDiscount"
+                    placeholder="Enter discount %"
+                    min="0"
+                    max="100"
+                >
+
+
+                <!-- Personal Trainer -->
+
+                <label for="personalTrainer">
+                    Personal Trainer
+                </label>
+
+                <select id="personalTrainer">
+
+                    <option value="">
+                        Select Option
+                    </option>
+
+                    <option value="Yes">
+                        Yes
+                    </option>
+
+                    <option value="No">
+                        No
+                    </option>
+
+                </select>
+
+
+                <!-- Member Limit -->
+
+                <label for="memberLimit">
+                    Member Limit
+                </label>
+
+                <input
+                    type="number"
+                    id="memberLimit"
+                    placeholder="Enter member limit"
+                    min="1"
+                >
+
+
+                <!-- Popular Plan -->
+
+                <label for="popularPlan">
+                    Popular Plan
+                </label>
+
+                <select id="popularPlan">
+
+                    <option value="No">
+                        No
+                    </option>
+
+                    <option value="Yes">
+                        Yes
+                    </option>
+
+                </select>
+
+
+                <!-- Status -->
+
+                <label for="membershipStatus">
+                    Status
+                </label>
+
+                <select id="membershipStatus">
+
+                    <option value="">
+                        Select Status
+                    </option>
+
+                    <option value="Active">
+                        Active
+                    </option>
+
+                    <option value="Inactive">
+                        Inactive
+                    </option>
+
+                </select>
+
+
+                <!-- Features -->
+
+                <label for="membershipFeatures">
+                    Features & Benefits
+                </label>
+
+                <textarea
+                    id="membershipFeatures"
+                    placeholder="Enter membership features and benefits"
+                ></textarea>
+
+
+                <!-- Buttons -->
+
+                <div class="membership-form-buttons">
+
+                    <button
+                        type="button"
+                        id="saveMembership"
+                    >
+                        Save Membership
+                    </button>
+
+                    <button
+                        type="button"
+                        id="cancelMembership"
+                    >
+                        Cancel
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </main>
+
+</body>
+
+</html>

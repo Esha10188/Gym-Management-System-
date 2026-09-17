@@ -320,7 +320,7 @@ body {
 /* Search */
 
 .search-box {
-    width: 70%;
+    width: 68%;
 }
 
 .search-box input {
@@ -548,6 +548,7 @@ tbody tr:hover {
     font-weight: 600;
 
     white-space: nowrap;
+    
 }
 
 .status.active {
