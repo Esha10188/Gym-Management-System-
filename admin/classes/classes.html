@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Classes & Schedules - PowerFit</title>
+
+    <link rel="stylesheet" href="classes.css">
+</head>
+
+<body>
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <div class="sidebar">
+
+        <div class="sidebar-logo">
+            <h1>PowerFit</h1>
+        </div>
+
+        <button id="sidebarToggle">‹</button>
+
+        <nav class="sidebar-menu">
+
+            <a href="../dashboard/admin.html" class="menuitem">
+                Dashboard
+            </a>
+
+            <a href="../member/member.html" class="menuitem">
+                Members
+            </a>
+
+            <a href="../trainer/trainer.html" class="menuitem">
+                Trainers
+            </a>
+
+            <a href="../membership/membership.html" class="menuitem">
+                Memberships
+            </a>
+
+            <a href="classes.html" class="menuitem active">
+                Classes & Schedules
+            </a>
+
+            <a href="#" class="menuitem">
+                Attendance
+            </a>
+
+            <a href="#" class="menuitem">
+                Payments
+            </a>
+
+            <a href="#" class="menuitem">
+                Equipment
+            </a>
+
+            <a href="#" class="menuitem">
+                Reports
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+            <button id="logoutBtn" class="Logout">
+                Logout
+            </button>
+        </div>
+
+    </div>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="main-content">
+
+        <!-- Page Header -->
+
+        <div class="page-header">
+
+            <div>
+                <h1>Classes & Schedules</h1>
+                <p>Manage gym classes and weekly schedules</p>
+            </div>
+
+            <button id="addClassBtn">
+                + Add Class
+            </button>
+
+        </div>
+
+
+        <!-- ================= TODAY'S SUMMARY ================= -->
+
+        <section class="schedule-summary">
+
+            <div class="summary-card">
+                <span>Today's Classes</span>
+                <h2>08</h2>
+            </div>
+
+            <div class="summary-card">
+                <span>Active Trainers</span>
+                <h2>12</h2>
+            </div>
+
+            <div class="summary-card">
+                <span>Total Seats</span>
+                <h2>160</h2>
+            </div>
+
+            <div class="summary-card">
+                <span>Available Seats</span>
+                <h2>42</h2>
+            </div>
+
+        </section>
+
+
+        <!-- ================= FILTERS ================= -->
+
+        <section class="schedule-controls">
+
+            <input
+                type="text"
+                id="searchClass"
+                placeholder="Search class..."
+            >
+
+            <select id="trainerFilter">
+
+                <option value="">
+                    All Trainers
+                </option>
+
+                <option value="Ali Khan">
+                    Ali Khan
+                </option>
+
+                <option value="Sara Ahmed">
+                    Sara Ahmed
+                </option>
+
+            </select>
+
+
+            <select id="dayFilter">
+
+                <option value="">
+                    All Days
+                </option>
+
+                <option value="Monday">
+                    Monday
+                </option>
+
+                <option value="Tuesday">
+                    Tuesday
+                </option>
+
+                <option value="Wednesday">
+                    Wednesday
+                </option>
+
+                <option value="Thursday">
+                    Thursday
+                </option>
+
+                <option value="Friday">
+                    Friday
+                </option>
+
+                <option value="Saturday">
+                    Saturday
+                </option>
+
+            </select>
+
+
+            <select id="categoryFilter">
+
+                <option value="">
+                    All Categories
+                </option>
+
+                <option value="Cardio">
+                    Cardio
+                </option>
+
+                <option value="Yoga">
+                    Yoga
+                </option>
+
+                <option value="Strength">
+                    Strength
+                </option>
+
+                <option value="CrossFit">
+                    CrossFit
+                </option>
+
+            </select>
+
+        </section>
+
+
+        <!-- ================= WEEKLY SCHEDULE ================= -->
+
+        <section class="weekly-schedule">
+
+            <div class="section-title">
+                <h2>Weekly Schedule</h2>
+            </div>
+
+
+            <div class="schedule-grid">
+
+                <!-- Monday -->
+
+                <div class="day-column">
+
+                    <h3>Monday</h3>
+
+                    <div class="class-card">
+
+                        <h4>Yoga</h4>
+
+                        <p>Trainer: Ali Khan</p>
+
+                        <p>5:00 PM - 6:00 PM</p>
+
+                        <span>Studio 1</span>
+
+                    </div>
+
+
+                    <div class="class-card">
+
+                        <h4>Cardio</h4>
+
+                        <p>Trainer: Sara Ahmed</p>
+
+                        <p>7:00 PM - 8:00 PM</p>
+
+                        <span>Gym Floor</span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Tuesday -->
+
+                <div class="day-column">
+
+                    <h3>Tuesday</h3>
+
+                    <div class="class-card">
+
+                        <h4>Strength Training</h4>
+
+                        <p>Trainer: Ali Khan</p>
+
+                        <p>5:00 PM - 6:30 PM</p>
+
+                        <span>Training Room</span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Wednesday -->
+
+                <div class="day-column">
+
+                    <h3>Wednesday</h3>
+
+                    <div class="class-card">
+
+                        <h4>CrossFit</h4>
+
+                        <p>Trainer: Sara Ahmed</p>
+
+                        <p>6:00 PM - 7:00 PM</p>
+
+                        <span>Studio 2</span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Thursday -->
+
+                <div class="day-column">
+
+                    <h3>Thursday</h3>
+
+                    <div class="class-card">
+
+                        <h4>Yoga</h4>
+
+                        <p>Trainer: Ali Khan</p>
+
+                        <p>5:00 PM - 6:00 PM</p>
+
+                        <span>Studio 1</span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Friday -->
+
+                <div class="day-column">
+
+                    <h3>Friday</h3>
+
+                    <div class="class-card">
+
+                        <h4>Cardio</h4>
+
+                        <p>Trainer: Sara Ahmed</p>
+
+                        <p>6:00 PM - 7:00 PM</p>
+
+                        <span>Gym Floor</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= UPCOMING CLASSES ================= -->
+
+        <section class="upcoming-classes">
+
+            <h2>Upcoming Classes</h2>
+
+            <div class="upcoming-card">
+
+                <div>
+                    <h3>Yoga</h3>
+                    <p>Monday · 5:00 PM</p>
+                </div>
+
+                <span>12 Seats Available</span>
+
+            </div>
+
+
+            <div class="upcoming-card">
+
+                <div>
+                    <h3>CrossFit</h3>
+                    <p>Wednesday · 6:00 PM</p>
+                </div>
+
+                <span>05 Seats Available</span>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= ADD CLASS FORM ================= -->
+
+        <section class="add-class-form" id="addClassForm">
+
+            <h2>Add New Class</h2>
+
+            <form>
+
+                <label for="className">
+                    Class Name
+                </label>
+
+                <input
+                    type="text"
+                    id="className"
+                    placeholder="Enter class name"
+                >
+
+
+                <label for="classCategory">
+                    Category
+                </label>
+
+                <select id="classCategory">
+
+                    <option value="">
+                        Select Category
+                    </option>
+
+                    <option value="Cardio">
+                        Cardio
+                    </option>
+
+                    <option value="Yoga">
+                        Yoga
+                    </option>
+
+                    <option value="Strength">
+                        Strength
+                    </option>
+
+                    <option value="CrossFit">
+                        CrossFit
+                    </option>
+
+                </select>
+
+
+                <label for="classTrainer">
+                    Trainer
+                </label>
+
+                <select id="classTrainer">
+
+                    <option value="">
+                        Select Trainer
+                    </option>
+
+                    <option value="Ali Khan">
+                        Ali Khan
+                    </option>
+
+                    <option value="Sara Ahmed">
+                        Sara Ahmed
+                    </option>
+
+                </select>
+
+
+                <label for="classDay">
+                    Day
+                </label>
+
+                <select id="classDay">
+
+                    <option value="">
+                        Select Day
+                    </option>
+
+                    <option value="Monday">
+                        Monday
+                    </option>
+
+                    <option value="Tuesday">
+                        Tuesday
+                    </option>
+
+                    <option value="Wednesday">
+                        Wednesday
+                    </option>
+
+                    <option value="Thursday">
+                        Thursday
+                    </option>
+
+                    <option value="Friday">
+                        Friday
+                    </option>
+
+                    <option value="Saturday">
+                        Saturday
+                    </option>
+
+                </select>
+
+
+                <label for="startTime">
+                    Start Time
+                </label>
+
+                <input
+                    type="time"
+                    id="startTime"
+                >
+
+
+                <label for="endTime">
+                    End Time
+                </label>
+
+                <input
+                    type="time"
+                    id="endTime"
+                >
+
+
+                <label for="capacity">
+                    Maximum Capacity
+                </label>
+
+                <input
+                    type="number"
+                    id="capacity"
+                    placeholder="Enter maximum members"
+                >
+
+
+                <label for="location">
+                    Location
+                </label>
+
+                <select id="location">
+
+                    <option value="">
+                        Select Location
+                    </option>
+
+                    <option value="Gym Floor">
+                        Gym Floor
+                    </option>
+
+                    <option value="Studio 1">
+                        Studio 1
+                    </option>
+
+                    <option value="Studio 2">
+                        Studio 2
+                    </option>
+
+                    <option value="Training Room">
+                        Training Room
+                    </option>
+
+                </select>
+
+
+                <label for="classStatus">
+                    Status
+                </label>
+
+                <select id="classStatus">
+
+                    <option value="Active">
+                        Active
+                    </option>
+
+                    <option value="Inactive">
+                        Inactive
+                    </option>
+
+                </select>
+
+
+                <div class="class-form-buttons">
+
+                    <button type="button" id="saveClass">
+                        Save Class
+                    </button>
+
+                    <button type="button" id="cancelClass">
+                        Cancel
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <script src="classes.js"></script>
+
+</body>
+
+</html>

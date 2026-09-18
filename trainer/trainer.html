@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PowerFit - Trainer Dashboard</title>
+
+    <link rel="stylesheet" href="trainer.css">
+</head>
+
+<body>
+
+    <!-- ================= SIDEBAR LOGO ================= -->
+
+    <div class="sidebar-logo">
+
+        <img src="../Imag/ChatGPT Image Sep 4, 2026, 07_11_46 PM.png" alt="PowerFit Logo">
+
+        <h1>PowerFit</h1>
+
+    </div>
+
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <div class="sidebar">
+
+        <button id="sidebarToggle">‹</button>
+
+        <nav class="sidebar-menu">
+
+            <a href="trainer.html" class="menuitem active">
+                Dashboard
+            </a>
+
+            <a href="members.html" class="menuitem">
+                My Members
+            </a>
+
+            <a href="classes.html" class="menuitem">
+                Classes & Schedules
+            </a>
+
+            <a href="attendance.html" class="menuitem">
+                Attendance
+            </a>
+
+            <a href="workout-plans.html" class="menuitem">
+                Workout Plans
+            </a>
+
+            <a href="profile.html" class="menuitem">
+                Profile
+            </a>
+
+        </nav>
+
+
+        <!-- Logout -->
+
+        <div class="sidebar-bottom">
+
+            <a href="../index.html" class="Logout">
+                Logout
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="main-content">
+
+        <!-- Dashboard Header -->
+
+        <section class="dashboard-header">
+
+            <div>
+
+                <h1>Dashboard</h1>
+
+                <p>
+                    Welcome, <span id="trainerName">Trainer</span>
+                </p>
+
+            </div>
+
+
+            <div class="header-right">
+
+                <span id="notification-icon">🔔</span>
+
+                <div class="profil">
+
+                    <span id="trainerProfileName">
+                        Trainer
+                    </span>
+
+                    <small>
+                        Trainer
+                    </small>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= DASHBOARD CARDS ================= -->
+
+        <section class="dashboard-cards">
+
+            <div class="dashboard-card">
+
+                <p>Assigned Members</p>
+
+                <h2 id="assignedMembers">
+                    0
+                </h2>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <p>Today's Classes</p>
+
+                <h2 id="todayClasses">
+                    0
+                </h2>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <p>Today's Attendance</p>
+
+                <h2 id="todayAttendance">
+                    0
+                </h2>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <p>Active Workout Plans</p>
+
+                <h2 id="activeWorkoutPlans">
+                    0
+                </h2>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= UPCOMING CLASSES ================= -->
+
+        <section class="upcoming-classes">
+
+            <div class="section-header">
+
+                <h2>Upcoming Classes</h2>
+
+                <button id="viewClassesBtn">
+                    View All
+                </button>
+
+            </div>
+
+
+            <div class="class-item">
+
+                <div>
+
+                    <p>Morning Fitness</p>
+
+                    <small>
+                        08:00 AM - 09:00 AM
+                    </small>
+
+                </div>
+
+                <span>
+                    Today
+                </span>
+
+            </div>
+
+
+            <div class="class-item">
+
+                <div>
+
+                    <p>Strength Training</p>
+
+                    <small>
+                        05:00 PM - 06:00 PM
+                    </small>
+
+                </div>
+
+                <span>
+                    Today
+                </span>
+
+            </div>
+
+
+            <div class="class-item">
+
+                <div>
+
+                    <p>Cardio Session</p>
+
+                    <small>
+                        10:00 AM - 11:00 AM
+                    </small>
+
+                </div>
+
+                <span>
+                    Tomorrow
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= RECENT ACTIVITIES ================= -->
+
+        <section class="recent-activities">
+
+            <div class="activity-header">
+
+                <h2>Recent Activities</h2>
+
+                <button id="viewAllBtn">
+                    View All
+                </button>
+
+            </div>
+
+
+            <div class="activity">
+
+                <div>
+
+                    <p>Workout plan updated</p>
+
+                    <small>
+                        Workout plan updated for a member
+                    </small>
+
+                </div>
+
+                <span>
+                    Today
+                </span>
+
+            </div>
+
+
+            <div class="activity">
+
+                <div>
+
+                    <p>Attendance marked</p>
+
+                    <small>
+                        Member attendance recorded
+                    </small>
+
+                </div>
+
+                <span>
+                    Today
+                </span>
+
+            </div>
+
+
+            <div class="activity">
+
+                <div>
+
+                    <p>New member assigned</p>
+
+                    <small>
+                        A new member was assigned to you
+                    </small>
+
+                </div>
+
+                <span>
+                    Yesterday
+                </span>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>

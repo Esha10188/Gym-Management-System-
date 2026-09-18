@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Payment Management - PowerFit</title>
+
+    <link rel="stylesheet" href="payments.css">
+</head>
+
+<body>
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+            <h1>PowerFit</h1>
+        </div>
+
+        <nav class="sidebar-menu">
+
+            <a href="../dashboard/admin.html">Dashboard</a>
+
+            <a href="../member/member.html">Members</a>
+
+            <a href="../trainer/trainer.html">Trainers</a>
+
+            <a href="../membership/membership.html">Memberships</a>
+
+            <a href="../classes/classes.html">Classes & Schedules</a>
+
+            <a href="../attendance/attendance.html">Attendance</a>
+
+            <a href="payments.html" class="active">Payments</a>
+
+            <a href="#">Equipment</a>
+
+            <a href="#">Reports</a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+            <button id="logoutBtn">Logout</button>
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="main-content">
+
+        <!-- PAGE HEADER -->
+
+        <header class="page-header">
+
+            <div>
+                <h2>Payment Management</h2>
+                <p>Track membership payments and payment history</p>
+            </div>
+
+            <button class="add-payment-btn" id="addPaymentBtn">
+                + Record Payment
+            </button>
+
+        </header>
+
+
+        <!-- ================= PAYMENT SUMMARY ================= -->
+
+        <section class="payment-summary">
+
+            <div class="summary-card">
+                <p>Total Revenue</p>
+                <h2>Rs. 245,000</h2>
+                <span>This Month</span>
+            </div>
+
+            <div class="summary-card">
+                <p>Paid Payments</p>
+                <h2>86</h2>
+                <span>Completed</span>
+            </div>
+
+            <div class="summary-card">
+                <p>Pending Payments</p>
+                <h2>14</h2>
+                <span>Due</span>
+            </div>
+
+            <div class="summary-card">
+                <p>Overdue Amount</p>
+                <h2>Rs. 38,500</h2>
+                <span>Needs Attention</span>
+            </div>
+
+        </section>
+
+
+        <!-- ================= PAYMENT OVERVIEW ================= -->
+
+        <section class="payment-overview">
+
+            <div class="overview-card">
+
+                <h3>Payment Overview</h3>
+
+                <div class="payment-method">
+
+                    <span>Cash</span>
+                    <strong>Rs. 95,000</strong>
+
+                </div>
+
+                <div class="payment-method">
+
+                    <span>Bank Transfer</span>
+                    <strong>Rs. 82,000</strong>
+
+                </div>
+
+                <div class="payment-method">
+
+                    <span>Card</span>
+                    <strong>Rs. 48,000</strong>
+
+                </div>
+
+                <div class="payment-method">
+
+                    <span>Online</span>
+                    <strong>Rs. 20,000</strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="overview-card">
+
+                <h3>Payment Status</h3>
+
+                <div class="status-item">
+                    <span>Completed</span>
+                    <strong>86</strong>
+                </div>
+
+                <div class="status-item">
+                    <span>Pending</span>
+                    <strong>14</strong>
+                </div>
+
+                <div class="status-item">
+                    <span>Overdue</span>
+                    <strong>8</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= FILTERS ================= -->
+
+        <section class="payment-filters">
+
+            <div>
+                <label for="searchPayment">Search Member</label>
+
+                <input
+                    type="text"
+                    id="searchPayment"
+                    placeholder="Search member name..."
+                >
+            </div>
+
+            <div>
+                <label for="paymentStatus">Payment Status</label>
+
+                <select id="paymentStatus">
+
+                    <option value="all">All Status</option>
+                    <option value="paid">Paid</option>
+                    <option value="pending">Pending</option>
+                    <option value="overdue">Overdue</option>
+
+                </select>
+            </div>
+
+            <div>
+                <label for="paymentMethod">Payment Method</label>
+
+                <select id="paymentMethod">
+
+                    <option value="all">All Methods</option>
+                    <option value="cash">Cash</option>
+                    <option value="bank">Bank Transfer</option>
+                    <option value="card">Card</option>
+                    <option value="online">Online</option>
+
+                </select>
+            </div>
+
+            <div>
+                <label for="paymentDate">Date</label>
+
+                <input type="date" id="paymentDate">
+            </div>
+
+        </section>
+
+
+        <!-- ================= TRANSACTIONS ================= -->
+
+        <section class="transactions">
+
+            <div class="section-header">
+
+                <div>
+                    <h2>Recent Transactions</h2>
+                    <p>Latest payment records</p>
+                </div>
+
+            </div>
+
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Payment ID</th>
+                            <th>Member</th>
+                            <th>Membership</th>
+                            <th>Amount</th>
+                            <th>Method</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th>Action</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                        <tr>
+
+                            <td>PAY001</td>
+                            <td>Ali Khan</td>
+                            <td>Premium</td>
+                            <td>Rs. 11,900</td>
+                            <td>Cash</td>
+                            <td>01-09-2026</td>
+
+                            <td>
+                                <span class="status paid">
+                                    Paid
+                                </span>
+                            </td>
+
+                            <td>
+                                <button class="action-btn">
+                                    View
+                                </button>
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>PAY002</td>
+                            <td>Fatima Ahmed</td>
+                            <td>Standard</td>
+                            <td>Rs. 7,200</td>
+                            <td>Card</td>
+                            <td>02-09-2026</td>
+
+                            <td>
+                                <span class="status paid">
+                                    Paid
+                                </span>
+                            </td>
+
+                            <td>
+                                <button class="action-btn">
+                                    View
+                                </button>
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>PAY003</td>
+                            <td>Usman Ahmed</td>
+                            <td>Basic</td>
+                            <td>Rs. 3,000</td>
+                            <td>Cash</td>
+                            <td>03-09-2026</td>
+
+                            <td>
+                                <span class="status pending">
+                                    Pending
+                                </span>
+                            </td>
+
+                            <td>
+                                <button class="action-btn">
+                                    View
+                                </button>
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>PAY004</td>
+                            <td>Ayesha Malik</td>
+                            <td>Premium</td>
+                            <td>Rs. 11,900</td>
+                            <td>Online</td>
+                            <td>03-09-2026</td>
+
+                            <td>
+                                <span class="status overdue">
+                                    Overdue
+                                </span>
+                            </td>
+
+                            <td>
+                                <button class="action-btn">
+                                    View
+                                </button>
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= RECORD PAYMENT FORM ================= -->
+
+        <section class="payment-form" id="paymentForm">
+
+            <div class="section-header">
+
+                <h2>Record New Payment</h2>
+
+                <p>Enter payment details</p>
+
+            </div>
+
+
+            <div class="form-grid">
+
+                <div>
+                    <label for="memberName">Member Name</label>
+
+                    <input
+                        type="text"
+                        id="memberName"
+                        placeholder="Enter member name"
+                    >
+                </div>
+
+
+                <div>
+                    <label for="membership">Membership</label>
+
+                    <select id="membership">
+
+                        <option value="">Select Membership</option>
+                        <option value="Basic">Basic</option>
+                        <option value="Standard">Standard</option>
+                        <option value="Premium">Premium</option>
+
+                    </select>
+                </div>
+
+
+                <div>
+                    <label for="amount">Amount</label>
+
+                    <input
+                        type="number"
+                        id="amount"
+                        placeholder="Enter amount"
+                    >
+                </div>
+
+
+                <div>
+                    <label for="method">Payment Method</label>
+
+                    <select id="method">
+
+                        <option value="">Select Method</option>
+                        <option value="Cash">Cash</option>
+                        <option value="Bank Transfer">Bank Transfer</option>
+                        <option value="Card">Card</option>
+                        <option value="Online">Online</option>
+
+                    </select>
+                </div>
+
+
+                <div>
+                    <label for="date">Payment Date</label>
+
+                    <input type="date" id="date">
+                </div>
+
+
+                <div>
+                    <label for="status">Payment Status</label>
+
+                    <select id="status">
+
+                        <option value="Paid">Paid</option>
+                        <option value="Pending">Pending</option>
+                        <option value="Overdue">Overdue</option>
+
+                    </select>
+                </div>
+
+            </div>
+
+
+            <div class="form-buttons">
+
+                <button type="button" class="save-btn">
+                    Save Payment
+                </button>
+
+                <button type="button" class="cancel-btn">
+                    Cancel
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="payments.js"></script>
+
+</body>
+
+</html>

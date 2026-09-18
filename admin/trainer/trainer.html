@@ -17,7 +17,7 @@
     <div class="sidebar">
 
         <div class="sidebar-logo">
-            <img src="../Imag/ChatGPT Image Sep 4, 2026, 07_11_46 PM.png" alt="PowerFit Logo">
+            <img src="../../Imag/ChatGPT Image Sep 4, 2026, 07_11_46 PM.png" alt="PowerFit Logo">
             <h1>PowerFit</h1>
         </div>
 
@@ -25,50 +25,47 @@
 
         <nav class="sidebar-menu">
 
-            <a href="Admin.html" class="menuitem">
+            <a href="../dashboard/admin.html" class="menuitem">
                 Dashboard
             </a>
 
-            <a href="Member.html" class="menuitem">
+            <a href="../member/members.html" class="menuitem">
                 Members
             </a>
 
-            <a href="Trainer.html" class="menuitem active">
+            <a href="../trainer/trainer.html" class="menuitem active">
                 Trainers
             </a>
 
-            <a href="Memberships.html" class="menuitem">
+            <a href="../membership/memberships.html" class="menuitem">
                 Memberships
             </a>
 
-            <a href="Classes.html" class="menuitem">
+            <a href="../classes/classes.html" class="menuitem">
                 Classes & Schedules
             </a>
 
-            <a href="Attendance.html" class="menuitem">
+            <a href="../attendance/attendance.html" class="menuitem">
                 Attendance
             </a>
 
-            <a href="Payments.html" class="menuitem">
+            <a href="../payments/payments.html" class="menuitem">
                 Payments
             </a>
 
-            <a href="Equipment.html" class="menuitem">
+            <a href="../equipment/equipment.html" class="menuitem">
                 Equipment
             </a>
 
-            <a href="Reports.html" class="menuitem">
+            <a href="../reports/reports.html" class="menuitem">
                 Reports
             </a>
 
-            <a href="#" class="menuitem">
-                Settings
-            </a>
 
         </nav>
 
         <div class="sidebar-bottom">
-            <a href="../index.html" class="Logout">
+            <a href="../../index.html" class="Logout">
                 Logout
             </a>
         </div>
@@ -134,6 +131,7 @@
                             <th>Trainer Name</th>
                             <th>Email</th>
                             <th>Phone</th>
+                            <th>CNIC</th>
                             <th>Specialization</th>
                             <th>Experience</th>
                             <th>Join Date</th>
@@ -157,6 +155,7 @@
                             <td>ali@gmail.com</td>
 
                             <td>0300-1234567</td>
+                            <td>35404-3456002-8</td>
 
                             <td>Weight Training</td>
 
@@ -200,6 +199,7 @@
                             <td>ahmed@gmail.com</td>
 
                             <td>0311-9876543</td>
+                            <td>35404-2310004-3</td>
 
                             <td>Cardio</td>
 
@@ -243,6 +243,7 @@
                             <td>usman@gmail.com</td>
 
                             <td>0322-4567890</td>
+                            <td>35404-3829012-9</td>
 
                             <td>Yoga</td>
 
@@ -297,9 +298,15 @@
         <label for="trainerEmail">Email</label>
         <input type="email" id="trainerEmail" placeholder="Enter email">
 
-        <!-- Phone -->
+       
+        
+         <!-- Phone -->
         <label for="trainerPhone">Phone</label>
         <input type="tel" id="trainerPhone" placeholder="Enter phone number">
+
+         <!-- CNIC -->
+        <label for="trainerCNIC">CNIC</label>
+        <input type="cnic" id="trainerCNIC" placeholder="Enter phone number">
 
         <!-- Gender -->
         <label for="trainerGender">Gender</label>
@@ -361,7 +368,7 @@
 </div>
 
     </main>
-
+<script src="trainer.js"></script>
 </body>
 
 </html>
