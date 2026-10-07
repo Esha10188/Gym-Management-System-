@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="membershipform.css">
+</head>
+<body>
+    
+
+
+        <div class="add-membership-form">
+
+            <h2>Add New Membership</h2>
+
+            <form>
+
+                <!-- Membership Name -->
+
+                <label for="membershipName">
+                    Membership Name
+                </label>
+
+                <input
+                    type="text"
+                    id="membershipName"
+                    placeholder="Enter membership name"
+                >
+
+
+                <!-- Duration -->
+
+                <label for="membershipDuration">
+                    Duration
+                </label>
+
+                <select id="membershipDuration">
+
+                    <option value="">
+                        Select Duration
+                    </option>
+
+                    <option value="1 Month">
+                        1 Month
+                    </option>
+
+                    <option value="3 Months">
+                        3 Months
+                    </option>
+
+                    <option value="6 Months">
+                        6 Months
+                    </option>
+        
+                    <option value="1 Year">
+                        1 Year
+                    </option>
+
+                </select>
+
+
+                <!-- Price -->
+
+                <label for="membershipPrice">
+                    Price
+                </label>
+
+                <input
+                    type="number"
+                    id="membershipPrice"
+                    placeholder="Enter price"
+                >
+
+
+                <!-- Discount -->
+
+                <label for="membershipDiscount">
+                    Discount
+                </label>
+
+                <input
+                    type="number"
+                    id="membershipDiscount"
+                    placeholder="Enter discount %"
+                    min="0"
+                    max="100"
+                >
+
+
+                <!-- Personal Trainer -->
+
+                <label for="personalTrainer">
+                    Personal Trainer
+                </label>
+
+                <select id="personalTrainer">
+
+                    <option value="">
+                        Select Option
+                    </option>
+
+                    <option value="Yes">
+                        Yes
+                    </option>
+
+                    <option value="No">
+                        No
+                    </option>
+
+                </select>
+
+
+                <!-- Member Limit -->
+
+                <label for="memberLimit">
+                    Member Limit
+                </label>
+
+                <input
+                    type="number"
+                    id="memberLimit"
+                    placeholder="Enter member limit"
+                    min="1"
+                >
+
+
+                <!-- Popular Plan -->
+
+                <label for="popularPlan">
+                    Popular Plan
+                </label>
+
+                <select id="popularPlan">
+
+                    <option value="No">
+                        No
+                    </option>
+
+                    <option value="Yes">
+                        Yes
+                    </option>
+
+                </select>
+
+
+                <!-- Status -->
+
+                <label for="membershipStatus">
+                    Status
+                </label>
+
+                <select id="membershipStatus">
+
+                    <option value="">
+                        Select Status
+                    </option>
+
+                    <option value="Active">
+                        Active
+                    </option>
+
+                    <option value="Inactive">
+                        Inactive
+                    </option>
+
+                </select>
+
+
+                <!-- Features -->
+
+                <label for="membershipFeatures">
+                    Features & Benefits
+                </label>
+
+                <textarea
+                    id="membershipFeatures"
+                    placeholder="Enter membership features and benefits"
+                ></textarea>
+
+
+                <!-- Buttons -->
+
+                <div class="membership-form-buttons">
+
+                    <button
+                        type="button"
+                        id="saveMembership"
+                    >
+                        Save Membership
+                    </button>
+
+                    <button
+                        type="button"
+                        id="cancelMembership"
+                    >
+                        Cancel
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    <script src="membershipform.js"></script>
+
+</body>
+
+</html>
+    
+    

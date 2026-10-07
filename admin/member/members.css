@@ -645,7 +645,7 @@ tbody tr:hover {
     border: 2px solid #F4C542;
     border-radius: 15px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12); 
-    display: none;
+    /* display: none; */
 }
 
 .add-member-form h2 {

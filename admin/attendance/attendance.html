@@ -24,21 +24,21 @@
 
             <a href="../dashboard/admin.html">Dashboard</a>
 
-            <a href="../member/member.html">Members</a>
+            <a href="../member/members.html">Members</a>
 
             <a href="../trainer/trainer.html">Trainers</a>
 
-            <a href="../membership/membership.html">Memberships</a>
+            <a href="../membership/memberships.html">Memberships</a>
 
             <a href="../classes/classes.html">Classes & Schedules</a>
 
-            <a href="attendance.html" class="active">Attendance</a>
+            <a href="../attendance/attendance.html" class="active">Attendance</a>
 
-            <a href="#">Payments</a>
+            <a href="../payments/payments.html">Payments</a>
 
-            <a href="#">Equipment</a>
 
-            <a href="#">Reports</a>
+
+
 
         </nav>
 
@@ -71,26 +71,25 @@
 
             <div class="summary-card">
                 <p>Total Members</p>
-                <h2>120</h2>
+                <h2 id="totalMembers">0</h2>
             </div>
 
             <div class="summary-card">
                 <p>Present Today</p>
-                <h2>86</h2>
+                <h2 id="presentToday">0</h2>
             </div>
 
             <div class="summary-card">
                 <p>Absent Today</p>
-                <h2>34</h2>
+                <h2 id="absentToday">0</h2>
             </div>
 
             <div class="summary-card">
                 <p>Attendance Rate</p>
-                <h2>72%</h2>
+                <h2 id="attendanceRate">0%</h2>
             </div>
 
         </section>
-
 
         <!-- ================= ATTENDANCE CONTROLS ================= -->
 
@@ -109,11 +108,7 @@
 
                 <label for="searchMember">Search Member</label>
 
-                <input
-                    type="text"
-                    id="searchMember"
-                    placeholder="Search member name..."
-                >
+                <input type="text" id="searchMember" placeholder="Search member name...">
 
             </div>
 
@@ -178,116 +173,14 @@
                     </thead>
 
 
-                    <tbody>
-
-                        <tr>
-
-                            <td>MB001</td>
-
-                            <td>Ali Khan</td>
-
-                            <td>Premium</td>
-
-                            <td>08:30 AM</td>
-
-                            <td>10:15 AM</td>
-
-                            <td>
-                                <span class="status present">
-                                    Present
-                                </span>
-                            </td>
-
-                            <td>
-                                <button class="action-btn">
-                                    View
-                                </button>
-                            </td>
-
-                        </tr>
 
 
-                        <tr>
-
-                            <td>MB002</td>
-
-                            <td>Fatima Ahmed</td>
-
-                            <td>Standard</td>
-
-                            <td>09:10 AM</td>
-
-                            <td>11:00 AM</td>
-
-                            <td>
-                                <span class="status present">
-                                    Present
-                                </span>
-                            </td>
-
-                            <td>
-                                <button class="action-btn">
-                                    View
-                                </button>
-                            </td>
-
-                        </tr>
-
-
-                        <tr>
-
-                            <td>MB003</td>
-
-                            <td>Usman Ahmed</td>
-
-                            <td>Basic</td>
-
-                            <td>—</td>
-
-                            <td>—</td>
-
-                            <td>
-                                <span class="status absent">
-                                    Absent
-                                </span>
-                            </td>
-
-                            <td>
-                                <button class="action-btn">
-                                    View
-                                </button>
-                            </td>
-
-                        </tr>
-
-
-                        <tr>
-
-                            <td>MB004</td>
-
-                            <td>Ayesha Malik</td>
-
-                            <td>Premium</td>
-
-                            <td>10:20 AM</td>
-
-                            <td>12:00 PM</td>
-
-                            <td>
-                                <span class="status present">
-                                    Present
-                                </span>
-                            </td>
-
-                            <td>
-                                <button class="action-btn">
-                                    View
-                                </button>
-                            </td>
-
-                        </tr>
+                    <tbody 
+                    id="attendanceTableBody">
 
                     </tbody>
+
+
 
                 </table>
 
@@ -318,28 +211,18 @@
                         Member Name / ID
                     </label>
 
-                    <input
-                        type="text"
-                        id="attendanceMember"
-                        placeholder="Enter member name or ID..."
-                    >
+                    <input type="text" id="attendanceMember" placeholder="Enter member name or ID...">
 
                 </div>
 
 
                 <div class="attendance-actions">
 
-                    <button
-                        type="button"
-                        id="presentBtn"
-                        class="present-btn">
+                    <button type="button" id="presentBtn" class="present-btn">
                         Mark Present
                     </button>
 
-                    <button
-                        type="button"
-                        id="absentBtn"
-                        class="absent-btn">
+                    <button type="button" id="absentBtn" class="absent-btn">
                         Mark Absent
                     </button>
 
@@ -354,7 +237,7 @@
 
     <!-- ================= JAVASCRIPT ================= -->
 
-    <script src="attendance.js"></script>
+    <script src="attendence.js"></script>
 
 </body>
 

@@ -539,37 +539,3 @@ body {
 
     white-space: nowrap;
 }
-/* =========================
-   COLLAPSED SIDEBAR
-========================= */
-
-.sidebar.collapsed {
-    width: 40px;
-}
-
-.sidebar-logo.collapsed {
-    width: 80px;
-}
-.sidebar.collapsed .menuitem {
-    font-size: 0;
-}
-.sidebar.collapsed .Logout {
-    font-size: 0;
-}
-.sidebar-logo.collapsed img {
-    display: none;
-}
-.sidebar-logo.collapsed h1 {
-    display: none;
-}
-.sidebar.collapsed ~ .main-content {
-    margin-left: 65px;
-    width: calc(100% - 65px);
-}
-.sidebar.collapsed .menuitem.active {
-    background-color: transparent;
-    color: white;
-}
-.sidebar-logo.collapsed {
-    width: 40px;
-}

@@ -32,7 +32,7 @@
 
     <div class="sidebar">
 
-        <button id="sidebarToggle">‹</button>
+        
 
 
         <nav class="sidebar-menu">
@@ -65,13 +65,9 @@
                 Payments
             </a>
 
-            <a href="../equipment/equipment.html" class="menuitem">
-                Equipment
-            </a>
+        
 
-            <a href="../reports/reports.html" class="menuitem">
-                Reports
-            </a>
+            
 
 
         </nav>
@@ -180,9 +176,9 @@
                             <th>Member Name</th>
 
                             <th>Email</th>
-                            <th>CNIC</th>
-
                             <th>Phone</th>
+
+                            <th>CNIC</th>
 
                             <th>Membership</th>
                             <th>Durtion</th>
@@ -190,6 +186,8 @@
                             <th>Join Date</th>
 
                             <th>Expiry Date</th>
+                            <th>Gender</th>
+                            <th>Address</th>
 
                             <th>Status</th>
 
@@ -203,136 +201,6 @@
                     <tbody id="membersTableBody">
 
 
-                        <tr>
-
-                            <td>001</td>
-
-                            <td>Ali Khan</td>
-
-                            <td>ali@gmail.com</td>
-                            <td>35404-8976452-0</td>
-
-                            <td>03001234567</td>
-
-                            <td>Premium</td>
-                            <td>3 months</td>
-
-                            <td>01-09-2026</td>
-
-                            <td>01-12-2026</td>
-
-                            <td>
-                                <span class="status active">
-                                    Active
-                                </span>
-                            </td>
-
-                            <td class="actions">
-
-                                <button class="view-btn">
-                                    View
-                                </button>
-
-                                <button class="edit-btn">
-                                    Edit
-                                </button>
-
-                                <button class="delete-btn">
-                                    Delete
-                                </button>
-
-                            </td>
-
-                        </tr>
-
-
-
-                        <tr>
-
-                            <td>002</td>
-
-                            <td>Fatima Ahmed</td>
-
-                            <td>fatima@gmail.com</td>
-                            <td>35404-2345671-7</td>
-
-                            <td>03111234567</td>
-
-                            <td>Basic</td>
-                            <td>6 months</td>
-
-                            <td>25-08-2026</td>
-
-                            <td>25-11-2026</td>
-
-                            <td>
-                                <span class="status active">
-                                    Active
-                                </span>
-                            </td>
-
-                            <td class="actions">
-
-                                <button class="view-btn">
-                                    View
-                                </button>
-
-                                <button class="edit-btn">
-                                    Edit
-                                </button>
-
-                                <button class="delete-btn">
-                                    Delete
-                                </button>
-
-                            </td>
-
-                        </tr>
-
-
-
-                        <tr>
-
-                            <td>003</td>
-
-                            <td>Usman Ahmed</td>
-
-                            <td>usman@gmail.com</td>
-                            <td>354042356785-0</td>
-
-                            <td>03221234567</td>
-
-                            <td>Standard</td>
-                            <td>1 Year</td>
-
-                            <td>10-07-2026</td>
-
-                            <td>10-10-2026</td>
-
-                            <td>
-                                <span class="status expired">
-                                    Expired
-                                </span>
-                            </td>
-
-                            <td class="actions">
-
-                                <button class="view-btn">
-                                    View
-                                </button>
-
-                                <button class="edit-btn">
-                                    Edit
-                                </button>
-
-                                <button class="delete-btn">
-                                    Delete
-                                </button>
-
-                            </td>
-
-                        </tr>
-
 
                     </tbody>
 
@@ -341,80 +209,10 @@
             </div>
 
         </section>
-       <!-- Add Member Form -->
+        </main>
 
-<div class="add-member-form">
-
-    <h2>Add New Member</h2>
-
-    <form>
-
-        <!-- Member Name -->
-        <label for="memberName">Member Name</label>
-        <input type="text" id="memberName" placeholder="Enter member name">
-
-        <!-- Email -->
-        <label for="memberEmail">Email</label>
-        <input type="email" id="memberEmail" placeholder="Enter email">
-
-        <!-- Phone -->
-        <label for="memberPhone">Phone</label>
-        <input type="tel" id="memberPhone" placeholder="Enter phone number">
-         
-         <!-- CNIC-->
-        <label for="memberCNIC">CNIC</label>
-        <input type="cnic" id="memberCNIC" placeholder="Enter CNIC">
-
-        <!-- Membership Type -->
-        <label for="membership">Membership Type</label>
-        <select id="membership">
-            <option value="">Select Membership</option>
-            <option value="Basic">Basic</option>
-            <option value="Standard">Standard</option>
-            <option value="Premium">Premium</option>
-        </select>
-
-        <!-- Membership Duration -->
-        <label for="membershipDuration">Membership Duration</label>
-        <select id="membershipDuration">
-            <option value="">Select Duration</option>
-            <option value="1 Month">1 Month</option>
-            <option value="3 Months">3 Months</option>
-            <option value="6 Months">6 Months</option>
-            <option value="1 Year">1 Year</option>
-        </select>
-
-        <!-- Join Date -->
-        <label for="joinDate">Join Date</label>
-        <input type="date" id="joinDate">
-
-        <!-- Expiry Date -->
-        <label for="expiryDate">Expiry Date</label>
-        <input type="date" id="expiryDate">
-
-        <!-- Gender -->
-        <label for="gender">Gender</label>
-        <select id="gender">
-            <option value="">Select Gender</option>
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-        </select>
-
-        <!-- Address -->
-        <label for="address">Address</label>
-        <textarea id="address" placeholder="Enter address"></textarea>
-
-        <!-- Buttons -->
-        <div class="form-buttons">
-            <button type="button" id="saveMember">Save Member</button>
-            <button type="button" id="cancelMember">Cancel</button>
-        </div>
-
-    </form>
-
-</div>
-  </main>
-
+        <script src="members.js"></script>
+    
 
 </body>
 

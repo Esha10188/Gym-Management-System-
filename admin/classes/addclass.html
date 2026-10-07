@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>classform</title>
+    <link rel="stylesheet" href="addclass.css"> 
+</head>
+<body>
+       <section class="add-class-form" id="addClassForm">
+
+            <h2>Add New Class</h2>
+
+            <form>
+
+                <label for="className">
+                    Class Name
+                </label>
+
+                <input
+                    type="text"
+                    id="className"
+                    placeholder="Enter class name"
+                >
+
+
+                <label for="classCategory">
+                    Category
+                </label>
+
+                <select id="classCategory">
+
+                    <option value="">
+                        Select Category
+                    </option>
+
+                    <option value="Cardio">
+                        Cardio
+                    </option>
+
+                    <option value="Yoga">
+                        Yoga
+                    </option>
+
+                    <option value="Strength">
+                        Strength
+                    </option>
+
+                    <option value="CrossFit">
+                        CrossFit
+                    </option>
+                    <option value="Weight Training">
+                        Weight Training
+                    </option>
+
+                </select>
+
+
+                <label for="classTrainer">
+                    Trainer
+                </label>
+
+                <select id="classTrainer">
+
+                    <option value="">
+                        Select Trainer
+                        </option>
+                   
+                </select>
+
+
+                <label for="classDay">
+                    Day
+                </label>
+
+                <select id="classDay">
+
+                    <option value="">
+                        Select Day
+                    </option>
+
+                    <option value="Monday">
+                        Monday
+                    </option>
+
+                    <option value="Tuesday">
+                        Tuesday
+                    </option>
+
+                    <option value="Wednesday">
+                        Wednesday
+                    </option>
+
+                    <option value="Thursday">
+                        Thursday
+                    </option>
+
+                    <option value="Friday">
+                        Friday
+                    </option>
+
+                    <option value="Saturday">
+                        Saturday
+                    </option>
+
+                </select>
+
+
+                <label for="startTime">
+                    Start Time
+                </label>
+
+                <input
+                    type="time"
+                    id="startTime"
+                >
+
+
+                <label for="endTime">
+                    End Time
+                </label>
+
+                <input
+                    type="time"
+                    id="endTime"
+                >
+
+
+                <label for="capacity">
+                    Maximum Capacity
+                </label>
+
+                <input
+                    type="number"
+                    id="capacity"
+                    placeholder="Enter maximum members"
+                >
+
+
+                <label for="location">
+                    Location
+                </label>
+
+                <select id="location">
+
+                    <option value="">
+                        Select Location
+                    </option>
+
+                    <option value="Gym Floor">
+                        Gym Floor
+                    </option>
+
+                    <option value="Studio 1">
+                        Studio 1
+                    </option>
+
+                    <option value="Studio 2">
+                        Studio 2
+                    </option>
+
+                    <option value="Training Room">
+                        Training Room
+                    </option>
+
+                </select>
+
+
+                <label for="classStatus">
+                    Status
+                </label>
+
+                <select id="classStatus">
+
+                    <option value="Active">
+                        Active
+                    </option>
+
+                    <option value="Inactive">
+                        Inactive
+                    </option>
+
+                </select>
+
+
+                <div class="class-form-buttons">
+
+                    <button type="button" id="saveClass">
+                        Save Class
+                    </button>
+
+                    <button type="button" id="cancelClass">
+                        Cancel
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+<script src="addclass.js"></script>
+</body>
+</html>

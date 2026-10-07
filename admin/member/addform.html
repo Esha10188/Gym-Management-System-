@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="addform.css">
+</head>
+<body>
+     <!-- Add Member Form -->
+
+<div class="add-member-form">
+
+    <h2>Add New Member</h2>
+
+    <form>
+        
+
+
+        <!-- Member Name -->
+        <label for="memberName">Member Name</label>
+        <input type="text" id="memberName" placeholder="Enter member name">
+
+        <!-- Email -->
+        <label for="memberEmail">Email</label>
+        <input type="email" id="memberEmail" placeholder="Enter email">
+
+        <!-- Phone -->
+        <label for="memberPhone">Phone</label>
+        <input type="tel" id="memberPhone" placeholder="Enter phone number">
+         
+         <!-- CNIC-->
+        <label for="memberCNIC">CNIC</label>
+        <input type="cnic" id="memberCNIC" placeholder="Enter CNIC">
+
+        <!-- Membership Type -->
+        <label for="membership">Membership Type</label>
+        <select id="membership">
+            <option value="">Select Membership</option>
+            <option value="Basic">Basic</option>
+            <option value="Standard">Standard</option>
+            <option value="Premium">Premium</option>
+        </select>
+
+        <!-- Membership Duration -->
+        <label for="membershipDuration"> Duration</label>
+        <select id="membershipDuration">
+            <option value="">Select Duration</option>
+            <option value="1 Month">1 Month</option>
+            <option value="3 Months">3 Months</option>
+            <option value="6 Months">6 Months</option>
+            <option value="1 Year">1 Year</option>
+        </select>
+
+<!-- ===========fitness goal====================
+  -->
+        <label for="memberGoal">Fitness Goal</label>
+<select id="memberGoal">
+    <option value="">Select Fitness Goal</option>
+    <option value="Cardio">Cardio</option>
+    <option value="Strength">Strength</option>
+    <option value="Yoga">Yoga</option>
+    <option value="CrossFit">CrossFit</option>
+    <option value="Weight Training">Weight Training</option>
+</select>
+
+<!-- ==============class assign=========== -->
+<label for="memberClass">Class</label>
+
+<select id="memberClass">
+    <option value="">Select Class</option>
+</select>
+
+        <!-- Join Date -->
+        <label for="joinDate">Join Date</label>
+        <input type="date" id="joinDate">
+
+        <!-- Expiry Date -->
+        <label for="expiryDate">Expiry Date</label>
+        <input type="date" id="expiryDate">
+
+        <!-- Gender -->
+        <label for="gender">Gender</label>
+        <select id="gender">
+            <option value="">Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+
+        <!-- Address -->
+        <label for="address">Address</label>
+        <textarea id="address" placeholder="Enter address"></textarea>
+
+        <!-- Buttons -->
+        <div class="form-buttons">
+            <button type="button" id="saveMember">Save Member</button>
+            <button type="button" id="cancelMember">Cancel</button>
+        </div>
+
+    </form>
+
+</div>
+  
+  <script src="addform.js"></script>
+
+
+    
+</body>
+</html>
