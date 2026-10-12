@@ -589,3 +589,45 @@ displayClasses();
 updateSummary();
 
 displayUpcomingClasses();
+// ================= LOGOUT =================
+
+function logoutUser() {
+
+    localStorage.removeItem("loggedInAdmin");
+
+    window.location.href = "../../index.html";
+}
+
+
+// ================= CHECK LOGIN =================
+
+function checkLogin() {
+
+    const loggedInAdmin =
+        localStorage.getItem("loggedInAdmin");
+
+    if (!loggedInAdmin) {
+
+        window.location.href = "../../index.html";
+
+    }
+}
+
+
+// Check Admin Login
+checkLogin();
+
+
+// Logout Button
+const logoutBtn =
+    document.getElementById("logoutBtn");
+
+if (logoutBtn) {
+
+    logoutBtn.addEventListener("click", function () {
+
+        logoutUser();
+
+    });
+
+}

@@ -1,139 +1,301 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Trainer Management - PowerFit</title>
 
+    <!-- CSS -->
     <link rel="stylesheet" href="trainer.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
 </head>
 
 <body>
+
 
     <!-- ================= SIDEBAR ================= -->
 
     <div class="sidebar">
 
+        <!-- LOGO -->
+
         <div class="sidebar-logo">
-            <img src="../../Imag/ChatGPT Image Sep 4, 2026, 07_11_46 PM.png" alt="PowerFit Logo">
+
+            <img src="../../Imag/ChatGPT Image Sep 4, 2026, 07_11_46 PM.png"
+                alt="PowerFit Logo">
+
             <h1>PowerFit</h1>
+
         </div>
 
+
+        <!-- SIDEBAR MENU -->
 
         <nav class="sidebar-menu">
 
             <a href="../dashboard/admin.html" class="menuitem">
-                Dashboard
+                <i class="fa-solid fa-gauge"></i>
+                <span>Dashboard</span>
             </a>
+
 
             <a href="../member/members.html" class="menuitem">
-                Members
+                <i class="fa-solid fa-users"></i>
+                <span>Members</span>
             </a>
+
 
             <a href="../trainer/trainer.html" class="menuitem active">
-                Trainers
+                <i class="fa-solid fa-user-tie"></i>
+                <span>Trainers</span>
             </a>
+
 
             <a href="../membership/memberships.html" class="menuitem">
-                Memberships
+                <i class="fa-solid fa-id-card"></i>
+                <span>Memberships</span>
             </a>
+
 
             <a href="../classes/classes.html" class="menuitem">
-                Classes & Schedules
+                <i class="fa-solid fa-calendar-days"></i>
+                <span>Classes & Schedules</span>
             </a>
+
 
             <a href="../attendance/attendance.html" class="menuitem">
-                Attendance
+                <i class="fa-solid fa-clipboard-check"></i>
+                <span>Attendance</span>
             </a>
+
 
             <a href="../payments/payments.html" class="menuitem">
-                Payments
+                <i class="fa-solid fa-money-bill-wave"></i>
+                <span>Payments</span>
             </a>
- </nav>
+
+        </nav>
+
+
+        <!-- LOGOUT -->
 
         <div class="sidebar-bottom">
-            <a href="../../index.html" class="Logout">
-                Logout
+
+            <a href="#" id="logoutBtn" class="Logout">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                <span>Logout</span>
+
             </a>
+
         </div>
 
     </div>
+
 
 
     <!-- ================= MAIN CONTENT ================= -->
 
     <main class="main-content">
 
-        <!-- Page Header -->
+
+        <!-- PAGE HEADER -->
 
         <section class="page-header">
 
             <div>
-                <h1>Trainer Management</h1>
+
+                <h1>
+                    <i class="fa-solid fa-user-tie"></i>
+                    Trainer Management
+                </h1>
+
                 <p>Manage PowerFit trainers</p>
+
             </div>
 
+
+            <!-- ADD TRAINER BUTTON -->
+
             <button id="addTrainerBtn">
-                + Add Trainer
+
+                <i class="fa-solid fa-user-plus"></i>
+
+                Add Trainer
+
             </button>
 
         </section>
+
 
 
         <!-- ================= SEARCH & FILTER ================= -->
 
         <section class="trainer-controls">
 
-            <input type="text" id="searchTrainer" placeholder="Search trainer...">
 
-            <select id="trainerStatusFilter">
+            <!-- SEARCH -->
 
-                <option value="">All Status</option>
-                <option value="Active">Active</option>
-                <option value="Inactive">Inactive</option>
+            <div class="search-box">
 
-            </select>
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input type="text"
+                    id="searchTrainer"
+                    placeholder="Search trainer...">
+
+            </div>
+
+
+            <!-- STATUS FILTER -->
+
+            <div class="filter-box">
+
+                <i class="fa-solid fa-filter"></i>
+
+                <select id="trainerStatusFilter">
+
+                    <option value="">All Status</option>
+
+                    <option value="Active">
+                        Active
+                    </option>
+
+                    <option value="Inactive">
+                        Inactive
+                    </option>
+
+                </select>
+
+            </div>
 
         </section>
+
 
 
         <!-- ================= TRAINER TABLE ================= -->
 
         <section class="trainer-list" id="trainertablebody">
 
-            <h2>Trainer List</h2>
+
+            <!-- TABLE TITLE -->
+
+            <h2>
+
+                <i class="fa-solid fa-users"></i>
+
+                Trainer List
+
+            </h2>
+
 
             <div class="table-wrapper">
 
+
                 <table>
-                <tbody>
+
+
+                    <!-- TABLE HEAD -->
+
                     <thead>
 
                         <tr>
-                            <th>ID</th>
-                            <th>Trainer Name</th>
-                            <th>Email</th>
-                            <th>Phone</th>
-                            <th>CNIC</th>
-                            <th>Specialization</th>
-                            <th>Experience</th>
-                            <th>Join Date</th>
-                            <th>Status</th>
-                            <th>Actions</th>
+
+                            <th>
+                                <i class="fa-solid fa-hashtag"></i>
+                                ID
+                            </th>
+
+
+                            <th>
+                                <i class="fa-solid fa-user"></i>
+                                Trainer Name
+                            </th>
+
+
+                            <th>
+                                <i class="fa-solid fa-envelope"></i>
+                                Email
+                            </th>
+
+
+                            <th>
+                                <i class="fa-solid fa-phone"></i>
+                                Phone
+                            </th>
+
+
+                            <th>
+                                <i class="fa-solid fa-id-card"></i>
+                                CNIC
+                            </th>
+
+
+                            <th>
+                                <i class="fa-solid fa-dumbbell"></i>
+                                Specialization
+                            </th>
+
+
+                            <th>
+                                <i class="fa-solid fa-clock"></i>
+                                Experience
+                            </th>
+
+
+                            <th>
+                                <i class="fa-solid fa-calendar"></i>
+                                Join Date
+                            </th>
+
+
+                            <th>
+                                <i class="fa-solid fa-circle-check"></i>
+                                Status
+                            </th>
+
+
+                            <th>
+                                <i class="fa-solid fa-gear"></i>
+                                Actions
+                            </th>
+
                         </tr>
 
                     </thead>
-                </tbody>
+
+
+                    <!-- JAVASCRIPT TRAINERS WILL COME HERE -->
+
+                    <tbody id="trainerTableBody">
+
+                    </tbody>
+
 
                 </table>
 
             </div>
 
         </section>
+
     </main>
+
+
+
+    <!-- JAVASCRIPT -->
+
     <script src="trainer.js"></script>
+
 </body>
 
 </html>
+

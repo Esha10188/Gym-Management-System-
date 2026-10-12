@@ -1,6 +1,7 @@
-/* =========================
-   RESET
-========================= */
+
+/* =====================================================
+   GENERAL
+===================================================== */
 
 * {
     margin: 0;
@@ -9,349 +10,1168 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f6f9;
-    color: #0B1B33;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f5f6fa;
+    color: #222;
     overflow: hidden;
 }
 
 
-/* =========================
+/* =====================================================
    SIDEBAR
-========================= */
+===================================================== */
 
 .sidebar {
     position: fixed;
-    left: 0;
     top: 0;
+    left: 0;
+
     width: 250px;
     height: 100vh;
+
     background-color: #0B1B33;
-    color: white;
+
     display: flex;
     flex-direction: column;
+
     z-index: 10;
+
+    animation: sidebarSlide 0.6s ease;
 }
 
 
-/* Logo */
+/* Sidebar Animation */
+
+@keyframes sidebarSlide {
+
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+}
+
+
+/* =====================================================
+   SIDEBAR LOGO
+===================================================== */
 
 .sidebar-logo {
-    height: 90px;
+
+    width: 100%;
+    height: 100px;
+
+    background-color: #0B1B33;
+
     display: flex;
     align-items: center;
+
+    padding-left: 25px;
+
     gap: 12px;
-    padding: 15px 20px;
-    border-bottom: 1px solid #263752;
+
+    border-bottom: 2px solid #C9A227;
 }
+
+
+/* Logo Image */
 
 .sidebar-logo img {
-    width: 55px;
-    height: 55px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 2px solid #F4C542;
+
+    width: 48px;
+    height: 48px;
+
+    object-fit: contain;
+
+    transition:
+        transform 0.4s ease,
+        filter 0.4s ease;
 }
+
+
+/* Logo Hover */
+
+.sidebar-logo:hover img {
+
+    transform: scale(1.08) rotate(-5deg);
+
+}
+
+
+/* PowerFit Text */
 
 .sidebar-logo h1 {
+
     color: white;
-    font-size: 23px;
+
+    font-size: 24px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
 }
 
 
-/* Sidebar Toggle */
+/* Text Hover */
 
-#sidebarToggle {
-    position: absolute;
-    right: -1px;
-    top: 45%;
-    width: 30px;
-    height: 60px;
-    border: none;
-    border-radius: 8px 0 0 8px;
-    background-color: #1a2b46;
-    color: white;
-    font-size: 22px;
-    cursor: pointer;
-    z-index: 20;
+.sidebar-logo:hover h1 {
+
+    color: #C9A227;
+
+    transform: translateX(3px);
+
 }
 
 
-/* Sidebar Menu */
+/* =====================================================
+   SIDEBAR MENU
+===================================================== */
 
 .sidebar-menu {
-    flex: 1;
-    overflow-y: auto;
-    padding: 15px 10px;
-   
-    scrollbar-width: none;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+    padding: 20px 15px;
+
 }
 
-.sidebar-menu::-webkit-scrollbar {
-    display: none;
-}
 
+/* Menu Items */
 
 .menuitem {
-    display: block;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
     padding: 13px 15px;
-    margin-bottom: 5px;
+
     color: white;
+
     text-decoration: none;
-    border-radius: 8px;
-    font-size: 14px;
-    transition: 0.2s;
+
+    border-radius: 7px;
+
+    font-size: 15px;
+
+    font-weight: 500;
+
+    position: relative;
+
+    overflow: hidden;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
 }
+
+
+/* Left Golden Line */
+
+.menuitem::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 3px;
+    height: 100%;
+
+    background-color: #C9A227;
+
+    transform: scaleY(0);
+
+    transform-origin: center;
+
+    transition: transform 0.3s ease;
+}
+
+
+/* Icons */
+
+.menuitem i {
+
+    width: 20px;
+
+    text-align: center;
+
+    font-size: 16px;
+
+    transition:
+        transform 0.3s ease,
+        color 0.3s ease;
+}
+
+
+/* Hover */
 
 .menuitem:hover {
-    background-color: #1a2b46;
-    color: #F4C542;
+
+    background-color: #C9A227;
+
+    color: #0B1B33;
+
+    transform: translateX(4px);
+
 }
+
+
+.menuitem:hover::before {
+
+    transform: scaleY(1);
+
+}
+
+
+.menuitem:hover i {
+
+    transform: scale(1.15);
+
+}
+
+
+/* Active */
 
 .menuitem.active {
-    background-color: #F4C542;
+
+    background-color: #C9A227;
+
     color: #0B1B33;
+
     font-weight: 600;
+
 }
 
 
-/* Logout */
+.menuitem.active i {
+
+    color: #0B1B33;
+
+}
+
+
+/* =====================================================
+   LOGOUT
+===================================================== */
 
 .sidebar-bottom {
-    padding: 15px 10px;
-    border-top: 1px solid #263752;
+
+    margin-top: auto;
+
+    padding: 0 15px 20px 15px;
+
 }
+
 
 .Logout {
-    display: block;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
     padding: 13px 15px;
+
     color: white;
+
     text-decoration: none;
-    border-radius: 8px;
-    font-size: 14px;
+
+    border-radius: 7px;
+
+    font-size: 15px;
+
+    font-weight: 500;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
 }
+
+
+.Logout i {
+
+    width: 20px;
+
+    text-align: center;
+
+    font-size: 16px;
+
+    transition: transform 0.3s ease;
+
+}
+
 
 .Logout:hover {
-    background-color: #1a2b46;
-    color: #F4C542;
+
+    background-color: #C9A227;
+
+    color: #0B1B33;
+
+    transform: translateX(4px);
+
 }
 
 
-/* =========================
+.Logout:hover i {
+
+    transform: translateX(4px);
+
+}
+
+
+/* =====================================================
    MAIN CONTENT
-========================= */
+===================================================== */
 
 .main-content {
+
     margin-left: 250px;
-    padding: 30px;
+
     height: 100vh;
+
+    padding: 35px 40px;
+
     overflow-y: auto;
-   
-    scrollbar-width: none;
-}
 
-.table-wrapper::-webkit-scrollbar {
-    display: none;
+    animation: contentFade 0.7s ease;
 }
 
 
+/* Main Content Animation */
 
-/* =========================
+@keyframes contentFade {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(15px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+/* =====================================================
    PAGE HEADER
-========================= */
+===================================================== */
 
 .page-header {
+
     display: flex;
+
     justify-content: space-between;
+
     align-items: center;
-    margin-bottom: 25px;
+
+    margin-bottom: 28px;
+
+    animation: headerAnimation 0.7s ease;
 }
+
+
+@keyframes headerAnimation {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(-15px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
 
 .page-header h1 {
+
     font-size: 28px;
+
     color: #0B1B33;
+
     margin-bottom: 6px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
 }
+
+
+.page-header h1 i {
+
+    color: #C9A227;
+
+    font-size: 25px;
+
+}
+
 
 .page-header p {
-    color: #666;
+
+    color: #777;
+
     font-size: 14px;
+
 }
 
 
-/* Add Trainer Button */
+/* =====================================================
+   ADD TRAINER BUTTON
+===================================================== */
 
 #addTrainerBtn {
-    padding: 12px 20px;
-    background-color: #F4C542;
-    color: #0B1B33;
+
     border: none;
+
+    background-color: #0B1B33;
+
+    color: white;
+
+    padding: 12px 20px;
+
     border-radius: 8px;
+
     font-size: 14px;
+
     font-weight: 600;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+#addTrainerBtn i {
+
+    font-size: 15px;
+
+    transition: transform 0.3s ease;
+
+}
+
+
+#addTrainerBtn:hover {
+
+    background-color: #C9A227;
+
+    color: #0B1B33;
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 5px 12px rgba(11, 27, 51, 0.18);
+
+}
+
+
+#addTrainerBtn:hover i {
+
+    transform: rotate(8deg) scale(1.1);
+
+}
+
+
+/* =====================================================
+   SEARCH & FILTER
+===================================================== */
+
+.trainer-controls {
+
+    display: flex;
+
+    gap: 15px;
+
+    margin-bottom: 25px;
+
+    animation: controlsAnimation 0.8s ease;
+}
+
+
+@keyframes controlsAnimation {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(10px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+/* Search Box */
+
+.search-box {
+
+    width: 350px;
+
+    height: 45px;
+
+    background-color: white;
+
+    border: 1px solid #ddd;
+
+    border-radius: 8px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 0 14px;
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.search-box i {
+
+    color: #0B1B33;
+
+    font-size: 15px;
+
+    margin-right: 10px;
+
+    transition: color 0.3s ease;
+}
+
+
+.search-box:focus-within {
+
+    border-color: #C9A227;
+
+    box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.12);
+
+}
+
+
+.search-box:focus-within i {
+
+    color: #C9A227;
+
+}
+
+
+.search-box input {
+
+    width: 100%;
+
+    border: none;
+
+    outline: none;
+
+    font-size: 14px;
+
+    background: transparent;
+}
+
+
+.search-box input::placeholder {
+
+    color: #999;
+
+}
+
+
+/* Filter */
+
+.filter-box {
+
+    width: 190px;
+
+    height: 45px;
+
+    background-color: white;
+
+    border: 1px solid #ddd;
+
+    border-radius: 8px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 0 14px;
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.filter-box i {
+
+    color: #0B1B33;
+
+    font-size: 15px;
+
+    margin-right: 10px;
+
+    transition: color 0.3s ease;
+}
+
+
+.filter-box:focus-within {
+
+    border-color: #C9A227;
+
+    box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.12);
+
+}
+
+
+.filter-box:focus-within i {
+
+    color: #C9A227;
+
+}
+
+
+.filter-box select {
+
+    width: 100%;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    font-size: 14px;
+
+    color: #333;
+
     cursor: pointer;
 }
 
-#addTrainerBtn:hover {
-    background-color: #0B1B33;
-    color: white;
-}
 
-
-/* =========================
-   SEARCH & FILTER
-========================= */
-
-.trainer-controls {
-    display: flex;
-    gap: 15px;
-    margin-bottom: 25px;
-}
-
-#searchTrainer {
-    width: 350px;
-    height: 45px;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    outline: none;
-    font-size: 14px;
-}
-
-#trainerStatusFilter {
-    width: 180px;
-    height: 45px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    outline: none;
-    font-size: 14px;
-    background-color: white;
-}
-
-#searchTrainer:focus,
-#trainerStatusFilter:focus {
-    border: 2px solid #F4C542;
-}
-
-
-/* =========================
+/* =====================================================
    TRAINER LIST
-========================= */
+===================================================== */
 
 .trainer-list {
+
     background-color: white;
-    padding: 25px;
+
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+    padding: 25px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+
+    animation: tableSectionAnimation 0.9s ease;
 }
 
+
+@keyframes tableSectionAnimation {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(20px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
 .trainer-list h2 {
+
     color: #0B1B33;
+
     font-size: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
     margin-bottom: 20px;
 }
 
 
-/* =========================
-   TABLE
-========================= */
+.trainer-list h2 i {
 
-.table-wrapper {
-    width: 100%;
-    overflow-x: auto;
-   
-    scrollbar-width: none;
+    color: #C9A227;
+
+    font-size: 18px;
+
 }
 
-.table-wrapper::-webkit-scrollbar {
-    display: none;
+
+/* =====================================================
+   TABLE
+===================================================== */
+
+.table-wrapper {
+
+    width: 100%;
+
+    overflow-x: auto;
+
+    border: 1px solid #eee;
+
+    border-radius: 8px;
 }
 
 
 table {
+
     width: 100%;
+
+    min-width: 1200px;
+
     border-collapse: collapse;
-    min-width: 1000px;
+
+    background-color: white;
 }
 
-th {
+
+thead {
+
     background-color: #0B1B33;
-    color: white;
+}
+
+
+thead th {
+
     padding: 14px 12px;
-    text-align: left;
+
+    color: white;
+
     font-size: 13px;
+
+    font-weight: 600;
+
+    text-align: left;
+
     white-space: nowrap;
 }
 
-td {
-    padding: 14px 12px;
-    border-bottom: 1px solid #eee;
-    font-size: 13px;
-    color: #333;
-    white-space: nowrap;
+
+thead th i {
+
+    margin-right: 5px;
+
+    color: #C9A227;
 }
+
+
+/* Table Rows */
+
+tbody tr {
+
+    border-bottom: 1px solid #eee;
+
+    transition:
+        background-color 0.25s ease,
+        transform 0.25s ease;
+}
+
 
 tbody tr:hover {
-    background-color: #fafafa;
+
+    background-color: #f8f9fc;
+
+    transform: scale(1.001);
+
 }
 
 
-/* =========================
-   STATUS
-========================= */
+tbody td {
 
-.status {
-    display: inline-block;
-    padding: 5px 10px;
-    border-radius: 20px;
-    font-size: 12px;
-    font-weight: 600;
-}
+    padding: 13px 12px;
 
-.status.active {
-    background-color: #e6f7ed;
-    color: #18864b;
-}
+    font-size: 13px;
 
-.status.inactive {
-    background-color: #fce8e8;
-    color: #c62828;
+    color: #444;
+
+    white-space: nowrap;
 }
 
 
-/* =========================
+tbody tr:last-child {
+
+    border-bottom: none;
+
+}
+
+
+/* =====================================================
    ACTION BUTTONS
-========================= */
+===================================================== */
 
-.view-btn,
 .edit-btn,
-.delete-btn {
-    padding: 7px 10px;
+.delete-btn,
+.view-btn {
+
     border: none;
+
+    padding: 7px 10px;
+
     border-radius: 6px;
-    font-size: 12px;
+
     cursor: pointer;
-    margin-right: 4px;
+
+    font-size: 12px;
+
+    margin-right: 5px;
+
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
 }
 
-.view-btn {
-    background-color: #e8f1ff;
-    color: #1d5fa7;
-}
+
+/* Edit */
 
 .edit-btn {
-    background-color: #fff4d6;
-    color: #9a7200;
+
+    background-color: #0B1B33;
+
+    color: white;
+
 }
+
+
+.edit-btn:hover {
+
+    background-color: #C9A227;
+
+    color: #0B1B33;
+
+    transform: translateY(-2px);
+
+}
+
+
+/* Delete */
 
 .delete-btn {
-    background-color: #fde8e8;
-    color: #c62828;
+
+    background-color: #dc3545;
+
+    color: white;
+
 }
 
-.view-btn:hover,
-.edit-btn:hover,
+
 .delete-btn:hover {
-    opacity: 0.75;
+
+    background-color: #b02a37;
+
+    transform: translateY(-2px);
+
 }
+
+
+/* View */
+
+.view-btn {
+
+    background-color: #e9edf5;
+
+    color: #0B1B33;
+
+}
+
+
+.view-btn:hover {
+
+    background-color: #C9A227;
+
+    color: #0B1B33;
+
+    transform: translateY(-2px);
+
+}
+
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+.status-active {
+
+    display: inline-block;
+
+    padding: 5px 10px;
+
+    border-radius: 20px;
+
+    background-color: #e7f7ed;
+
+    color: #198754;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    transition: transform 0.2s ease;
+}
+
+
+.status-active:hover {
+
+    transform: scale(1.05);
+
+}
+
+
+.status-inactive {
+
+    display: inline-block;
+
+    padding: 5px 10px;
+
+    border-radius: 20px;
+
+    background-color: #fde8e8;
+
+    color: #dc3545;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    transition: transform 0.2s ease;
+}
+
+
+.status-inactive:hover {
+
+    transform: scale(1.05);
+
+}
+
+
+/* =====================================================
+   SCROLLBAR
+===================================================== */
+
+.main-content::-webkit-scrollbar,
+.table-wrapper::-webkit-scrollbar {
+
+    width: 7px;
+
+    height: 7px;
+}
+
+
+.main-content::-webkit-scrollbar-thumb,
+.table-wrapper::-webkit-scrollbar-thumb {
+
+    background-color: #C9A227;
+
+    border-radius: 10px;
+}
+
+
+.main-content::-webkit-scrollbar-track,
+.table-wrapper::-webkit-scrollbar-track {
+
+    background-color: #eee;
+
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 1000px) {
+
+    .sidebar {
+
+        width: 220px;
+
+    }
+
+
+    .main-content {
+
+        margin-left: 220px;
+
+        padding: 25px;
+
+    }
+
+
+    .search-box {
+
+        width: 280px;
+
+    }
+
+}
+
+
+@media (max-width: 750px) {
+
+    .sidebar {
+
+        width: 70px;
+
+    }
+
+
+    .sidebar-logo {
+
+        justify-content: center;
+
+        padding-left: 0;
+
+    }
+
+
+    .sidebar-logo h1 {
+
+        display: none;
+
+    }
+
+
+    .sidebar-logo img {
+
+        width: 40px;
+
+        height: 40px;
+
+    }
+
+
+    .sidebar-menu {
+
+        padding: 20px 10px;
+
+    }
+
+
+    .menuitem span,
+    .Logout span {
+
+        display: none;
+
+    }
+
+
+    .menuitem,
+    .Logout {
+
+        justify-content: center;
+
+        padding: 13px 5px;
+
+    }
+
+
+    .main-content {
+
+        margin-left: 70px;
+
+        padding: 25px 20px;
+
+    }
+
+
+    .page-header {
+
+        align-items: flex-start;
+
+        gap: 15px;
+
+    }
+
+
+    .page-header h1 {
+
+        font-size: 23px;
+
+    }
+
+
+    .trainer-controls {
+
+        flex-direction: column;
+
+    }
+
+
+    .search-box,
+    .filter-box {
+
+        width: 100%;
+
+    }
+
+}
+

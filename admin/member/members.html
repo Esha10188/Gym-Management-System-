@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,72 +12,108 @@
 
     <link rel="stylesheet" href="members.css">
 
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
 </head>
 
 <body>
 
 
-    <!-- Sidebar Logo -->
+    <!-- ================= SIDEBAR LOGO ================= -->
 
     <div class="sidebar-logo">
 
-        <img src="../../Imag/ChatGPT Image Sep 4, 2026, 07_11_46 PM.png" alt="PowerFit Logo">
+        <img src="../../Imag/ChatGPT Image Sep 4, 2026, 07_11_46 PM.png"
+            alt="PowerFit Logo">
 
         <h1>PowerFit</h1>
 
     </div>
 
 
-
-    <!-- Sidebar -->
+    <!-- ================= SIDEBAR ================= -->
 
     <div class="sidebar">
-
-        
-
 
         <nav class="sidebar-menu">
 
             <a href="../dashboard/Admin.html" class="menuitem">
-                Dashboard
+
+                <i class="fa-solid fa-gauge"></i>
+
+                <span>Dashboard</span>
+
             </a>
+
 
             <a href="../member/members.html" class="menuitem active">
-                Members
+
+                <i class="fa-solid fa-users"></i>
+
+                <span>Members</span>
+
             </a>
+
 
             <a href="../trainer/trainer.html" class="menuitem">
-                Trainers
+
+                <i class="fa-solid fa-user-tie"></i>
+
+                <span>Trainers</span>
+
             </a>
+
 
             <a href="../membership/memberships.html" class="menuitem">
-                Memberships
+
+                <i class="fa-solid fa-id-card"></i>
+
+                <span>Memberships</span>
+
             </a>
+
 
             <a href="../Classes/classes.html" class="menuitem">
-                Classes & Schedules
+
+                <i class="fa-solid fa-calendar-days"></i>
+
+                <span>Classes & Schedules</span>
+
             </a>
+
 
             <a href="../attendance/attendance.html" class="menuitem">
-                Attendance
+
+                <i class="fa-solid fa-clipboard-check"></i>
+
+                <span>Attendance</span>
+
             </a>
+
 
             <a href="../payments/payments.html" class="menuitem">
-                Payments
+
+                <i class="fa-solid fa-money-bill-wave"></i>
+
+                <span>Payments</span>
+
             </a>
-
-        
-
-            
-
 
         </nav>
 
 
+        <!-- ================= LOGOUT ================= -->
+
         <div class="sidebar-bottom">
 
-            <a href="../../index.html" class="Logout">
-                Logout
+            <a href="#" id="logoutBtn" class="Logout">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                <span>Logout</span>
+
             </a>
 
         </div>
@@ -84,13 +121,12 @@
     </div>
 
 
-
-    <!-- Main Content -->
+    <!-- ================= MAIN CONTENT ================= -->
 
     <main class="main-content">
 
 
-        <!-- Page Header -->
+        <!-- ================= PAGE HEADER ================= -->
 
         <section class="page-header">
 
@@ -104,18 +140,26 @@
 
 
             <button id="addMemberBtn">
-                + Add Member
+
+                <i class="fa-solid fa-user-plus"></i>
+
+                Add Member
+
             </button>
 
         </section>
 
 
-
-        <!-- Search and Filter -->
+        <!-- ================= SEARCH & FILTER ================= -->
 
         <section class="member-controls">
 
+
+            <!-- Search -->
+
             <div class="search-box">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
 
                 <input
                     type="text"
@@ -126,7 +170,11 @@
             </div>
 
 
+            <!-- Status Filter -->
+
             <div class="filter-box">
+
+                <i class="fa-solid fa-filter"></i>
 
                 <select id="memberStatus">
 
@@ -153,12 +201,24 @@
         </section>
 
 
-
-        <!-- Members Table -->
+        <!-- ================= MEMBERS TABLE ================= -->
 
         <section class="members-table-section">
 
-            <h2>Members List</h2>
+            <div class="table-header">
+
+                <div>
+
+                    <h2>
+                        <i class="fa-solid fa-users"></i>
+                        Members List
+                    </h2>
+
+                    <p>View and manage all registered members</p>
+
+                </div>
+
+            </div>
 
 
             <!-- Horizontal Overflow -->
@@ -171,27 +231,70 @@
 
                         <tr>
 
-                            <th>ID</th>
+                            <th>
+                                <i class="fa-solid fa-hashtag"></i>
+                                ID
+                            </th>
 
-                            <th>Member Name</th>
+                            <th>
+                                <i class="fa-solid fa-user"></i>
+                                Member Name
+                            </th>
 
-                            <th>Email</th>
-                            <th>Phone</th>
+                            <th>
+                                <i class="fa-solid fa-envelope"></i>
+                                Email
+                            </th>
 
-                            <th>CNIC</th>
+                            <th>
+                                <i class="fa-solid fa-phone"></i>
+                                Phone
+                            </th>
 
-                            <th>Membership</th>
-                            <th>Durtion</th>
+                            <th>
+                                <i class="fa-solid fa-id-card"></i>
+                                CNIC
+                            </th>
 
-                            <th>Join Date</th>
+                            <th>
+                                <i class="fa-solid fa-crown"></i>
+                                Membership
+                            </th>
 
-                            <th>Expiry Date</th>
-                            <th>Gender</th>
-                            <th>Address</th>
+                            <th>
+                                <i class="fa-solid fa-clock"></i>
+                                Duration
+                            </th>
 
-                            <th>Status</th>
+                            <th>
+                                <i class="fa-solid fa-calendar-plus"></i>
+                                Join Date
+                            </th>
 
-                            <th>Actions</th>
+                            <th>
+                                <i class="fa-solid fa-calendar-xmark"></i>
+                                Expiry Date
+                            </th>
+
+                            <th>
+                                <i class="fa-solid fa-venus-mars"></i>
+                                Gender
+                            </th>
+
+                            <th>
+                                <i class="fa-solid fa-location-dot"></i>
+                                Address
+                            </th>
+
+                            <th>
+                                <i class="fa-solid fa-circle-check"></i>
+                                Status
+                            </th>
+
+                            <th>
+                                <i class="fa-solid fa-gear"></i>
+                                Actions
+                            </th>
 
                         </tr>
 
@@ -200,8 +303,6 @@
 
                     <tbody id="membersTableBody">
 
-
-
                     </tbody>
 
                 </table>
@@ -209,19 +310,16 @@
             </div>
 
         </section>
-        </main>
 
-        <script src="members.js"></script>
-    
+    </main>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="members.js"></script>
+
 
 </body>
 
 </html>
-
-
-
-
-
-
-  
-   
+```

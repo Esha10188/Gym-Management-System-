@@ -16,7 +16,8 @@
 
     <div class="sidebar-logo">
 
-        <img src="../../Imag/ChatGPT Image Sep 4, 2026, 07_11_46 PM.png" alt="PowerFit Logo">
+        <img src="../../Imag/ChatGPT Image Sep 4, 2026, 07_11_46 PM.png"
+            alt="PowerFit Logo">
 
         <h1>PowerFit</h1>
 
@@ -27,37 +28,34 @@
 
     <div class="sidebar">
 
-   
-
         <nav class="sidebar-menu">
 
             <a href="../trainer.html" class="menuitem">
                 Dashboard
             </a>
 
-            <a href="mymember/mymember.html" class="menuitem active">
+            <a href="mymember.html" class="menuitem active">
                 My Members
             </a>
 
-            <a href="classes/classes.html" class="menuitem">
+            <a href="../myclasses/myclasses.html" class="menuitem">
                 Classes & Schedules
             </a>
 
-            <a href="attendance/attendance.html" class="menuitem">
+            <a href="../myattendance/myattendance.html" class="menuitem">
                 Attendance
             </a>
 
-            <a href="workout-plans/workout-plans.html" class="menuitem">
+            <a href="../workout/workout.html" class="menuitem">
                 Workout Plans
             </a>
 
-            
-
         </nav>
+
 
         <div class="sidebar-bottom">
 
-            <a href="../index.html" class="Logout">
+            <a href="../../index.html" class="Logout">
                 Logout
             </a>
 
@@ -70,7 +68,8 @@
 
     <main class="main-content">
 
-        <!-- Page Header -->
+
+        <!-- ================= PAGE HEADER ================= -->
 
         <section class="page-header">
 
@@ -78,7 +77,9 @@
 
                 <h1>My Members</h1>
 
-                <p>View and manage your assigned members</p>
+                <p>
+                    View and manage your assigned members
+                </p>
 
             </div>
 
@@ -89,38 +90,55 @@
 
         <section class="summary-cards">
 
+
+            <!-- Total Assigned Members -->
+
             <div class="summary-card">
 
                 <p>Total Assigned Members</p>
 
-                <h2 id="totalAssignedMembers">0</h2>
+                <h2 id="totalAssignedMembers">
+                    0
+                </h2>
 
             </div>
 
+
+            <!-- Active Members -->
 
             <div class="summary-card">
 
                 <p>Active Members</p>
 
-                <h2 id="activeMembers">0</h2>
+                <h2 id="activeMembers">
+                    0
+                </h2>
 
             </div>
 
+
+            <!-- Expired Members -->
 
             <div class="summary-card">
 
                 <p>Expired Members</p>
 
-                <h2 id="expiredMembers">0</h2>
+                <h2 id="expiredMembers">
+                    0
+                </h2>
 
             </div>
 
+
+            <!-- Today's Attendance -->
 
             <div class="summary-card">
 
                 <p>Today's Attendance</p>
 
-                <h2 id="todayAttendance">0</h2>
+                <h2 id="todayAttendance">
+                    0
+                </h2>
 
             </div>
 
@@ -131,24 +149,33 @@
 
         <section class="members-section">
 
+
+            <!-- Section Header -->
+
             <div class="section-header">
 
                 <div>
 
                     <h2>Assigned Members</h2>
 
-                    <p>Members assigned to you</p>
+                    <p>
+                        Members assigned to you
+                    </p>
 
                 </div>
 
             </div>
 
 
-            <!-- Search -->
+            <!-- ================= SEARCH ================= -->
 
             <div class="search-box">
 
-                <input type="text" id="searchMember" placeholder="Search member by ID ,CNIC or name...">
+                <input
+                    type="text"
+                    id="searchMember"
+                    placeholder="Search member by ID, CNIC or name..."
+                >
 
             </div>
 
@@ -166,12 +193,16 @@
                             <th>Member ID</th>
 
                             <th>Member Name</th>
+
                             <th>CNIC</th>
+
                             <th>Membership</th>
 
-                            <th>Status</th>
+                            <th>Goal</th>
 
-                            <th>Assigned Date</th>
+                            <th>Class</th>
+
+                            <th>Status</th>
 
                             <th>Action</th>
 
@@ -180,84 +211,9 @@
                     </thead>
 
 
+                    <!-- JavaScript will add members here -->
+
                     <tbody id="memberTableBody">
-
-                        <tr>
-
-                            <td>M001</td>
-
-                            <td>Ali Khan</td>
-                            <td>12345-6789012-3</td>
-
-                            <td>Premium</td>
-
-                            <td>
-                                <span class="status active-status">
-                                    Active
-                                </span>
-                            </td>
-
-                            <td>10 Sep 2026</td>
-
-                            <td>
-                                <button class="view-btn">
-                                    View Details
-                                </button>
-                            </td>
-
-                        </tr>
-
-
-                        <tr>
-
-                            <td>M002</td>
-
-                            <td>Sara Ahmed</td>
-                            <td>98765-4321098-7</td>
-
-                            <td>Basic</td>
-
-                            <td>
-                                <span class="status active-status">
-                                    Active
-                                </span>
-                            </td>
-
-                            <td>12 Sep 2026</td>
-
-                            <td>
-                                <button class="view-btn">
-                                    View Details
-                                </button>
-                            </td>
-
-                        </tr>
-
-
-                        <tr>
-
-                            <td>M003</td>
-
-                            <td>Usman Ali</td>
-                            <td>56789-0123456-8</td>
-
-                            <td>Premium</td>
-
-                            <td>
-                                <span class="status expired-status">
-                                    Expired
-                                </span>
-                            </td>
-
-                            <td>05 Aug 2026</td>
-
-                            <td>
-                                <button class="view-btn">
-                                    View Details
-                                </button>
-                            </td>
-
-                        </tr>
 
                     </tbody>
 
@@ -268,46 +224,106 @@
         </section>
 
     </main>
-    <!-- MEMBER DETAILS MODAL -->
+
+
+    <!-- ================= MEMBER DETAILS MODAL ================= -->
 
     <div class="member-modal" id="memberModal">
 
         <div class="modal-content">
 
-            <button class="close-modal" id="closeModal">&times;</button>
+
+            <!-- Close Button -->
+
+            <button
+                class="close-modal"
+                id="closeModal"
+            >
+                &times;
+            </button>
+
 
             <h2>Member Details</h2>
 
+
             <div class="member-details">
 
+
+                <!-- Phone -->
+
                 <div class="detail-item">
+
                     <span>Phone</span>
-                    <strong id="detailPhone">-</strong>
+
+                    <strong id="detailPhone">
+                        -
+                    </strong>
+
                 </div>
 
+
+                <!-- Email -->
+
                 <div class="detail-item">
+
                     <span>Email</span>
-                    <strong id="detailEmail">-</strong>
+
+                    <strong id="detailEmail">
+                        -
+                    </strong>
+
                 </div>
 
+
+                <!-- Membership Expiry -->
+
                 <div class="detail-item">
+
                     <span>Membership Expiry</span>
-                    <strong id="detailExpiry">-</strong>
+
+                    <strong id="detailExpiry">
+                        -
+                    </strong>
+
                 </div>
 
+
+                <!-- Attendance -->
+
                 <div class="detail-item">
+
                     <span>Attendance</span>
-                    <strong id="detailAttendance">-</strong>
+
+                    <strong id="detailAttendance">
+                        -
+                    </strong>
+
                 </div>
 
+
+                <!-- Workout Plan -->
+
                 <div class="detail-item">
+
                     <span>Current Workout Plan</span>
-                    <strong id="detailWorkout">-</strong>
+
+                    <strong id="detailWorkout">
+                        -
+                    </strong>
+
                 </div>
 
+
+                <!-- Trainer Notes -->
+
                 <div class="detail-item">
+
                     <span>Trainer Notes</span>
-                    <strong id="detailNotes">-</strong>
+
+                    <strong id="detailNotes">
+                        -
+                    </strong>
+
                 </div>
 
             </div>
@@ -317,7 +333,9 @@
     </div>
 
 
-    <script src="members.js"></script>
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="mymember.js"></script>
 
 </body>
 

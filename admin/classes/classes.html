@@ -1,119 +1,184 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Classes & Schedules - PowerFit</title>
 
-    <link rel="stylesheet" href="classes.css">
+<title>Classes & Schedules - PowerFit</title>
+
+<link rel="stylesheet" href="classes.css">
+
+<!-- Font Awesome -->
+<link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
 </head>
 
 <body>
 
-    <!-- ================= SIDEBAR ================= -->
 
-    <div class="sidebar">
+<!-- ================= SIDEBAR ================= -->
 
-        <div class="sidebar-logo">
-            <h1>PowerFit</h1>
-        </div>
+<div class="sidebar">
+<div class="sidebar-logo">
+    <img src="../../Imag/ChatGPT Image Sep 4, 2026, 07_11_46 PM.png" alt="PowerFit Logo">
+</div>
 
 
+    <nav class="sidebar-menu">
 
-        <nav class="sidebar-menu">
+        <a href="../dashboard/admin.html" class="menuitem">
+            <i class="fa-solid fa-house"></i>
+            Dashboard
+        </a>
 
-            <a href="../dashboard/admin.html" class="menuitem">
-                Dashboard
-            </a>
+        <a href="../member/members.html" class="menuitem">
+            <i class="fa-solid fa-users"></i>
+            Members
+        </a>
 
-            <a href="../member/members.html" class="menuitem">
-                Members
-            </a>
+        <a href="../trainer/trainer.html" class="menuitem">
+            <i class="fa-solid fa-person-chalkboard"></i>
+            Trainers
+        </a>
 
-            <a href="../trainer/trainer.html" class="menuitem">
-                Trainers
-            </a>
+        <a href="../membership/memberships.html" class="menuitem">
+            <i class="fa-solid fa-id-card"></i>
+            Memberships
+        </a>
 
-            <a href="../membership/memberships.html" class="menuitem">
-                Memberships
-            </a>
+        <a href="../classes/classes.html" class="menuitem active">
+            <i class="fa-solid fa-calendar-days"></i>
+            Classes & Schedules
+        </a>
 
-            <a href="../classes/classes.html" class="menuitem active">
+        <a href="../attendance/attendance.html" class="menuitem">
+            <i class="fa-solid fa-clipboard-user"></i>
+            Attendance
+        </a>
+
+        <a href="../payments/payments.html" class="menuitem">
+            <i class="fa-solid fa-money-bill-wave"></i>
+            Payments
+        </a>
+
+    </nav>
+
+
+    <div class="sidebar-bottom">
+
+        <button id="logoutBtn" class="Logout">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            Logout
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- ================= MAIN CONTENT ================= -->
+
+<main class="main-content">
+
+
+    <!-- Page Header -->
+
+    <div class="page-header">
+
+        <div>
+            <h1>
+                <i class="fa-solid fa-calendar-check"></i>
                 Classes & Schedules
-            </a>
+            </h1>
 
-            <a href="../attendance/attendance.html" class="menuitem">
-                Attendance
-            </a>
-
-            <a href="../payments/payments.html" class="menuitem">
-                Payments
-            </a>
-
-
-        </nav>
-
-        <div class="sidebar-bottom">
-            <button id="logoutBtn" class="Logout">
-                Logout
-            </button>
+            <p>Manage gym classes and weekly schedules</p>
         </div>
+
+        <button id="addClassBtn">
+            <i class="fa-solid fa-plus"></i>
+            Add Class
+        </button>
 
     </div>
 
 
-    <!-- ================= MAIN CONTENT ================= -->
+    <!-- ================= TODAY'S SUMMARY ================= -->
 
-    <main class="main-content">
+    <section class="schedule-summary">
 
-        <!-- Page Header -->
+        <div class="summary-card">
 
-        <div class="page-header">
+            <span>
+                <i class="fa-solid fa-calendar-day"></i>
+                Today's Classes
+            </span>
 
-            <div>
-                <h1>Classes & Schedules</h1>
-                <p>Manage gym classes and weekly schedules</p>
-            </div>
-
-            <button id="addClassBtn">
-                + Add Class
-            </button>
+            <h2 id="todayClasses">0</h2>
 
         </div>
 
 
-        <!-- ================= TODAY'S SUMMARY ================= -->
-        <section class="schedule-summary">
+        <div class="summary-card">
 
-            <div class="summary-card">
-                <span>Today's Classes</span>
-                <h2 id="todayClasses">0</h2>
-            </div>
+            <span>
+                <i class="fa-solid fa-user-check"></i>
+                Active Trainers
+            </span>
 
-            <div class="summary-card">
-                <span>Active Trainers</span>
-                <h2 id="activeTrainers">0</h2>
-            </div>
+            <h2 id="activeTrainers">0</h2>
 
-            <div class="summary-card">
-                <span>Total Seats</span>
-                <h2 id="totalSeats">0</h2>
-            </div>
+        </div>
 
-            <div class="summary-card">
-                <span>Available Seats</span>
-                <h2 id="availableSeats">0</h2>
-            </div>
 
-        </section>
+        <div class="summary-card">
 
-        <!-- ================= FILTERS ================= -->
+            <span>
+                <i class="fa-solid fa-chair"></i>
+                Total Seats
+            </span>
 
-        <section class="schedule-controls">
+            <h2 id="totalSeats">0</h2>
 
-            <input type="text" id="searchClass" placeholder="Search class...">
+        </div>
+
+
+        <div class="summary-card">
+
+            <span>
+                <i class="fa-solid fa-chair"></i>
+                Available Seats
+            </span>
+
+            <h2 id="availableSeats">0</h2>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FILTERS ================= -->
+
+    <section class="schedule-controls">
+
+        <div class="search-box">
+
+            
+
+            <input type="text"
+                id="searchClass"
+                placeholder="Search class...">
+
+        </div>
+
+
+        <div class="filter-box">
+
+            
 
             <select id="trainerFilter">
 
@@ -121,9 +186,13 @@
                     All Trainers
                 </option>
 
-
-
             </select>
+
+        </div>
+
+
+        <div class="filter-box">
+
 
 
             <select id="dayFilter">
@@ -158,6 +227,12 @@
 
             </select>
 
+        </div>
+
+
+        <div class="filter-box">
+
+        
 
             <select id="categoryFilter">
 
@@ -183,154 +258,258 @@
 
             </select>
 
-        </section>
+        </div>
+
+    </section>
 
 
-        <!-- ================= WEEKLY SCHEDULE ================= -->
+    <!-- ================= WEEKLY SCHEDULE ================= -->
 
-        <section class="weekly-schedule">
+    <section class="weekly-schedule">
 
-            <div class="section-title">
-                <h2>Weekly Schedule</h2>
-            </div>
+        <div class="section-title">
 
+            <h2>
+                <i class="fa-solid fa-calendar-week"></i>
+                Weekly Schedule
+            </h2>
 
-            <div class="schedule-grid">
-
-                <!-- Monday -->
-
-                <div class="day-column">
-
-                    <h3>Monday</h3>
-
-                    <div class="class-card">
-
-                        <h4>Yoga</h4>
-
-                        <p>Trainer: Ali Khan</p>
-
-                        <p>5:00 PM - 6:00 PM</p>
-
-                        <span>Studio 1</span>
-
-                    </div>
+        </div>
 
 
-                    <div class="class-card">
-
-                        <h4>Cardio</h4>
-
-                        <p>Trainer: Sara Ahmed</p>
-
-                        <p>7:00 PM - 8:00 PM</p>
-
-                        <span>Gym Floor</span>
-
-                    </div>
-
-                </div>
+        <div class="schedule-grid">
 
 
-                <!-- Tuesday -->
+            <!-- Monday -->
 
-                <div class="day-column">
+            <div class="day-column">
 
-                    <h3>Tuesday</h3>
+                <h3>
+                    <i class="fa-regular fa-calendar"></i>
+                    Monday
+                </h3>
 
-                    <div class="class-card">
+                <div class="class-card">
 
-                        <h4>Strength Training</h4>
+                    <h4>
+                        <i class="fa-solid fa-person-running"></i>
+                        Yoga
+                    </h4>
 
-                        <p>Trainer: Ali Khan</p>
+                    <p>
+                        <i class="fa-solid fa-user"></i>
+                        Trainer: Ali Khan
+                    </p>
 
-                        <p>5:00 PM - 6:30 PM</p>
+                    <p>
+                        <i class="fa-regular fa-clock"></i>
+                        5:00 PM - 6:00 PM
+                    </p>
 
-                        <span>Training Room</span>
-
-                    </div>
+                    <span>
+                        <i class="fa-solid fa-location-dot"></i>
+                        Studio 1
+                    </span>
 
                 </div>
 
 
-                <!-- Wednesday -->
+                <div class="class-card">
 
-                <div class="day-column">
+                    <h4>
+                        <i class="fa-solid fa-heart-pulse"></i>
+                        Cardio
+                    </h4>
 
-                    <h3>Wednesday</h3>
+                    <p>
+                        <i class="fa-solid fa-user"></i>
+                        Trainer: Sara Ahmed
+                    </p>
 
-                    <div class="class-card">
+                    <p>
+                        <i class="fa-regular fa-clock"></i>
+                        7:00 PM - 8:00 PM
+                    </p>
 
-                        <h4>CrossFit</h4>
-
-                        <p>Trainer: Sara Ahmed</p>
-
-                        <p>6:00 PM - 7:00 PM</p>
-
-                        <span>Studio 2</span>
-
-                    </div>
-
-                </div>
-
-
-                <!-- Thursday -->
-
-                <div class="day-column">
-
-                    <h3>Thursday</h3>
-
-                    <div class="class-card">
-
-                        <h4>Yoga</h4>
-
-                        <p>Trainer: Ali Khan</p>
-
-                        <p>5:00 PM - 6:00 PM</p>
-
-                        <span>Studio 1</span>
-
-                    </div>
-
-                </div>
-
-
-                <!-- Friday -->
-
-                <div class="day-column">
-
-                    <h3>Friday</h3>
-
-                    <div class="class-card">
-
-                        <h4>Cardio</h4>
-
-                        <p>Trainer: Sara Ahmed</p>
-
-                        <p>6:00 PM - 7:00 PM</p>
-
-                        <span>Gym Floor</span>
-
-                    </div>
+                    <span>
+                        <i class="fa-solid fa-location-dot"></i>
+                        Gym Floor
+                    </span>
 
                 </div>
 
             </div>
 
-        </section>
 
+            <!-- Tuesday -->
 
-        <!-- ================= UPCOMING CLASSES ================= -->
+            <div class="day-column">
 
-        <section class="upcoming-classes">
+                <h3>
+                    <i class="fa-regular fa-calendar"></i>
+                    Tuesday
+                </h3>
 
-            <h2>Upcoming Classes</h2>
+                <div class="class-card">
 
-            <div id="upcomingClassesList">
+                    <h4>
+                        <i class="fa-solid fa-dumbbell"></i>
+                        Strength Training
+                    </h4>
+
+                    <p>
+                        <i class="fa-solid fa-user"></i>
+                        Trainer: Ali Khan
+                    </p>
+
+                    <p>
+                        <i class="fa-regular fa-clock"></i>
+                        5:00 PM - 6:30 PM
+                    </p>
+
+                    <span>
+                        <i class="fa-solid fa-location-dot"></i>
+                        Training Room
+                    </span>
+
+                </div>
+
             </div>
 
-        </section>
-    </main>
-    <script src="classes.js"></script>
+
+            <!-- Wednesday -->
+
+            <div class="day-column">
+
+                <h3>
+                    <i class="fa-regular fa-calendar"></i>
+                    Wednesday
+                </h3>
+
+                <div class="class-card">
+
+                    <h4>
+                        <i class="fa-solid fa-fire"></i>
+                        CrossFit
+                    </h4>
+
+                    <p>
+                        <i class="fa-solid fa-user"></i>
+                        Trainer: Sara Ahmed
+                    </p>
+
+                    <p>
+                        <i class="fa-regular fa-clock"></i>
+                        6:00 PM - 7:00 PM
+                    </p>
+
+                    <span>
+                        <i class="fa-solid fa-location-dot"></i>
+                        Studio 2
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Thursday -->
+
+            <div class="day-column">
+
+                <h3>
+                    <i class="fa-regular fa-calendar"></i>
+                    Thursday
+                </h3>
+
+                <div class="class-card">
+
+                    <h4>
+                        <i class="fa-solid fa-person-yoga"></i>
+                        Yoga
+                    </h4>
+
+                    <p>
+                        <i class="fa-solid fa-user"></i>
+                        Trainer: Ali Khan
+                    </p>
+
+                    <p>
+                        <i class="fa-regular fa-clock"></i>
+                        5:00 PM - 6:00 PM
+                    </p>
+
+                    <span>
+                        <i class="fa-solid fa-location-dot"></i>
+                        Studio 1
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Friday -->
+
+            <div class="day-column">
+
+                <h3>
+                    <i class="fa-regular fa-calendar"></i>
+                    Friday
+                </h3>
+
+                <div class="class-card">
+
+                    <h4>
+                        <i class="fa-solid fa-heart-pulse"></i>
+                        Cardio
+                    </h4>
+
+                    <p>
+                        <i class="fa-solid fa-user"></i>
+                        Trainer: Sara Ahmed
+                    </p>
+
+                    <p>
+                        <i class="fa-regular fa-clock"></i>
+                        6:00 PM - 7:00 PM
+                    </p>
+
+                    <span>
+                        <i class="fa-solid fa-location-dot"></i>
+                        Gym Floor
+                    </span>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= UPCOMING CLASSES ================= -->
+
+    <section class="upcoming-classes">
+
+        <h2>
+            <i class="fa-solid fa-clock"></i>
+            Upcoming Classes
+        </h2>
+
+        <div id="upcomingClassesList">
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<script src="classes.js"></script>
+
 
 </body>
 

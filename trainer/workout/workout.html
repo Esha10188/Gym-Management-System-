@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PowerFit - Workout Plans</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="workout.css">
+</head>
+
+<body>
+
+    <!-- ================= SIDEBAR LOGO ================= -->
+
+    <div class="sidebar-logo">
+
+        <img src="../../Imag/ChatGPT Image Sep 4, 2026, 07_11_46 PM.png"
+            alt="PowerFit Logo">
+
+        <h1>PowerFit</h1>
+
+    </div>
+
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <div class="sidebar">
+
+        <nav class="sidebar-menu">
+
+            <a href="../trainer.html" class="menuitem">
+                <i class="fa-solid fa-chart-line"></i>
+                Dashboard
+            </a>
+
+            <a href="../mymember/mymember.html" class="menuitem">
+                <i class="fa-solid fa-users"></i>
+                My Members
+            </a>
+
+            <a href="../myclasses/myclasses.html" class="menuitem">
+                <i class="fa-solid fa-dumbbell"></i>
+                Classes & Schedules
+            </a>
+
+            <a href="../myattendance/myattendance.html" class="menuitem">
+                <i class="fa-solid fa-calendar-check"></i>
+                Attendance
+            </a>
+
+            <a href="workout.html" class="menuitem active">
+                <i class="fa-solid fa-person-running"></i>
+                Workout Plans
+            </a>
+
+        </nav>
+
+
+        <!-- Logout -->
+
+        <div class="sidebar-bottom">
+
+            <a href="../../index.html" class="Logout">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Logout
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="main-content">
+
+
+        <!-- ================= HEADER ================= -->
+
+        <section class="dashboard-header">
+
+            <div>
+
+                <h1>Workout Plans</h1>
+
+                <p>
+                    Create and manage workout plans for your members
+                </p>
+
+            </div>
+
+
+            <div class="header-right">
+
+                <span id="notification-icon">
+                    <i class="fa-solid fa-bell"></i>
+                </span>
+
+
+                <div class="profil">
+
+                    <span id="trainerProfileName">
+                        Trainer
+                    </span>
+
+                    <small>
+                        Trainer
+                    </small>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= SUMMARY CARDS ================= -->
+
+        <section class="dashboard-cards">
+
+            <div class="dashboard-card">
+
+                <p>Total Plans</p>
+
+                <h2 id="totalPlans">
+                    0
+                </h2>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <p>Active Plans</p>
+
+                <h2 id="activePlans">
+                    0
+                </h2>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <p>Completed Plans</p>
+
+                <h2 id="completedPlans">
+                    0
+                </h2>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <p>My Members</p>
+
+                <h2 id="myMembers">
+                    0
+                </h2>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CREATE BUTTON ================= -->
+
+        <section class="create-section">
+
+            <button id="createPlanBtn">
+
+                <i class="fa-solid fa-plus"></i>
+
+                Create Workout Plan
+
+            </button>
+
+        </section>
+
+
+        <!-- ================= FILTER SECTION ================= -->
+
+        <section class="filter-section">
+
+
+            <!-- SEARCH -->
+
+            <div class="filter-item">
+
+                <label for="searchPlan">
+                    Search Member
+                </label>
+
+                <div class="search-box">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                        type="text"
+                        id="searchPlan"
+                        placeholder="Search member...">
+
+                </div>
+
+            </div>
+
+
+            <!-- GOAL -->
+
+            <div class="filter-item">
+
+                <label for="goalFilter">
+                    Goal
+                </label>
+
+                <select id="goalFilter">
+
+                    <option value="all">
+                        All Goals
+                    </option>
+
+                    <option value="Weight Loss">
+                        Weight Loss
+                    </option>
+
+                    <option value="Muscle Gain">
+                        Muscle Gain
+                    </option>
+
+                    <option value="General Fitness">
+                        General Fitness
+                    </option>
+
+                    <option value="Strength">
+                        Strength
+                    </option>
+
+                    <option value="Cardio">
+                        Cardio
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- STATUS -->
+
+            <div class="filter-item">
+
+                <label for="statusFilter">
+                    Status
+                </label>
+
+                <select id="statusFilter">
+
+                    <option value="all">
+                        All Status
+                    </option>
+
+                    <option value="Active">
+                        Active
+                    </option>
+
+                    <option value="Completed">
+                        Completed
+                    </option>
+
+                </select>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= WORKOUT PLANS TABLE ================= -->
+
+        <section class="table-section">
+
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>
+                        Workout Plans
+                    </h2>
+
+                    <p>
+                        Manage workout plans assigned to your members
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Plan ID</th>
+
+                            <th>Member</th>
+
+                            <th>Goal</th>
+
+                            <th>Start Date</th>
+
+                            <th>End Date</th>
+
+                            <th>Status</th>
+
+                            <th>Actions</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="workoutPlansTableBody">
+
+                        <!-- JavaScript will add plans here -->
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= CREATE / EDIT MODAL ================= -->
+
+    <div id="planModal" class="modal">
+
+        <div class="modal-content">
+
+
+            <!-- MODAL HEADER -->
+
+            <div class="modal-header">
+
+                <h2 id="modalTitle">
+                    Create Workout Plan
+                </h2>
+
+                <button
+                    id="closeModal"
+                    class="close-btn">
+
+                    <i class="fa-solid fa-xmark"></i>
+
+                </button>
+
+            </div>
+
+
+            <!-- FORM -->
+
+            <form id="workoutPlanForm">
+
+
+                <!-- MEMBER -->
+
+                <div class="form-group">
+
+                    <label for="planMember">
+                        Member
+                    </label>
+
+                    <select id="planMember" required>
+
+                        <option value="">
+                            Select Member
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- GOAL -->
+
+                <div class="form-group">
+
+                    <label for="planGoal">
+                        Goal
+                    </label>
+
+                    <select id="planGoal" required>
+
+                        <option value="">
+                            Select Goal
+                        </option>
+
+                        <option value="Weight Loss">
+                            Weight Loss
+                        </option>
+
+                        <option value="Muscle Gain">
+                            Muscle Gain
+                        </option>
+
+                        <option value="General Fitness">
+                            General Fitness
+                        </option>
+
+                        <option value="Strength">
+                            Strength
+                        </option>
+
+                        <option value="Cardio">
+                            Cardio
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- DATES -->
+
+                <div class="form-row">
+
+
+                    <div class="form-group">
+
+                        <label for="startDate">
+                            Start Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="startDate"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="endDate">
+                            End Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="endDate"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+                <!-- WORKOUT SCHEDULE -->
+
+                <div class="form-group">
+
+                    <label for="workoutSchedule">
+                        Workout Schedule
+                    </label>
+
+                    <textarea
+                        id="workoutSchedule"
+                        rows="3"
+                        placeholder="Example: Monday, Wednesday, Friday - 60 minutes"
+                        required></textarea>
+
+                </div>
+
+
+                <!-- EXERCISES -->
+
+                <div class="form-group">
+
+                    <label for="exercises">
+                        Exercises
+                    </label>
+
+                    <textarea
+                        id="exercises"
+                        rows="5"
+                        placeholder="Example:
+Squats - 3 sets x 12 reps
+Push Ups - 3 sets x 10 reps
+Running - 15 minutes"
+                        required></textarea>
+
+                </div>
+
+
+                <!-- STATUS -->
+
+                <div class="form-group">
+
+                    <label for="planStatus">
+                        Status
+                    </label>
+
+                    <select id="planStatus" required>
+
+                        <option value="Active">
+                            Active
+                        </option>
+
+                        <option value="Completed">
+                            Completed
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- BUTTONS -->
+
+                <div class="form-actions">
+
+                    <button
+                        type="button"
+                        id="cancelBtn"
+                        class="cancel-btn">
+
+                        Cancel
+
+                    </button>
+
+
+                    <button
+                        type="submit"
+                        class="save-btn">
+
+                        <i class="fa-solid fa-check"></i>
+
+                        Save Plan
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= VIEW DETAILS MODAL ================= -->
+
+    <div id="detailsModal" class="modal">
+
+        <div class="modal-content">
+
+
+            <div class="modal-header">
+
+                <h2>
+                    Workout Plan Details
+                </h2>
+
+                <button
+                    id="closeDetailsModal"
+                    class="close-btn">
+
+                    <i class="fa-solid fa-xmark"></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="modal-body">
+
+
+                <div class="detail-item">
+
+                    <span>Plan ID</span>
+
+                    <strong id="detailPlanId">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-item">
+
+                    <span>Member</span>
+
+                    <strong id="detailMember">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-item">
+
+                    <span>Goal</span>
+
+                    <strong id="detailGoal">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-item">
+
+                    <span>Start Date</span>
+
+                    <strong id="detailStartDate">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-item">
+
+                    <span>End Date</span>
+
+                    <strong id="detailEndDate">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-item">
+
+                    <span>Status</span>
+
+                    <strong id="detailStatus">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-item">
+
+                    <span>Workout Schedule</span>
+
+                    <strong id="detailSchedule">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-item">
+
+                    <span>Exercises</span>
+
+                    <strong id="detailExercises">
+                        -
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="workout.js"></script>
+
+</body>
+
+</html>

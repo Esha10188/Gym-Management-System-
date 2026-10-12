@@ -4,139 +4,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Membership Management - PowerFit</title>
 
     <link rel="stylesheet" href="memberships.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
-<body>
-
-    <!-- ================= SIDEBAR ================= -->
+<body> <!-- ================= SIDEBAR ================= -->
 
     <div class="sidebar">
-
-        <div class="sidebar-logo">
-            <img src="../../imag/ChatGPT Image Sep 4, 2026, 07_11_46 PM.png" alt="PowerFit Logo">
+        <!-- LOGO -->
+        <div class="sidebar-logo"> <img src="../../imag/ChatGPT Image Sep 4, 2026, 07_11_46 PM.png" alt="PowerFit Logo">
             <h1>PowerFit</h1>
         </div>
+        <!-- SIDEBAR MENU -->
+        <nav class="sidebar-menu"> <a href="../dashboard/Admin.html" class="menuitem"> <i class="fa-solid fa-gauge"></i>
+                <span>Dashboard</span>
+            </a> <a href="../member/members.html" class="menuitem">
+                <i class="fa-solid fa-users"></i> <span>Members</span>
+            </a> <a href="../trainer/trainer.html" class="menuitem"> <i class="fa-solid fa-user-tie"></i>
+                <span>Trainers</span> </a> <a href="../membership/memberships.html" class="menuitem active"> <i
+                    class="fa-solid fa-id-card"></i>
+                <span>Memberships</span> </a>
 
+            <a href="../classes/classes.html" class="menuitem"> <i class="fa-solid fa-calendar-days"></i>
+                <span>Classes & Schedules</span> </a> <a href="../attendance/attendance.html" class="menuitem"> <i
+                    class="fa-solid fa-clipboard-check"></i>
 
-
-        <nav class="sidebar-menu">
-
-            <a href="../dashboard/Admin.html" class="menuitem">
-                Dashboard
-            </a>
-
-            <a href="../member/members.html" class="menuitem">
-                Members
-            </a>
-
-            <a href="../trainer/trainer.html" class="menuitem">
-                Trainers
-            </a>
-
-            <a href="../membership/memberships.html" class="menuitem active">
-                Memberships
-            </a>
-
-            <a href="../classes/classes.html" class="menuitem">
-                Classes & Schedules
-            </a>
-
-            <a href="../attendance/attendance.html" class="menuitem">
-                Attendance
-            </a>
-
-            <a href="../payments/payments.html" class="menuitem">
-                Payments
-            </a>
-
-        </nav>
-
-        <div class="sidebar-bottom">
-
-            <a href="../../index.html" class="Logout">
-                Logout
-            </a>
-
-        </div>
-
+                <span>Attendance</span> </a> <a href="../payments/payments.html" class="menuitem"> <i
+                    class="fa-solid fa-money-bill-wave"></i> <span>Payments</span> </a>
+        </nav> <!-- LOGOUT -->
+        <div class="sidebar-bottom"> <a href="#" id="logoutBtn" class="Logout"> <i
+                    class="fa-solid fa-right-from-bracket"></i> <span>Logout</span> </a> </div>
     </div>
 
-
     <!-- ================= MAIN CONTENT ================= -->
-
     <main class="main-content">
 
         <!-- ================= PAGE HEADER ================= -->
-
         <section class="page-header">
-
             <div>
-                <h1>Membership Management</h1>
-                <p>Manage PowerFit membership plans</p>
+                <h1> <i class="fa-solid fa-id-card"></i> Membership Management </h1>
+                <p> Manage PowerFit membership plans </p>
             </div>
 
-            <button id="addMembershipBtn">
-                + Add Membership
-            </button>
+            <!-- ADD MEMBERSHIP -->
 
+            <button id="addMembershipBtn"> <i class="fa-solid fa-plus"></i> Add
+                Membership </button>
         </section>
 
 
         <!-- ================= SEARCH & FILTER ================= -->
-
-        <section class="membership-controls">
-
-            <input type="text" id="searchMembership" placeholder="Search membership...">
-
-            <select id="membershipStatusFilter">
-
-                <option value="">All Status</option>
-
-                <option value="Active">
-                    Active
-                </option>
-
-                <option value="Inactive">
-                    Inactive
-                </option>
-
-            </select>
-
-        </section>
-
-
-        <!-- ================= MEMBERSHIP LIST ================= -->
-
+        <section class="membership-controls"> <!-- SEARCH -->
+            <div class="search-box"> <i class="fa-solid fa-magnifying-glass"></i> <input type="text"
+                    id="searchMembership" placeholder="Search membership..."> </div> <!-- FILTER -->
+            <div class="filter-box"> <i class="fa-solid fa-filter"></i> <select id="membershipStatusFilter">
+                    <option value=""> All Status </option>
+                    <option value="Active"> Active </option>
+                    <option value="Inactive"> Inactive </option>
+                </select> </div>
+        </section> <!-- ================= MEMBERSHIP LIST ================= -->
         <section class="membership-list">
-
-            <h2>Membership Plans</h2>
-
+            <h2> <i class="fa-solid fa-list-check"></i> Membership Plans </h2>
             <div class="table-wrapper">
-
                 <table>
-
                     <thead>
                         <tr>
-                            <th>ID</th>
-                            <th>Membership</th>
-                            <th>Duration</th>
-                            <th>Price</th>
-                            <th>Discount</th>
-                            <th>Final Price</th>
-                            <th>Trainer</th>
-                            <th>Member Limit</th>
-                            <th>Status</th>
-                            <th>Actions</th>
+                            <th> <i class="fa-solid fa-hashtag"></i> ID </th>
+                            <th> <i class="fa-solid fa-id-card"></i> Membership </th>
+                            <th> <i class="fa-solid fa-calendar-days"></i> Duration </th>
+                            <th> <i class="fa-solid fa-tag"></i> Price </th>
+                            <th> <i class="fa-solid fa-percent"></i> Discount </th>
+                            <th> <i class="fa-solid fa-money-bill"></i> Final Price </th>
+                            <th> <i class="fa-solid fa-user-tie"></i> Trainer </th>
+                            <th> <i class="fa-solid fa-users"></i> Member Limit </th>
+                            <th> <i class="fa-solid fa-circle-check"></i> Status </th>
+                            <th> <i class="fa-solid fa-gear"></i> Actions </th>
                         </tr>
-                    </thead>
+                    </thead> <!-- JAVASCRIPT DATA -->
                     <tbody id="membershipsTableBody"> </tbody>
                 </table>
             </div>
         </section>
-        <script src="memberships.js"></script>
+    </main> <!-- JAVASCRIPT -->
+    <script src="memberships.js"></script>
 </body>
+
 </html>

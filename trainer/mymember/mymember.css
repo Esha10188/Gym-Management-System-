@@ -557,3 +557,437 @@ table {
 .detail-item strong {
     color: #0B1B33;
 }
+/* ===============================
+   MEMBER DETAILS MODAL
+================================ */
+
+.member-modal {
+    display: none;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(11, 27, 51, 0.55);
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 1000;
+}
+
+
+/* Show Modal */
+
+.member-modal.show {
+    display: flex;
+}
+
+
+/* ===============================
+   MODAL BOX
+================================ */
+
+.modal-content {
+
+    background: #ffffff;
+
+    width: 500px;
+    max-width: 90%;
+
+    padding: 30px;
+
+    border-radius: 12px;
+
+    position: relative;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+
+    color: #0B1B33;
+}
+
+
+/* ===============================
+   MODAL HEADING
+================================ */
+
+.modal-content h2 {
+
+    color: #0B1B33;
+
+    margin-bottom: 25px;
+
+}
+
+
+/* ===============================
+   CLOSE BUTTON
+================================ */
+
+.close-modal {
+
+    position: absolute;
+
+    top: 12px;
+    right: 18px;
+
+    background: none;
+
+    border: none;
+
+    color: #0B1B33;
+
+    font-size: 28px;
+
+    cursor: pointer;
+
+}
+
+
+.close-modal:hover {
+
+    color: #C9A227;
+
+}
+
+
+/* ===============================
+   MEMBER DETAILS
+================================ */
+
+.member-details {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+
+}
+
+
+/* ===============================
+   DETAIL ITEM
+================================ */
+
+.detail-item {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+
+}
+
+
+.detail-item span {
+
+    color: #777;
+
+    font-size: 13px;
+
+}
+
+
+.detail-item strong {
+
+    color: #0B1B33;
+
+    font-size: 15px;
+
+}
+
+
+/* =========================
+   ADVANCED DASHBOARD ANIMATIONS
+========================= */
+
+.sidebar-logo,
+.sidebar,
+.main-content,
+.page-header,
+.summary-card,
+.members-section {
+    will-change: transform, opacity;
+}
+
+/* Page entrance */
+.main-content {
+    animation: contentEnter .7s cubic-bezier(.2,.8,.2,1) both;
+}
+@keyframes contentEnter {
+    from { opacity:0; transform:translateY(18px); }
+    to { opacity:1; transform:translateY(0); }
+}
+
+/* Sidebar entrance */
+.sidebar-logo {
+    animation: logoEnter .65s ease-out both;
+}
+.sidebar {
+    animation: sidebarEnter .7s ease-out both;
+}
+@keyframes logoEnter {
+    from { opacity:0; transform:translateX(-35px); }
+    to { opacity:1; transform:translateX(0); }
+}
+@keyframes sidebarEnter {
+    from { opacity:0; transform:translateX(-25px); }
+    to { opacity:1; transform:translateX(0); }
+}
+
+/* Logo floating */
+.sidebar-logo img {
+    transition: transform .3s ease;
+    animation: logoFloat 3s ease-in-out infinite;
+}
+@keyframes logoFloat {
+    0%,100% { transform:translateY(0) rotate(0); }
+    50% { transform:translateY(-5px) rotate(3deg); }
+}
+
+/* Menu stagger */
+.menuitem {
+    position:relative;
+    overflow:hidden;
+    animation: menuEnter .45s ease-out both;
+}
+.menuitem:nth-child(1){animation-delay:.08s}
+.menuitem:nth-child(2){animation-delay:.14s}
+.menuitem:nth-child(3){animation-delay:.20s}
+.menuitem:nth-child(4){animation-delay:.26s}
+.menuitem:nth-child(5){animation-delay:.32s}
+.menuitem:nth-child(6){animation-delay:.38s}
+.menuitem:nth-child(7){animation-delay:.44s}
+.menuitem:nth-child(8){animation-delay:.50s}
+
+@keyframes menuEnter {
+    from { opacity:0; transform:translateX(-18px); }
+    to { opacity:1; transform:translateX(0); }
+}
+
+.menuitem::after {
+    content:"";
+    position:absolute;
+    top:0;
+    left:-120%;
+    width:70%;
+    height:100%;
+    background:rgba(255,255,255,.12);
+    transform:skewX(-20deg);
+    transition:left .45s ease;
+}
+.menuitem:hover::after { left:150%; }
+
+.menuitem {
+    transition:transform .25s ease, background-color .25s ease, color .25s ease;
+}
+.menuitem:hover {
+    transform:translateX(5px);
+}
+.menuitem i {
+    display:inline-block;
+    transition:transform .25s ease;
+}
+.menuitem:hover i {
+    transform:scale(1.18);
+}
+
+/* Collapse button */
+#sidebarToggle {
+    transition:all .25s ease;
+}
+#sidebarToggle:hover {
+    transform:scale(1.05);
+    box-shadow:0 5px 14px rgba(244,197,66,.25);
+}
+
+/* Smooth collapse */
+.sidebar,
+.sidebar-logo,
+.main-content {
+    transition:width .35s cubic-bezier(.2,.8,.2,1),
+               margin-left .35s cubic-bezier(.2,.8,.2,1),
+               transform .35s ease;
+}
+
+/* Header reveal */
+.page-header h1 {
+    animation:titleReveal .65s ease-out both;
+}
+.page-header p {
+    animation:subtitleReveal .65s .12s ease-out both;
+}
+@keyframes titleReveal {
+    from { opacity:0; transform:translateX(-20px); }
+    to { opacity:1; transform:translateX(0); }
+}
+@keyframes subtitleReveal {
+    from { opacity:0; transform:translateX(-12px); }
+    to { opacity:1; transform:translateX(0); }
+}
+
+/* Summary cards */
+.summary-card {
+    position:relative;
+    overflow:hidden;
+    animation:cardEnter .6s cubic-bezier(.2,.8,.2,1) both;
+}
+.summary-card:nth-child(1){animation-delay:.12s}
+.summary-card:nth-child(2){animation-delay:.22s}
+.summary-card:nth-child(3){animation-delay:.32s}
+.summary-card:nth-child(4){animation-delay:.42s}
+
+@keyframes cardEnter {
+    from { opacity:0; transform:translateY(25px) scale(.96); }
+    to { opacity:1; transform:translateY(0) scale(1); }
+}
+
+.summary-card:hover {
+    transform:translateY(-7px) scale(1.02);
+    box-shadow:0 14px 28px rgba(0,0,0,.14);
+}
+
+.summary-card::after {
+    content:"";
+    position:absolute;
+    top:0;
+    left:-120%;
+    width:65%;
+    height:100%;
+    background:linear-gradient(90deg,transparent,rgba(244,197,66,.13),transparent);
+    transform:skewX(-20deg);
+    transition:left .7s ease;
+    pointer-events:none;
+}
+.summary-card:hover::after { left:150%; }
+
+.summary-card h2 {
+    animation:numberPop .7s .3s ease-out both;
+}
+@keyframes numberPop {
+    from { opacity:0; transform:scale(.7); }
+    70% { transform:scale(1.08); }
+    to { opacity:1; transform:scale(1); }
+}
+
+/* Members section */
+.members-section {
+    animation:sectionEnter .7s .45s ease-out both;
+}
+@keyframes sectionEnter {
+    from { opacity:0; transform:translateY(25px); }
+    to { opacity:1; transform:translateY(0); }
+}
+
+/* Search focus */
+.search-box input {
+    transition:all .3s ease;
+}
+.search-box input:focus {
+    transform:translateY(-2px);
+    box-shadow:0 6px 16px rgba(201,162,39,.16);
+}
+
+/* Table rows */
+tbody tr {
+    animation:rowEnter .45s ease-out both;
+}
+tbody tr:nth-child(1){animation-delay:.08s}
+tbody tr:nth-child(2){animation-delay:.14s}
+tbody tr:nth-child(3){animation-delay:.20s}
+tbody tr:nth-child(4){animation-delay:.26s}
+tbody tr:nth-child(5){animation-delay:.32s}
+tbody tr:nth-child(6){animation-delay:.38s}
+tbody tr:nth-child(7){animation-delay:.44s}
+tbody tr:nth-child(8){animation-delay:.50s}
+
+@keyframes rowEnter {
+    from { opacity:0; transform:translateX(15px); }
+    to { opacity:1; transform:translateX(0); }
+}
+
+tbody tr {
+    transition:background-color .2s ease, transform .2s ease;
+}
+tbody tr:hover {
+    transform:translateX(3px);
+}
+
+/* Status */
+.status {
+    transition:transform .2s ease, box-shadow .2s ease;
+}
+.status:hover {
+    transform:scale(1.08);
+    box-shadow:0 3px 8px rgba(0,0,0,.10);
+}
+
+/* View button */
+.view-btn {
+    transition:all .25s ease;
+}
+.view-btn:hover {
+    transform:translateY(-2px) scale(1.05);
+    box-shadow:0 6px 14px rgba(11,27,51,.20);
+}
+
+/* Modal overlay + box */
+.member-modal.show {
+    animation:modalFade .25s ease-out both;
+}
+.member-modal.show .modal-content {
+    animation:modalPop .4s cubic-bezier(.2,.8,.2,1) both;
+}
+@keyframes modalFade {
+    from { opacity:0; }
+    to { opacity:1; }
+}
+@keyframes modalPop {
+    from { opacity:0; transform:translateY(30px) scale(.92); }
+    to { opacity:1; transform:translateY(0) scale(1); }
+}
+
+/* Modal close button */
+.close-modal {
+    transition:all .25s ease;
+}
+.close-modal:hover {
+    transform:rotate(90deg) scale(1.15);
+}
+
+/* Modal detail animation */
+.member-modal.show .detail-item {
+    animation:detailEnter .4s ease-out both;
+}
+.member-modal.show .detail-item:nth-child(1){animation-delay:.08s}
+.member-modal.show .detail-item:nth-child(2){animation-delay:.14s}
+.member-modal.show .detail-item:nth-child(3){animation-delay:.20s}
+.member-modal.show .detail-item:nth-child(4){animation-delay:.26s}
+.member-modal.show .detail-item:nth-child(5){animation-delay:.32s}
+.member-modal.show .detail-item:nth-child(6){animation-delay:.38s}
+
+@keyframes detailEnter {
+    from { opacity:0; transform:translateX(-12px); }
+    to { opacity:1; transform:translateX(0); }
+}
+
+/* Smooth scrolling */
+.main-content {
+    scroll-behavior:smooth;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation:none !important;
+        transition:none !important;
+        scroll-behavior:auto !important;
+    }
+}

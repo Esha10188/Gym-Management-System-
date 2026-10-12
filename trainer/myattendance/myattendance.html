@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PowerFit - Attendance</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="myattendance.css">
+
+</head>
+
+<body>
+
+
+    <!-- ================= SIDEBAR LOGO ================= -->
+
+    <div class="sidebar-logo">
+
+        <img src="../../Imag/ChatGPT Image Sep 4, 2026, 07_11_46 PM.png"
+            alt="PowerFit Logo">
+
+        <h1>PowerFit</h1>
+
+    </div>
+
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <div class="sidebar">
+
+        <nav class="sidebar-menu">
+
+
+            <a href="../trainer.html" class="menuitem">
+
+                <i class="fa-solid fa-chart-line"></i>
+
+                Dashboard
+
+            </a>
+
+
+            <a href="../mymember/mymember.html" class="menuitem">
+
+                <i class="fa-solid fa-users"></i>
+
+                My Members
+
+            </a>
+
+
+            <a href="../myclasses/myclasses.html" class="menuitem">
+
+                <i class="fa-solid fa-dumbbell"></i>
+
+                Classes & Schedules
+
+            </a>
+
+
+            <a href="myattendance.html" class="menuitem active">
+
+                <i class="fa-solid fa-calendar-check"></i>
+
+                Attendance
+
+            </a>
+
+
+            <a href="../workout/workout.html" class="menuitem">
+
+                <i class="fa-solid fa-person-running"></i>
+
+                Workout Plans
+
+            </a>
+
+
+        </nav>
+
+
+        <!-- ================= LOGOUT ================= -->
+
+        <div class="sidebar-bottom">
+
+            <a href="../../index.html" class="Logout">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                Logout
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="main-content">
+
+
+        <!-- ================= HEADER ================= -->
+
+        <section class="dashboard-header">
+
+            <div>
+
+                <h1>Attendance</h1>
+
+                <p>
+                    Manage and track member attendance
+                </p>
+
+            </div>
+
+
+            <div class="header-right">
+
+                <span id="notification-icon">
+
+                    <i class="fa-solid fa-bell"></i>
+
+                </span>
+
+
+                <div class="profil">
+
+                    <span id="trainerProfileName">
+                        Trainer
+                    </span>
+
+                    <small>
+                        Trainer
+                    </small>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= SUMMARY CARDS ================= -->
+
+        <section class="dashboard-cards">
+
+
+            <div class="dashboard-card">
+
+                <p>My Members</p>
+
+                <h2 id="totalMembers">
+                    0
+                </h2>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <p>Present Today</p>
+
+                <h2 id="presentToday">
+                    0
+                </h2>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <p>Absent Today</p>
+
+                <h2 id="absentToday">
+                    0
+                </h2>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <p>Attendance Rate</p>
+
+                <h2 id="attendanceRate">
+                    0%
+                </h2>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ================= FILTER SECTION ================= -->
+
+        <section class="filter-section">
+
+
+          
+
+
+            <!-- SEARCH -->
+
+            <div class="search-box">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="text"
+                    id="searchMember"
+                    placeholder="Search member...">
+
+            </div>
+              <!-- DATE -->
+            <div class="filter-item">
+
+                <label for="attendanceDate">
+                    Date
+                </label>
+
+                <input
+                    type="date"
+                    id="attendanceDate">
+
+            </div>
+
+
+
+            <!-- STATUS -->
+
+            <div class="filter-item">
+
+                <label for="statusFilter">
+                    Status
+                </label>
+
+                <select id="statusFilter">
+                    <option value="all">
+                        All Status
+                    </option>
+
+                    <option value="Present">
+                        Present
+                    </option>
+
+                    <option value="Absent">
+                        Absent
+                    </option>
+
+                    
+
+                </select>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ================= ATTENDANCE TABLE ================= -->
+
+        <section class="table-section">
+
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>
+                        Member Attendance
+                    </h2>
+
+                    <p>
+                        Attendance records of your assigned members
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Member ID</th>
+
+                            <th>Member Name</th>
+
+                            <th>Class</th>
+
+                            <th>Date</th>
+
+                            <th>Check-in Time</th>
+
+                            <th>Status</th>
+
+                            <th>Action</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="attendanceTableBody">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+        </section>
+
+
+
+    </main>
+
+
+
+    <!-- ================= ATTENDANCE DETAILS MODAL ================= -->
+
+    <div id="attendanceModal" class="modal">
+
+
+        <div class="modal-content">
+
+
+            <!-- MODAL HEADER -->
+
+            <div class="modal-header">
+
+                <h2>
+                    Attendance Details
+                </h2>
+
+
+                <button
+                    id="closeModal"
+                    class="close-btn">
+
+                    <i class="fa-solid fa-xmark"></i>
+
+                </button>
+
+            </div>
+
+
+
+            <!-- MODAL BODY -->
+
+            <div class="modal-body">
+
+
+                <div class="detail-item">
+
+                    <span>
+                        Member ID
+                    </span>
+
+                    <strong id="detailMemberId">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-item">
+
+                    <span>
+                        Member Name
+                    </span>
+
+                    <strong id="detailMemberName">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-item">
+
+                    <span>
+                        Class
+                    </span>
+
+                    <strong id="detailClass">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-item">
+
+                    <span>
+                        Date
+                    </span>
+
+                    <strong id="detailDate">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-item">
+
+                    <span>
+                        Check-in Time
+                    </span>
+
+                    <strong id="detailCheckIn">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-item">
+
+                    <span>
+                        Status
+                    </span>
+
+                    <strong id="detailStatus">
+                        -
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="myattendance.js"></script>
+
+</body>
+
+</html>

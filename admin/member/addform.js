@@ -24,6 +24,26 @@ const cancelMember = document.getElementById("cancelMember");
 // GET MEMBERS FROM LOCAL STORAGE
 
 let members = JSON.parse(localStorage.getItem("members")) || [];
+function generatePassword() {
+
+    const characters =
+        "ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz23456789@#$";
+
+    let password = "";
+
+    for (let i = 0; i < 8; i++) {
+
+        const randomIndex = Math.floor(
+            Math.random() * characters.length
+        );
+
+        password += characters[randomIndex];
+    }
+
+    return password;
+}
+
+
 const classes = JSON.parse(localStorage.getItem("classes")) || [];
 
 function loadClassesByGoal() {
@@ -48,6 +68,7 @@ function loadClassesByGoal() {
 }
 
 
+
 // 5. GOAL CHANGE
 
 memberGoal.addEventListener("change", function () {
@@ -55,7 +76,6 @@ memberGoal.addEventListener("change", function () {
     loadClassesByGoal();
 
 });
-
 
 
 // CHECK EDIT MODE
@@ -151,9 +171,15 @@ saveMember.addEventListener("click", function () {
             members[memberIndex].goal = memberGoal.value;
 
             members[memberIndex].classId = memberClass.value;
-            const selectedClass = classes.find(function (classItem) {
-                return classItem.id === memberClass.value;
-            });
+          
+const selectedClass = classes.find(function (classItem) {
+    return String(classItem.id) === String(memberClass.value);
+});
+
+if (!selectedClass) {
+    alert("Selected class not found. Please select a valid class.");
+    return;
+}
 
             members[memberIndex].trainerId = selectedClass.trainerId;
 
@@ -184,14 +210,20 @@ saveMember.addEventListener("click", function () {
     }
     // CREATE NEW MEMBER
 
-    const selectedClass = classes.find(function (classItem) {
-        return classItem.id === memberClass.value;
-    });
+   const selectedClass = classes.find(function (classItem) {
+    return String(classItem.id) === String(memberClass.value);
+});
+
+if (!selectedClass) {
+    alert("Selected class not found. Please select a valid class.");
+    return;
+}
     const newMember = {
 
         id: members.length + 1,
 
         name: memberName.value.trim(),
+        password: generatePassword(),
 
         email: memberEmail.value.trim(),
 
@@ -222,13 +254,16 @@ saveMember.addEventListener("click", function () {
     members.push(newMember);
 
     // Save updated array
+localStorage.setItem("members", JSON.stringify(members));
 
-    localStorage.setItem("members", JSON.stringify(members));
-    alert("Member added successfully!");
+alert(
+    "Member added successfully!\n\n" +
+    "Name: " + newMember.name +
+    "\nPassword: " + newMember.password +
+    "\n\nPlease give these login details to the member."
+);
 
-    // Go back to Members page
-
-    window.location.href = "members.html";
+window.location.href = "members.html";
 
 });
 // CANCEL BUTTON

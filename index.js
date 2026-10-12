@@ -17,7 +17,7 @@ login.addEventListener("click", function () {
     ) {
 
         alert("Admin Login Successful");
-
+    localStorage.setItem("loggedInAdmin", "Admin");
         window.location.href = "admin/dashboard/admin.html";
 
         return;
@@ -61,11 +61,48 @@ login.addEventListener("click", function () {
         }
 
     }
+    
 
+// ================= MEMBER LOGIN =================
 
-    // ================= INVALID LOGIN =================
+if (role === "Member") {
 
-    alert("Invalid credentials");
+    const members =
+        JSON.parse(localStorage.getItem("members")) || [];
 
+    // Check 1: Members save hain ya nahi
+    if (members.length === 0) {
+        alert("No members found! Please check saved member data.");
+        return;
+    }
+
+    // Check 2: Username match karna
+    const member = members.find(function (member) {
+        return (
+            member.name.toLowerCase() === username.toLowerCase()
+        );
+    });
+
+    if (!member) {
+        alert("Username does not match any saved member.");
+        return;
+    }
+
+    // Check 3: Password match karna
+    if (member.password !== password) {
+        alert("Username found, but password is incorrect.");
+        return;
+    }
+
+    // Login successful
+    localStorage.setItem(
+        "loggedInMember",
+        JSON.stringify(member)
+    );
+
+    alert("Member Login Successful");
+
+    window.location.href = "member/member.html";
+    return;
+}
 });
-
