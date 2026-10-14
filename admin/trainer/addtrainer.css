@@ -1,0 +1,116 @@
+/* =========================
+   ADD TRAINER FORM
+========================= */
+
+.add-trainer-form {
+    width: 100%;
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: white;
+    border: 2px solid #F4C542;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+    /* display: none; */
+}
+
+.add-trainer-form h2 {
+    color: #0B1B33;
+    font-size: 24px;
+    margin-bottom: 25px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #F4C542;
+}
+
+/* Form Layout */
+
+.add-trainer-form form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 25px;
+    row-gap: 5px;
+}
+
+/* Labels */
+
+.add-trainer-form label {
+    display: block;
+    color: #0B1B33;
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 12px;
+    margin-bottom: 6px;
+}
+
+/* Inputs, Select & Textarea */
+
+.add-trainer-form input,
+.add-trainer-form select,
+.add-trainer-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    background-color: white;
+}
+
+/* Focus */
+
+.add-trainer-form input:focus,
+.add-trainer-form select:focus,
+.add-trainer-form textarea:focus {
+    border: 2px solid #F4C542;
+}
+
+/* Address */
+
+.add-trainer-form textarea {
+    min-height: 90px;
+    resize: vertical;
+}
+
+/* =========================
+   FORM BUTTONS
+========================= */
+
+.trainer-form-buttons {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+#saveTrainer {
+    padding: 12px 25px;
+    background-color: #F4C542;
+    color: #0B1B33;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#saveTrainer:hover {
+    background-color: #0B1B33;
+    color: white;
+}
+
+#cancelTrainer {
+    padding: 12px 25px;
+    background-color: #0B1B33;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#cancelTrainer:hover {
+    background-color: #F4C542;
+    color: #0B1B33;
+}

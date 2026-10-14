@@ -1,0 +1,400 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PowerFit - Admin Dashboard</title>
+
+
+    <!-- ================= FONT AWESOME ================= -->
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    <!-- ================= CSS ================= -->
+
+    <link rel="stylesheet" href="admin.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         SIDEBAR LOGO
+    ====================================================== -->
+
+    <div class="sidebar-logo">
+
+        <img src="../../Imag/ChatGPT Image Sep 4, 2026, 07_11_46 PM.png"
+            alt="PowerFit Logo">
+
+        <h1>PowerFit</h1>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <div class="sidebar">
+
+
+        <nav class="sidebar-menu">
+
+
+            <!-- Dashboard -->
+
+            <a href="Admin.html" class="menuitem active">
+
+                <i class="fa-solid fa-chart-line"></i>
+
+                Dashboard
+
+            </a>
+
+
+            <!-- Members -->
+
+            <a href="../member/members.html" class="menuitem">
+
+                <i class="fa-solid fa-users"></i>
+
+                Members
+
+            </a>
+
+
+            <!-- Trainers -->
+
+            <a href="../trainer/trainer.html" class="menuitem">
+
+                <i class="fa-solid fa-user-tie"></i>
+
+                Trainers
+
+            </a>
+
+
+            <!-- Memberships -->
+
+            <a href="../membership/memberships.html" class="menuitem">
+
+                <i class="fa-solid fa-id-card"></i>
+
+                Memberships
+
+            </a>
+
+
+            <!-- Classes -->
+
+            <a href="../Classes/classes.html" class="menuitem">
+
+                <i class="fa-solid fa-calendar-days"></i>
+
+                Classes & Schedules
+
+            </a>
+
+
+            <!-- Attendance -->
+
+            <a href="../attendance/attendance.html" class="menuitem">
+
+                <i class="fa-solid fa-clipboard-check"></i>
+
+                Attendance
+
+            </a>
+
+
+            <!-- Payments -->
+
+            <a href="../payments/payments.html" class="menuitem">
+
+                <i class="fa-solid fa-money-bill-wave"></i>
+
+                Payments
+
+            </a>
+
+
+        </nav>
+
+
+
+        <!-- =================================================
+             LOGOUT
+        ================================================== -->
+
+        <div class="sidebar-bottom">
+
+            <a href="#" id="logoutBtn" class="Logout">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                Logout
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main class="main-content">
+
+
+        <!-- =================================================
+             DASHBOARD HEADER
+        ================================================== -->
+
+        <section class="dashboard-header">
+
+
+            <div>
+
+                <h1>Dashboard</h1>
+
+                <p>
+                    Hello, <span id="username">Admin</span>
+                </p>
+
+            </div>
+
+
+
+            <!-- HEADER RIGHT -->
+
+            <div class="header-right">
+
+
+                <!-- Notification -->
+
+                <span id="notification-icon">
+
+                    <i class="fa-solid fa-bell"></i>
+
+                </span>
+
+
+
+                <!-- Profile -->
+
+                <div class="profil">
+
+                    <span id="adminName">
+                        Admin
+                    </span>
+
+                    <small>
+                        Administrator
+                    </small>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             DASHBOARD CARDS
+        ====================================================== -->
+
+        <section class="dashboard-cards">
+
+
+            <!-- TOTAL MEMBERS -->
+
+            <div class="dashboard-card">
+
+                <div class="card-icon">
+
+                    <i class="fa-solid fa-users"></i>
+
+                </div>
+
+                <p>Total Members</p>
+
+                <h2 id="totalMembers">
+                    
+                </h2>
+
+            </div>
+
+
+
+            <!-- ACTIVE MEMBERS -->
+
+            <div class="dashboard-card">
+
+                <div class="card-icon">
+
+                    <i class="fa-solid fa-user-check"></i>
+
+                </div>
+
+                <p>Active Members</p>
+
+                <h2 id="activeMembers">
+                    
+                </h2>
+
+            </div>
+
+
+
+            <!-- EXPIRED MEMBERS -->
+
+            <div class="dashboard-card">
+
+                <div class="card-icon">
+
+                    <i class="fa-solid fa-user-clock"></i>
+
+                </div>
+
+                <p>Expired Members</p>
+
+                <h2 id="expiredMembers">
+                    
+                </h2>
+
+            </div>
+
+
+
+            <!-- TOTAL TRAINERS -->
+
+            <div class="dashboard-card">
+
+                <div class="card-icon">
+
+                    <i class="fa-solid fa-user-tie"></i>
+
+                </div>
+
+                <p>Total Trainers</p>
+
+                <h2 id="totalTrainers">
+                    
+                </h2>
+
+            </div>
+
+
+
+            <!-- TODAY'S ATTENDANCE -->
+
+            <div class="dashboard-card">
+
+                <div class="card-icon">
+
+                    <i class="fa-solid fa-calendar-check"></i>
+
+                </div>
+
+                <p>Today's Attendance</p>
+
+                <h2 id="todayAttendance">
+                    
+                </h2>
+
+            </div>
+
+
+
+            <!-- PENDING PAYMENTS -->
+
+            <div class="dashboard-card">
+
+                <div class="card-icon">
+
+                    <i class="fa-solid fa-clock"></i>
+
+                </div>
+
+                <p>Pending Payments</p>
+
+                <h2 id="pendingPayments">
+                    
+                </h2>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =====================================================
+             RECENT ACTIVITIES
+        ====================================================== -->
+
+        <section class="recent-activities">
+
+
+            <div class="activity-header">
+
+                <div>
+
+                    <h2>
+                        Recent Activities
+                    </h2>
+
+                    <p>
+                        Latest gym activities
+                    </p>
+
+                </div>
+
+
+                <button id="viewAllBtn">
+
+                    <i class="fa-solid fa-list"></i>
+
+                    View All
+
+                </button>
+
+            </div>
+
+
+    <div class="activity-list" id="recentActivities">
+
+        <!-- JavaScript se activities yahan show hongi -->
+
+    </div>
+            </section>
+           </main> 
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="admin.js"></script>
+
+
+</body>
+
+</html>
+

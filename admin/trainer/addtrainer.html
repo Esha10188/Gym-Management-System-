@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="addtrainer.css">
+</head>
+<body>
+            <!-- Add Trainer Form -->
+
+<div class="add-trainer-form">
+
+    <h2>Add New Trainer</h2>
+
+    <form>
+
+        <!-- Trainer Name -->
+        <label for="trainerName">Trainer Name</label>
+        <input type="text" id="trainerName" placeholder="Enter trainer name">
+
+        <!-- Email -->
+        <label for="trainerEmail">Email</label>
+        <input type="email" id="trainerEmail" placeholder="Enter email">
+
+       
+        
+         <!-- Phone -->
+        <label for="trainerPhone">Phone</label>
+        <input type="tel" id="trainerPhone" placeholder="Enter phone number">
+
+         <!-- CNIC -->
+        <label for="trainerCNIC">CNIC</label>
+        <input type="text" id="trainerCNIC" placeholder="Enter CNIC number">
+
+        <!-- Gender -->
+        <label for="trainerGender">Gender</label>
+        <select id="trainerGender">
+            <option value="">Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+
+        <!-- Specialization -->
+        <label for="specialization">Specialization</label>
+        <select id="specialization">
+            <option value="">Select Specialization</option>
+            <option value="Weight Training">Weight Training</option>
+            <option value="Cardio">Cardio</option>
+            <option value="Yoga">Yoga</option>
+            <option value="CrossFit">CrossFit</option>
+            <option value="Personal Training">Personal Training</option>
+        </select>
+
+        <!-- Experience -->
+        <label for="experience">Experience</label>
+        <select id="experience">
+            <option value="">Select Experience</option>
+            <option value="1 Year">1 Year</option>
+            <option value="2 Years">2 Years</option>
+            <option value="3 Years">3 Years</option>
+            <option value="5 Years">5 Years</option>
+            <option value="5+ Years">5+ Years</option>
+        </select>
+
+        <!-- Joining Date -->
+        <label for="joiningDate">Joining Date</label>
+        <input type="date" id="joiningDate">
+
+        <!-- Salary -->
+        <label for="salary">Salary</label>
+        <input type="number" id="salary" placeholder="Enter salary">
+
+        <!-- Address -->
+        <label for="trainerAddress">Address</label>
+        <textarea id="trainerAddress" placeholder="Enter address"></textarea>
+
+        <!-- Buttons -->
+        <div class="trainer-form-buttons">
+
+            <button type="button" id="saveTrainer">
+                Save Trainer
+            </button>
+
+            <button type="button" id="cancelTrainer">
+                Cancel
+            </button>
+
+        </div>
+
+    </form>
+
+</div>
+<script src="addtrainer.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,126 @@
+/* =========================
+   ADD MEMBERSHIP FORM
+========================= */
+
+.add-membership-form {
+    width: 100%;
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: white;
+    border: 2px solid #F4C542;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+
+    /* display: none; */
+}
+
+.add-membership-form h2 {
+    color: #0B1B33;
+    font-size: 24px;
+    margin-bottom: 25px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #F4C542;
+}
+
+
+/* FORM GRID */
+
+.add-membership-form form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 25px;
+    row-gap: 5px;
+}
+
+
+/* LABEL */
+
+.add-membership-form label {
+    display: block;
+    color: #0B1B33;
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 12px;
+    margin-bottom: 6px;
+}
+
+
+/* INPUT / SELECT / TEXTAREA */
+
+.add-membership-form input,
+.add-membership-form select,
+.add-membership-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    background-color: white;
+}
+
+.add-membership-form input:focus,
+.add-membership-form select:focus,
+.add-membership-form textarea:focus {
+    border: 2px solid #F4C542;
+}
+
+
+/* TEXTAREA */
+
+.add-membership-form textarea {
+    min-height: 90px;
+    resize: vertical;
+}
+
+
+/* =========================
+   FORM BUTTONS
+========================= */
+
+.membership-form-buttons {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+
+/* SAVE */
+
+#saveMembership {
+    padding: 12px 25px;
+    background-color: #F4C542;
+    color: #0B1B33;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#saveMembership:hover {
+    background-color: #0B1B33;
+    color: white;
+}
+
+
+/* CANCEL */
+
+#cancelMembership {
+    padding: 12px 25px;
+    background-color: #0B1B33;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#cancelMembership:hover {
+    background-color: #F4C542;
+    color: #0B1B33;
+}

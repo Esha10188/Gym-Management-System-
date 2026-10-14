@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PowerFit - My Classes</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="myclasses.css">
+
+</head>
+
+<body>
+
+
+    <!-- ================= SIDEBAR LOGO ================= -->
+
+    <div class="sidebar-logo">
+
+        <img src="../../Imag/ChatGPT Image Sep 4, 2026, 07_11_46 PM.png"
+            alt="PowerFit Logo">
+
+        <h1>PowerFit</h1>
+
+    </div>
+
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <div class="sidebar">
+
+        <nav class="sidebar-menu">
+
+            <a href="../trainer.html" class="menuitem">
+
+                <i class="fa-solid fa-chart-line"></i>
+
+                Dashboard
+
+            </a>
+
+
+            <a href="../mymember/mymember.html" class="menuitem">
+
+                <i class="fa-solid fa-users"></i>
+
+                My Members
+
+            </a>
+
+
+            <a href="myclasses.html" class="menuitem active">
+
+                <i class="fa-solid fa-dumbbell"></i>
+
+                Classes & Schedules
+
+            </a>
+
+
+            <a href="../myattendance/myattendance.html" class="menuitem">
+
+                <i class="fa-solid fa-calendar-check"></i>
+
+                Attendance
+
+            </a>
+
+
+            <a href="../workout/workout.html" class="menuitem">
+
+                <i class="fa-solid fa-person-running"></i>
+
+                Workout Plans
+
+            </a>
+
+        </nav>
+
+
+        <!-- ================= LOGOUT ================= -->
+
+        <div class="sidebar-bottom">
+
+            <a href="../../index.html" class="Logout">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                Logout
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="main-content">
+
+
+        <!-- ================= HEADER ================= -->
+
+        <section class="dashboard-header">
+
+            <div>
+
+                <h1>My Classes</h1>
+
+                <p>
+                    View and manage your assigned classes
+                </p>
+
+            </div>
+
+
+            <div class="header-right">
+
+                <span id="notification-icon">
+
+                    <i class="fa-solid fa-bell"></i>
+
+                </span>
+
+
+                <div class="profil">
+
+                    <span id="trainerProfileName">
+                        Trainer
+                    </span>
+
+                    <small>
+                        Trainer
+                    </small>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= SUMMARY CARDS ================= -->
+
+        <section class="dashboard-cards">
+
+
+            <div class="dashboard-card">
+
+                <p>Total Classes</p>
+
+                <h2 id="totalClasses">
+                    0
+                </h2>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <p>Today's Classes</p>
+
+                <h2 id="todayClasses">
+                    0
+                </h2>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <p>Active Classes</p>
+
+                <h2 id="activeClasses">
+                    0
+                </h2>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <p>Total Capacity</p>
+
+                <h2 id="totalCapacity">
+                    0
+                </h2>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ================= FILTER SECTION ================= -->
+
+        <section class="filter-section">
+
+
+            <!-- SEARCH -->
+
+            <div class="search-box">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="text"
+                    id="searchClass"
+                    placeholder="Search class...">
+
+            </div>
+
+
+            <!-- DAY FILTER -->
+
+            <select id="dayFilter">
+
+                <option value="all">
+                    All Days
+                </option>
+
+                <option value="Monday">
+                    Monday
+                </option>
+
+                <option value="Tuesday">
+                    Tuesday
+                </option>
+
+                <option value="Wednesday">
+                    Wednesday
+                </option>
+
+                <option value="Thursday">
+                    Thursday
+                </option>
+
+                <option value="Friday">
+                    Friday
+                </option>
+
+                <option value="Saturday">
+                    Saturday
+                </option>
+
+            </select>
+
+
+            <!-- CATEGORY FILTER -->
+
+            <select id="categoryFilter">
+
+                <option value="all">
+                    All Categories
+                </option>
+
+                <option value="Cardio">
+                    Cardio
+                </option>
+
+                <option value="Yoga">
+                    Yoga
+                </option>
+
+                <option value="Strength">
+                    Strength
+                </option>
+
+                <option value="CrossFit">
+                    CrossFit
+                </option>
+
+            </select>
+
+
+        </section>
+
+
+
+        <!-- ================= TABLE SECTION ================= -->
+
+        <section class="table-section">
+
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>
+                        Assigned Classes
+                    </h2>
+
+                    <p>
+                        Classes assigned to you
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>ID</th>
+
+                            <th>Class Name</th>
+
+                            <th>Category</th>
+
+                            <th>Day</th>
+
+                            <th>Time</th>
+
+                            <th>Capacity</th>
+
+                            <th>Location</th>
+
+                            <th>Status</th>
+
+                            <th>Action</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="classTableBody">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+        </section>
+
+
+
+    </main>
+
+
+
+    <!-- ================= CLASS DETAILS MODAL ================= -->
+
+    <div id="classModal" class="modal">
+
+
+        <div class="modal-content">
+
+
+            <div class="modal-header">
+
+                <h2>
+                    Class Details
+                </h2>
+
+
+                <button id="closeModal" class="close-btn">
+
+                    <i class="fa-solid fa-xmark"></i>
+
+                </button>
+
+            </div>
+
+
+
+            <div class="modal-body">
+
+
+                <div class="detail-item">
+
+                    <span>
+                        Class Name
+                    </span>
+
+                    <strong id="detailClassName">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-item">
+
+                    <span>
+                        Category
+                    </span>
+
+                    <strong id="detailCategory">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-item">
+
+                    <span>
+                        Day
+                    </span>
+
+                    <strong id="detailDay">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-item">
+
+                    <span>
+                        Time
+                    </span>
+
+                    <strong id="detailTime">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-item">
+
+                    <span>
+                        Capacity
+                    </span>
+
+                    <strong id="detailCapacity">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-item">
+
+                    <span>
+                        Location
+                    </span>
+
+                    <strong id="detailLocation">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-item">
+
+                    <span>
+                        Status
+                    </span>
+
+                    <strong id="detailStatus">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-item">
+
+                    <span>
+                        Assigned Members
+                    </span>
+
+                    <strong id="detailMembers">
+                        0
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <script src="myclasses.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,335 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PowerFit - My Workout Plan</title>
+
+    <link rel="stylesheet" href="myworkout.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- ================= SIDEBAR LOGO ================= -->
+
+    <div class="sidebar-logo">
+
+        <img src="../../Imag/ChatGPT Image Sep 4, 2026, 07_11_46 PM.png"
+             alt="PowerFit Logo">
+
+        <h1>PowerFit</h1>
+
+    </div>
+
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <div class="sidebar">
+
+        <nav class="sidebar-menu">
+
+            <a href="../member.html" class="menuitem">
+                <i class="fa-solid fa-house"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="../myclass/myclass.html" class="menuitem">
+                <i class="fa-solid fa-dumbbell"></i>
+                <span>My Class & Trainer</span>
+            </a>
+
+            <a href="myworkout.html" class="menuitem active">
+                <i class="fa-solid fa-heart-pulse"></i>
+                <span>My Workout Plan</span>
+            </a>
+
+            <a href="../myrecord/myrecord.html" class="menuitem">
+                <i class="fa-solid fa-clipboard-list"></i>
+                <span>My Records</span>
+            </a>
+
+        </nav>
+
+
+        <!-- LOGOUT -->
+
+        <div class="sidebar-bottom">
+
+            <a href="#" id="logoutBtn" class="Logout">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="main-content">
+
+
+        <!-- ================= PAGE HEADER ================= -->
+
+        <section class="dashboard-header">
+
+            <div>
+                <h1>My Workout Plan</h1>
+
+                <p>
+                    View your workout routine and exercise instructions.
+                </p>
+            </div>
+
+            <div class="header-right">
+
+                <i class="fa-regular fa-bell" id="notification-icon"></i>
+
+                <div class="profil">
+
+                    <i class="fa-solid fa-circle-user profile-icon"></i>
+
+                    <div>
+                        <span id="memberName">Member Name</span>
+                        <small>Gym Member</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= WORKOUT SUMMARY CARDS ================= -->
+
+        <section class="dashboard-cards">
+
+            <!-- PLAN NAME -->
+
+            <div class="dashboard-card">
+
+                <div class="card-icon">
+                    <i class="fa-solid fa-dumbbell"></i>
+                </div>
+
+                <p>Workout Plan</p>
+
+                <h2 id="workoutPlanName">Not Assigned</h2>
+
+            </div>
+
+
+            <!-- FITNESS GOAL -->
+
+            <div class="dashboard-card">
+
+                <div class="card-icon">
+                    <i class="fa-solid fa-bullseye"></i>
+                </div>
+
+                <p>Fitness Goal</p>
+
+                <h2 id="workoutGoal">--</h2>
+
+            </div>
+
+
+            <!-- EXERCISES COUNT -->
+
+            <div class="dashboard-card">
+
+                <div class="card-icon">
+                    <i class="fa-solid fa-list-check"></i>
+                </div>
+
+                <p>Total Exercises</p>
+
+                <h2 id="totalExercises">0</h2>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= WORKOUT PLAN INFORMATION ================= -->
+
+        <section class="recent-activities">
+
+            <div class="activity-header">
+
+                <div>
+                    <h2>
+                        <i class="fa-solid fa-clipboard-list"></i>
+                        Workout Information
+                    </h2>
+
+                    <p>
+                        Details of the workout plan assigned to you.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="workout-info-grid">
+
+                <!-- PLAN NAME -->
+
+                <div class="workout-info-item">
+
+                    <div class="workout-info-icon">
+                        <i class="fa-solid fa-file-lines"></i>
+                    </div>
+
+                    <div>
+                        <p>Plan Name</p>
+                        <h3 id="planTitle">--</h3>
+                    </div>
+
+                </div>
+
+
+                <!-- GOAL -->
+
+                <div class="workout-info-item">
+
+                    <div class="workout-info-icon">
+                        <i class="fa-solid fa-bullseye"></i>
+                    </div>
+
+                    <div>
+                        <p>Fitness Goal</p>
+                        <h3 id="planGoal">--</h3>
+                    </div>
+
+                </div>
+
+
+                <!-- DURATION -->
+
+                <div class="workout-info-item">
+
+                    <div class="workout-info-icon">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+
+                    <div>
+                        <p>Workout Duration</p>
+                        <h3 id="planDuration">--</h3>
+                    </div>
+
+                </div>
+
+
+                <!-- TRAINER -->
+
+                <div class="workout-info-item">
+
+                    <div class="workout-info-icon">
+                        <i class="fa-solid fa-user-tie"></i>
+                    </div>
+
+                    <div>
+                        <p>Assigned Trainer</p>
+                        <h3 id="planTrainer">--</h3>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= EXERCISE LIST ================= -->
+
+        <section class="recent-activities">
+
+            <div class="activity-header">
+
+                <div>
+                    <h2>
+                        <i class="fa-solid fa-person-running"></i>
+                        My Exercises
+                    </h2>
+
+                    <p>
+                        Follow the exercises and instructions in your plan.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Exercise Name</th>
+                            <th>Sets</th>
+                            <th>Reps</th>
+                            <th>Rest</th>
+                            <th>Instructions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="exerciseTableBody">
+
+                        <tr>
+                            <td colspan="6" class="empty-message">
+                                <i class="fa-solid fa-dumbbell"></i>
+
+                                <p>No workout exercises available.</p>
+
+                                <span>
+                                    Your assigned exercises will appear here.
+                                </span>
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= TRAINER INSTRUCTIONS ================= -->
+
+        <section class="recent-activities workout-note">
+
+            <div class="note-icon">
+                <i class="fa-solid fa-circle-info"></i>
+            </div>
+
+            <div>
+                <h3>Trainer Instructions</h3>
+
+                <p id="trainerInstructions">
+                    Follow the workout plan assigned by your trainer.
+                    If you have questions about an exercise, ask your trainer
+                    for guidance.
+                </p>
+            </div>
+
+        </section>
+
+
+    </main>
+    <script src="myworkout.js"></script>
+</body>
+
+</html>

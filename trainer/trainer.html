@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PowerFit - Trainer Dashboard</title>
+
+    <!-- ================= FONT AWESOME ================= -->
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- ================= CSS ================= -->
+
+    <link rel="stylesheet" href="trainer.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= SIDEBAR LOGO ================= -->
+
+    <div class="sidebar-logo">
+
+        <img src="../Imag/ChatGPT Image Sep 4, 2026, 07_11_46 PM.png"
+            alt="PowerFit Logo">
+
+        <h1>PowerFit</h1>
+
+    </div>
+
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <div class="sidebar">
+
+        <nav class="sidebar-menu">
+
+
+            <!-- Dashboard -->
+
+            <a href="trainer.html" class="menuitem active">
+
+                <i class="fa-solid fa-chart-line"></i>
+
+                Dashboard
+
+            </a>
+
+
+            <!-- My Members -->
+
+            <a href="mymember/mymember.html" class="menuitem">
+
+                <i class="fa-solid fa-users"></i>
+
+                My Members
+
+            </a>
+
+
+            <!-- Classes & Schedules -->
+
+            <a href="myclasses/myclasses.html" class="menuitem">
+
+                <i class="fa-solid fa-calendar-days"></i>
+
+                Classes & Schedules
+
+            </a>
+
+
+            <!-- Attendance -->
+
+            <a href="myattendance/myattendance.html" class="menuitem">
+
+                <i class="fa-solid fa-clipboard-check"></i>
+
+                Attendance
+
+            </a>
+
+
+            <!-- Workout Plans -->
+
+            <a href="workout/workout.html" class="menuitem">
+
+                <i class="fa-solid fa-dumbbell"></i>
+
+                Workout Plans
+
+            </a>
+
+
+        </nav>
+
+
+        <!-- ================= LOGOUT ================= -->
+
+        <div class="sidebar-bottom">
+
+            <a href="../index.html" class="Logout">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                Logout
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="main-content">
+
+
+        <!-- ================= DASHBOARD HEADER ================= -->
+
+        <section class="dashboard-header">
+
+            <div>
+
+                <h1>Dashboard</h1>
+
+                <p>
+                    Welcome, <span id="trainerName">Trainer</span>
+                </p>
+
+            </div>
+
+
+            <!-- ================= HEADER RIGHT ================= -->
+
+            <div class="header-right">
+
+                <span id="notification-icon">
+
+                    <i class="fa-solid fa-bell"></i>
+
+                </span>
+
+
+                <div class="profil">
+
+                    <span id="trainerProfileName">
+                        Trainer
+                    </span>
+
+                    <small>
+                        Trainer
+                    </small>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= DASHBOARD CARDS ================= -->
+
+        <section class="dashboard-cards">
+
+
+            <!-- Assigned Members -->
+
+            <div class="dashboard-card">
+
+                <p>Assigned Members</p>
+
+                <h2 id="assignedMembers">
+                    0
+                </h2>
+
+            </div>
+
+
+            <!-- Today's Classes -->
+
+            <div class="dashboard-card">
+
+                <p>Today's Classes</p>
+
+                <h2 id="todayClasses">
+                    0
+                </h2>
+
+            </div>
+
+
+            <!-- Today's Attendance -->
+
+            <div class="dashboard-card">
+
+                <p>Today's Attendance</p>
+
+                <h2 id="todayAttendance">
+                    0
+                </h2>
+
+            </div>
+
+
+            <!-- Active Workout Plans -->
+
+            <div class="dashboard-card">
+
+                <p>Active Workout Plans</p>
+
+                <h2 id="activeWorkoutPlans">
+                    0
+                </h2>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= UPCOMING CLASSES ================= -->
+
+        <section class="upcoming-classes">
+
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>Upcoming Classes</h2>
+
+                    <p>Your upcoming scheduled classes</p>
+
+                </div>
+
+
+                <button id="viewClassesBtn">
+
+                    <i class="fa-solid fa-calendar-days"></i>
+
+                    View All
+
+                </button>
+
+            </div>
+
+
+            <!-- Class 1 -->
+
+            <div class="class-item">
+
+                <div>
+
+                    <p>Morning Fitness</p>
+
+                    <small>
+                        08:00 AM - 09:00 AM
+                    </small>
+
+                </div>
+
+                <span>
+                    Today
+                </span>
+
+            </div>
+
+
+            <!-- Class 2 -->
+
+            <div class="class-item">
+
+                <div>
+
+                    <p>Strength Training</p>
+
+                    <small>
+                        05:00 PM - 06:00 PM
+                    </small>
+
+                </div>
+
+                <span>
+                    Today
+                </span>
+
+            </div>
+
+
+            <!-- Class 3 -->
+
+            <div class="class-item">
+
+                <div>
+
+                    <p>Cardio Session</p>
+
+                    <small>
+                        10:00 AM - 11:00 AM
+                    </small>
+
+                </div>
+
+                <span>
+                    Tomorrow
+                </span>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- ================= RECENT ACTIVITIES ================= -->
+
+        <section class="recent-activities">
+
+
+            <div class="activity-header">
+
+                <div>
+
+                    <h2>Recent Activities</h2>
+
+                    <p>Your latest trainer activities</p>
+
+                </div>
+
+
+                <button id="viewAllBtn">
+
+                    <i class="fa-solid fa-list"></i>
+
+                    View All
+
+                </button>
+
+            </div>
+
+
+            <!-- Activity 1 -->
+
+            <div class="activity">
+
+                <div>
+
+                    <p>
+
+                        <i class="fa-solid fa-pen-to-square"></i>
+
+                        Workout plan updated
+
+                    </p>
+
+                    <small>
+                        Workout plan updated for a member
+                    </small>
+
+                </div>
+
+                <span>
+                    Today
+                </span>
+
+            </div>
+
+
+            <!-- Activity 2 -->
+
+            <div class="activity">
+
+                <div>
+
+                    <p>
+
+                        <i class="fa-solid fa-clipboard-check"></i>
+
+                        Attendance marked
+
+                    </p>
+
+                    <small>
+                        Member attendance recorded
+                    </small>
+
+                </div>
+
+                <span>
+                    Today
+                </span>
+
+            </div>
+
+
+            <!-- Activity 3 -->
+
+            <div class="activity">
+
+                <div>
+
+                    <p>
+
+                        <i class="fa-solid fa-user-plus"></i>
+
+                        New member assigned
+
+                    </p>
+
+                    <small>
+                        A new member was assigned to you
+                    </small>
+
+                </div>
+
+                <span>
+                    Yesterday
+                </span>
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="trainer.js"></script>
+
+
+</body>
+
+</html>

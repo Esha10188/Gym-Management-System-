@@ -1,0 +1,277 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Records - PowerFit</title>
+
+    <link rel="stylesheet" href="myrecord.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- ================= SIDEBAR LOGO ================= -->
+
+    <div class="sidebar-logo">
+        <img src="../../Imag/ChatGPT Image Sep 4, 2026, 07_11_46 PM.png"
+            alt="PowerFit Logo">
+        <h1>PowerFit</h1>
+    </div>
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <div class="sidebar">
+
+        <nav class="sidebar-menu">
+
+            <a href="../member.html" class="menuitem">
+                <i class="fa-solid fa-gauge-high"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="../myclass/myclass.html" class="menuitem">
+                <i class="fa-solid fa-dumbbell"></i>
+                <span>My Class & Trainer</span>
+            </a>
+
+            <a href="../myworkout/myworkout.html" class="menuitem">
+                <i class="fa-solid fa-clipboard-list"></i>
+                <span>My Workout Plan</span>
+            </a>
+
+            <a href="myrecord.html" class="menuitem active">
+                <i class="fa-solid fa-file-lines"></i>
+                <span>My Records</span>
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="#" id="logoutBtn" class="Logout">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+            </a>
+        </div>
+
+    </div>
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="main-content">
+
+        <!-- PAGE HEADER -->
+
+        <section class="dashboard-header">
+
+            <div>
+                <h1>My Records</h1>
+                <p>View your attendance, membership and payment history.</p>
+            </div>
+
+            <div class="header-right">
+
+                <i class="fa-regular fa-bell" id="notification-icon"></i>
+
+                <div class="profil">
+                    <i class="fa-solid fa-circle-user"></i>
+
+                    <div>
+                        <span id="memberName">Member</span>
+                        <small>Gym Member</small>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ================= RECORD SUMMARY CARDS ================= -->
+
+        <section class="dashboard-cards">
+
+            <div class="dashboard-card">
+                <div class="card-icon">
+                    <i class="fa-solid fa-calendar-check"></i>
+                </div>
+
+                <p>Total Attendance</p>
+                <h2 id="totalAttendance">0</h2>
+            </div>
+
+            <div class="dashboard-card">
+                <div class="card-icon">
+                    <i class="fa-solid fa-calendar-xmark"></i>
+                </div>
+
+                <p>Absent Days</p>
+                <h2 id="absentDays">0</h2>
+            </div>
+
+            <div class="dashboard-card">
+                <div class="card-icon">
+                    <i class="fa-solid fa-wallet"></i>
+                </div>
+
+                <p>Total Paid</p>
+                <h2 id="totalPaid">Rs. 0</h2>
+            </div>
+
+        </section>
+
+        <!-- ================= MEMBERSHIP DETAILS ================= -->
+
+        <section class="record-section">
+
+            <div class="section-header">
+                <div>
+                    <h2>
+                        <i class="fa-solid fa-id-card"></i>
+                        Membership Details
+                    </h2>
+
+                    <p>Your current membership information.</p>
+                </div>
+            </div>
+
+            <div class="membership-grid">
+
+                <div class="record-box">
+                    <span>Membership Type</span>
+                    <h3 id="membershipType">Not Available</h3>
+                </div>
+
+                <div class="record-box">
+                    <span>Membership Duration</span>
+                    <h3 id="membershipDuration">Not Available</h3>
+                </div>
+
+                <div class="record-box">
+                    <span>Joining Date</span>
+                    <h3 id="joiningDate">Not Available</h3>
+                </div>
+
+                <div class="record-box">
+                    <span>Expiry Date</span>
+                    <h3 id="membershipExpiry">Not Available</h3>
+                </div>
+
+                <div class="record-box">
+                    <span>Membership Status</span>
+                    <h3 id="membershipStatus">Not Available</h3>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ================= ATTENDANCE HISTORY ================= -->
+
+        <section class="record-section">
+
+            <div class="section-header">
+                <div>
+                    <h2>
+                        <i class="fa-solid fa-calendar-check"></i>
+                        Attendance History
+                    </h2>
+
+                    <p>Your attendance records marked by the admin.</p>
+                </div>
+            </div>
+
+            <div class="table-controls">
+
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input type="date" id="attendanceDateFilter"
+                        aria-label="Filter attendance by date">
+                </div>
+
+                <select id="attendanceStatusFilter"
+                    aria-label="Filter attendance status">
+                    <option value="all">All Records</option>
+                    <option value="Present">Present</option>
+                    <option value="Absent">Absent</option>
+                </select>
+
+            </div>
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Date</th>
+                            <th>Check In</th>
+                            <th>Check Out</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="attendanceTableBody">
+                        <tr>
+                            <td colspan="5">Loading attendance records...</td>
+                        </tr>
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+        <!-- ================= PAYMENT HISTORY ================= -->
+
+        <section class="record-section">
+
+            <div class="section-header">
+                <div>
+                    <h2>
+                        <i class="fa-solid fa-money-bill-wave"></i>
+                        Payment History
+                    </h2>
+
+                    <p>Review your saved payment records.</p>
+                </div>
+            </div>
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Payment Date</th>
+                            <th>Amount</th>
+                            <th>Payment Method</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="paymentTableBody">
+                        <tr>
+                            <td colspan="5">Loading payment records...</td>
+                        </tr>
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+<script src="myrecord.js"></script>
+</body>
+
+</html>

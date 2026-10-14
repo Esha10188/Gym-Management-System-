@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Payment Management - PowerFit</title>
+
+    <link rel="stylesheet" href="payments.css">
+</head>
+
+<body>
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+            <h1>PowerFit</h1>
+        </div>
+
+        <nav class="sidebar-menu">
+
+            <a href="../dashboard/admin.html">Dashboard</a>
+
+            <a href="../member/members.html">Members</a>
+
+            <a href="../trainer/trainer.html">Trainers</a>
+
+            <a href="../membership/memberships.html">Memberships</a>
+
+            <a href="../classes/classes.html">Classes & Schedules</a>
+
+            <a href="../attendance/attendance.html">Attendance</a>
+
+            <a href="payments.html" class="active">Payments</a>
+
+            
+
+            
+
+        </nav>
+
+        <div class="sidebar-bottom">
+            <button id="logoutBtn">Logout</button>
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="main-content">
+
+        <!-- PAGE HEADER -->
+
+        <header class="page-header">
+
+            <div>
+                <h2>Payment Management</h2>
+                <p>Track membership payments and payment history</p>
+            </div>
+
+            <button class="add-payment-btn" id="addPaymentBtn">
+                + Record Payment
+            </button>
+
+        </header>
+
+
+        <!-- ================= PAYMENT SUMMARY ================= -->
+
+        <section class="payment-summary">
+
+            <div class="summary-card">
+                <p>Total Revenue</p>
+                <h2 id="totalRevenue">Rs. 0</h2>
+                <span>This Month</span>
+            </div>
+
+            <div class="summary-card">
+                <p>Paid Payments</p>
+                <h2 id="paidpayments">0</h2>
+                <span>Completed</span>
+            </div>
+
+            <div class="summary-card">
+                <p>Pending Payments</p>
+                <h2 id="pendingpayments">0</h2>
+                <span>Due</span>
+            </div>
+
+           
+
+        </section>
+
+
+
+             
+
+        <!-- ================= FILTERS ================= -->
+
+        <section class="payment-filters">
+
+            <div>
+                <label for="searchPayment">Search Member</label>
+
+                <input
+                    type="text"
+                    id="searchPayment"
+                    placeholder="Search member name..."
+                >
+            </div>
+
+            <div>
+                <label for="paymentStatus">Payment Status</label>
+
+                <select id="paymentStatus">
+
+                    <option value="all">All Status</option>
+                    <option value="paid">Paid</option>
+                    <option value="pending">Pending</option>
+                   
+                </select>
+            </div>
+
+            <div>
+                <label for="paymentMethod">Payment Method</label>
+
+                <select id="paymentMethod">
+
+                    <option value="all">All Methods</option>
+                    <option value="cash">Cash</option>
+                    <option value="bank transfer">Bank Transfer</option>
+                    <option value="card">Card</option>
+                    <option value="online">Online</option>
+
+                </select>
+            </div>
+
+            <div>
+                <label for="paymentDate">Date</label>
+
+                <input type="date" id="paymentDate">
+            </div>
+
+        </section>
+
+
+        <!-- ================= TRANSACTIONS ================= -->
+
+        <section class="transactions">
+
+            <div class="section-header">
+
+                <div>
+                    <h2>Recent Transactions</h2>
+                    <p>Latest payment records</p>
+                </div>
+
+            </div>
+
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Member ID</th>
+                            <th>Member</th>
+                            <th>Membership</th>
+                            <th>Amount</th>
+                            <th>Method</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                            
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody
+
+                      id=paymentsTableBody>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= RECORD PAYMENT FORM ================= -->
+
+        <section class="payment-form" id="paymentForm">
+
+            <div class="section-header">
+
+                <h2>Record New Payment</h2>
+
+                <p>Enter payment details</p>
+
+            </div>
+
+
+            <div class="form-grid">
+
+                <div>
+                    <label for="memberID">Member ID</label>
+
+                    <input
+                        type="text"
+                        id="memberID"
+                        placeholder="Enter member ID"
+                    >
+                </div>
+
+
+                <div>
+                    <label for="membership">Membership</label>
+
+                    <select id="membership">
+
+                        <option value="">Select Membership</option>
+                        <option value="Basic">Basic</option>
+                        <option value="Standard">Standard</option>
+                        <option value="Premium">Premium</option>
+
+                    </select>
+                </div>
+
+
+                <div>
+                    <label for="amount">Amount</label>
+
+                    <input
+                        type="number"
+                        id="amount"
+                        placeholder="Enter amount"
+                    >
+                </div>
+
+
+                <div>
+                    <label for="method">Payment Method</label>
+
+                    <select id="method">
+
+                        <option value="">Select Method</option>
+                        <option value="Cash">Cash</option>
+                        <option value="bank transfer">Bank Transfer</option>
+                        <option value="Card">Card</option>
+                        <option value="Online">Online</option>
+
+                    </select>
+                </div>
+
+
+                <div>
+                    <label for="date">Payment Date</label>
+
+                    <input type="date" id="date">
+                </div>
+
+
+                <div>
+                    <label for="status">Payment Status</label>
+
+                    <select id="status">
+
+                        <option value="Paid">Paid</option>
+                        <option value="Pending">Pending</option>
+                       
+
+                    </select>
+                </div>
+
+            </div>
+
+
+            <div class="form-buttons">
+
+                <button type="button" class="save-btn">
+                    Save Payment
+                </button>
+
+                <button type="button" class="cancel-btn">
+                    Cancel
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="payments.js"></script>
+
+</body>
+
+</html>

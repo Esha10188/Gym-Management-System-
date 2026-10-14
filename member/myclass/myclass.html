@@ -1,0 +1,367 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PowerFit - My Class & Trainer</title>
+
+    <link rel="stylesheet" href="myclass.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- ================= SIDEBAR LOGO ================= -->
+
+    <div class="sidebar-logo">
+
+        <img src="../../Imag/ChatGPT Image Sep 4, 2026, 07_11_46 PM.png"
+             alt="PowerFit Logo">
+
+        <h1>PowerFit</h1>
+
+    </div>
+
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <div class="sidebar">
+
+        <nav class="sidebar-menu">
+
+            <a href="../member.html" class="menuitem">
+                <i class="fa-solid fa-house"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="myclass.html" class="menuitem active">
+                <i class="fa-solid fa-dumbbell"></i>
+                <span>My Class & Trainer</span>
+            </a>
+
+            <a href="../myworkout/myworkout.html" class="menuitem">
+                <i class="fa-solid fa-heart-pulse"></i>
+                <span>My Workout Plan</span>
+            </a>
+
+            <a href="../myrecord/myrecord.html" class="menuitem">
+                <i class="fa-solid fa-clipboard-list"></i>
+                <span>My Records</span>
+            </a>
+
+        </nav>
+
+
+        <!-- LOGOUT -->
+
+        <div class="sidebar-bottom">
+
+            <a href="#" id="logoutBtn" class="Logout">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="main-content">
+
+
+        <!-- ================= PAGE HEADER ================= -->
+
+        <section class="dashboard-header">
+
+            <div>
+                <h1>My Class & Trainer</h1>
+
+                <p>
+                    View your assigned fitness class and trainer details.
+                </p>
+            </div>
+
+            <div class="header-right">
+
+                <i class="fa-regular fa-bell" id="notification-icon"></i>
+
+                <div class="profil">
+
+                    <i class="fa-solid fa-circle-user profile-icon"></i>
+
+                    <div>
+                        <span id="memberName">Member Name</span>
+                        <small>Gym Member</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CLASS SUMMARY CARDS ================= -->
+
+        <section class="dashboard-cards">
+
+            <!-- CLASS NAME -->
+
+            <div class="dashboard-card">
+
+                <div class="card-icon">
+                    <i class="fa-solid fa-dumbbell"></i>
+                </div>
+
+                <p>Assigned Class</p>
+
+                <h2 id="className">Not Assigned</h2>
+
+            </div>
+
+
+            <!-- FITNESS GOAL -->
+
+            <div class="dashboard-card">
+
+                <div class="card-icon">
+                    <i class="fa-solid fa-bullseye"></i>
+                </div>
+
+                <p>Fitness Goal</p>
+
+                <h2 id="classCategory">--</h2>
+
+            </div>
+
+
+            <!-- TRAINER NAME -->
+
+            <div class="dashboard-card">
+
+                <div class="card-icon">
+                    <i class="fa-solid fa-user-tie"></i>
+                </div>
+
+                <p>My Trainer</p>
+
+                <h2 id="trainerName">--</h2>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CLASS DETAILS ================= -->
+
+        <section class="recent-activities">
+
+            <div class="activity-header">
+
+                <div>
+                    <h2>
+                        <i class="fa-solid fa-calendar-days"></i>
+                        Class Details
+                    </h2>
+
+                    <p>
+                        Your assigned class schedule and location.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="details-grid">
+
+                <!-- CLASS DAY -->
+
+                <div class="detail-item">
+
+                    <div class="detail-icon">
+                        <i class="fa-solid fa-calendar-week"></i>
+                    </div>
+
+                    <div>
+                        <p>Class Day</p>
+                        <h3 id="classDay">--</h3>
+                    </div>
+
+                </div>
+
+
+                <!-- START TIME -->
+
+                <div class="detail-item">
+
+                    <div class="detail-icon">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+
+                    <div>
+                        <p>Start Time</p>
+                        <h3 id="startTime">--</h3>
+                    </div>
+
+                </div>
+
+
+                <!-- END TIME -->
+
+                <div class="detail-item">
+
+                    <div class="detail-icon">
+                        <i class="fa-solid fa-hourglass-end"></i>
+                    </div>
+
+                    <div>
+                        <p>End Time</p>
+                        <h3 id="endTime">--</h3>
+                    </div>
+
+                </div>
+
+
+                <!-- LOCATION -->
+
+                <div class="detail-item">
+
+                    <div class="detail-icon">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+
+                    <div>
+                        <p>Class Location</p>
+                        <h3 id="classLocation">--</h3>
+                    </div>
+
+                </div>
+
+
+                <!-- CAPACITY -->
+
+                <div class="detail-item">
+
+                    <div class="detail-icon">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+
+                    <div>
+                        <p>Class Capacity</p>
+                        <h3 id="classCapacity">--</h3>
+                    </div>
+
+                </div>
+
+
+                <!-- CLASS STATUS -->
+
+                <div class="detail-item">
+
+                    <div class="detail-icon">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+
+                    <div>
+                        <p>Class Status</p>
+                        <h3 id="classStatus">--</h3>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= TRAINER DETAILS ================= -->
+
+        <section class="recent-activities">
+
+            <div class="activity-header">
+
+                <div>
+                    <h2>
+                        <i class="fa-solid fa-user-tie"></i>
+                        Trainer Information
+                    </h2>
+
+                    <p>
+                        Details of the trainer assigned to your class.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="trainer-details">
+
+                <div class="trainer-avatar">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+
+
+                <div class="trainer-info">
+
+                    <h3 id="trainerFullName">Trainer Name</h3>
+
+                    <p>
+                        <i class="fa-solid fa-star"></i>
+                        Specialization:
+                        <span id="trainerSpecialization">--</span>
+                    </p>
+
+                    <p>
+                        <i class="fa-solid fa-envelope"></i>
+                        Email:
+                        <span id="trainerEmail">--</span>
+                    </p>
+
+                    <p>
+                        <i class="fa-solid fa-phone"></i>
+                        Phone:
+                        <span id="trainerPhone">--</span>
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= INFORMATION NOTE ================= -->
+
+        <section class="recent-activities information-note">
+
+            <div class="note-icon">
+                <i class="fa-solid fa-circle-info"></i>
+            </div>
+
+            <div>
+                <h3>Important Information</h3>
+
+                <p>
+                    Your assigned class and trainer are based on the
+                    membership information saved by the gym administrator.
+                    Contact the gym administrator if any details need to
+                    be corrected.
+                </p>
+            </div>
+
+        </section>
+
+
+    </main>
+    <script src="myclass.js"></script>
+
+</body>
+
+</html>
