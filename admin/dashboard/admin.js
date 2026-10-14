@@ -103,16 +103,8 @@ function displayRecentActivities() {
 
         activityList.innerHTML = `
             <div class="activity-item">
-                <i class="fa-solid fa-circle-info"></i>
-
-                <div>
-                    <p>No activities available yet.</p>
-                    <small>Activities will appear here when actions are recorded.</small>
                 </div>
-            </div>
-        `;
-
-        return;
+        `
     }
 
     // Latest activities first

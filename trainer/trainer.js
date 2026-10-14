@@ -68,6 +68,19 @@ const myMembers = members.filter(function(member) {
 // ===============================
 
 assignedMembers.textContent = myMembers.length;
+// =============== 19. LOGOUT ===============
+
+const logoutLink = document.querySelector(".Logout");
+
+if (logoutLink) {
+
+    logoutLink.addEventListener("click", function () {
+
+        localStorage.removeItem("loggedInTrainer");
+
+    });
+
+}
 
 
 // ===============================

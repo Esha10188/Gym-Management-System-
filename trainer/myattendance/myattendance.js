@@ -528,3 +528,16 @@ if (loggedInTrainer && loggedInTrainer.id != null) {
     displayAttendance();
 
 }
+// =============== 19. LOGOUT ===============
+
+const logoutLink = document.querySelector(".Logout");
+
+if (logoutLink) {
+
+    logoutLink.addEventListener("click", function () {
+
+        localStorage.removeItem("loggedInTrainer");
+
+    });
+
+}

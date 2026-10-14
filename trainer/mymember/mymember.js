@@ -349,6 +349,19 @@ const todayPresentMembers =
 
 todayAttendance.textContent =
     todayPresentMembers.length;
+    // =============== . LOGOUT ===============
+
+const logoutLink = document.querySelector(".Logout");
+
+if (logoutLink) {
+
+    logoutLink.addEventListener("click", function () {
+
+        localStorage.removeItem("loggedInTrainer");
+
+    });
+
+}
 
 
 
